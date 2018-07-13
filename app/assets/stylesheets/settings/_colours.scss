@@ -1,0 +1,74 @@
+// Zesty Dark
+$zesty-dark: hsl(145, 63%, 43%);
+$zesty-dark-inverted: hsl(145, 15%, 99%);
+
+// Zesty
+$zesty: hsl(145, 63%, 47%);
+$zesty-inverted: hsl(145, 15%, 100%);
+
+// Zesty Light
+$zesty-light: hsl(145, 55%, 56%);
+$zesty-light-inverted: hsl(145, 15%, 97%);
+
+// Zesty Lighter
+$zesty-lighter: hsl(145, 55%, 66%);
+$zesty-lighter-inverted: hsl(145, 15%, 99%);
+
+
+
+// Licorice Dark
+$licorice-dark: hsl(180, 6%, 14%);
+$licorice-dark-inverted: hsl(180, 15%, 91%);
+
+// Licorice
+$licorice: hsl(180, 7%, 16%);
+$licorice-inverted: hsl(180, 15%, 90%);
+
+// Licorice Light
+$licorice-light: hsl(180, 5%, 24%);
+$licorice-light-inverted: hsl(180, 15%, 92%);
+
+// Licorice Lighter
+$licorice-lighter: hsl(180, 3%, 32%);
+$licorice-lighter-inverted: hsl(180, 15%, 94%);
+
+
+
+// Grey
+$grey: hsl(220, 7%, 86%);
+$grey-inverted: hsl(220, 15%, 26%);
+
+// Grey Light
+$grey-light: hsl(220, 20%, 94%);
+$grey-light-inverted: hsl(220, 15%, 30%);
+
+// Grey Lighter
+$grey-lighter: hsl(220, 20%, 97%);
+$grey-light-inverted: hsl(220, 15%, 34%);
+
+
+
+// Creme
+$creme: hsl(0, 0%, 100%);
+$creme-inverted: hsl(220, 10%, 36%);
+
+
+// Danger Dark
+$danger-dark: hsl(8, 76%, 62%);
+$danger-dark-inverted: hsl(8, 15%, 95%);
+
+// Danger
+$danger: hsl(8, 100%, 68%);
+$danger-inverted: hsl(8, 15%, 96%);
+
+// Danger Light
+$danger-light: hsl(8, 100%, 74%);
+$danger-light-inverted: hsl(8, 15%, 96%);
+
+// Danger Lighter
+$danger-lighter: hsl(8, 100%, 76%);
+$danger-lighter-inverted: hsl(8, 15%, 96%);
+
+
+$text: $creme-inverted;
+$text-bold: darken($creme-inverted, 20%);

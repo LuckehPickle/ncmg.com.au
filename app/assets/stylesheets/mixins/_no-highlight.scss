@@ -1,0 +1,5 @@
+// Prevents highlighting on an element
+@mixin no-highlight () {
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}

@@ -1,0 +1,35 @@
+.footer {
+  background: $licorice;
+  border-bottom: 4px solid $zesty;
+
+  .footer-wrapper {
+    display: grid;
+  }
+
+  .base {
+    background: $licorice-dark;
+    padding: 1.5rem 0;
+
+      .logo {
+        display: block;
+        height: 25px;
+        line-height: 1.0;
+
+        img {
+          height: 100%;
+        }
+    }
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    p {
+      margin: 0;
+      color: darken($licorice-dark-inverted, 15%);
+    }
+
+  }
+}

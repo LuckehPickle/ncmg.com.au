@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+  <head>
+    <%- title = content_for?(:title) ? yield(:title) : 'North Coast Marble & Granite' %>
+    <%- description = yield(:description) %>
+    <title><%= title %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1, maximum-scale: 1.0" />
+    <meta name="description" content="<%= description %>"/>
+    <link rel="canonical" href="<%= yield(:canonical_url) %>">
+    <meta property="og:url" content="https://www.ncmg.com.au"/>
+    <meta property="og:image" content="<%= image_url 'open-graph.jpg' %>"/>
+    <meta property="og:title" content="<%= title %>"/>
+    <meta property="og:description" content="<%= description %>">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'application/header' %>
+    <%= yield %>
+    <%= render 'application/footer' %>
+  </body>
+</html>

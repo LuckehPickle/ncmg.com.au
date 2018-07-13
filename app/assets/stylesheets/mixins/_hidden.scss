@@ -1,0 +1,9 @@
+// Visually hides an element. It is still visible to a screen reader.
+@mixin hidden () {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}

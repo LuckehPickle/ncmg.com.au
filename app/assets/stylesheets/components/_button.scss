@@ -1,0 +1,33 @@
+.button,
+.button-secondary,
+.button-tertiary {
+  display: flex;
+  align-items: center;
+  font-size: $font-size - 1px;
+  font-weight: 500;
+  line-height: 1.1;
+  vertical-align: middle;
+  border: none;
+  border-radius: $border-radius - 1px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 14px 22px;
+  @include no-highlight();
+
+  // For buttons that should fill the width of their container
+  &.wide {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.button {
+  background: $zesty;
+  color: $zesty-inverted;
+
+  &[disabled] {
+    background: $grey;
+    color: $grey-inverted;
+    cursor: no-drop;
+  }
+}

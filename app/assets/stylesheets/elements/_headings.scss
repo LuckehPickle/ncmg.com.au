@@ -1,0 +1,31 @@
+.subheading {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 84%;
+  letter-spacing: 0.05em; // Extra 5% letter spacing for added readability
+  color: $zesty-dark;
+
+  // Add some spacing above, unless this is the first child in a container.
+  &:not(:first-child) {
+    margin-top: 2rem;
+  }
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $text-bold;
+}
+
+h1 {
+  font-size: 2.4em;
+  font-weight: normal; // Font weight should be similar to that of the subheading (visually).
+  margin-top: 0.25rem; // Space between h1 and subheading
+  margin-bottom: 2.5rem;
+}
+
+.inverted {
+  // Invert the natural colour of the headings when inside an inverted section of the page.
+  h1, h2, h3, h4, h5, h6 {
+    color: $licorice-inverted;
+  }
+}

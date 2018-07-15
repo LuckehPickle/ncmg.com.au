@@ -1,13 +1,76 @@
 <div class="footer">
   <!-- Wraps together links and business information -->
   <div class="footer-wrapper">
-    <div class="links">
-      
+    <div>
+
+      <!-- A collection of useful links. -->
+      <div class="links columns">
+
+        <!-- Navigation -->
+        <div class="column">
+          <h2>Navigation</h2>
+          <ul>
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Products & Services', root_path %></li>
+            <li><%= link_to 'Gallery', root_path %></li>
+            <li><%= link_to 'Contact Us', root_path(anchor: 'contact-us') %></li>
+            <li><%= link_to 'Staff Area', root_path %></li>
+          </ul>
+        </div>
+
+        <!-- Suppliers -->
+        <div class="column">
+          <h2>Engineered stone suppliers</h2>
+          <ul>
+            <li><%= link_to 'Caeserstone', 'http://www.caesarstone.com.au/', target: '_blank' %></li>
+            <li><%= link_to 'Silestone', 'https://www.silestoneoceania.com/', target: '_blank' %></li>
+            <li><%= link_to 'Smartstone', 'https://www.smartstone.com.au/', target: '_blank' %></li>
+            <li><%= link_to 'essastone', 'http://www.essastone.com.au/', target: '_blank' %></li>
+            <li><%= link_to 'Quantum Quartz', 'https://www.wk.com.au/pages/Quantum-Quartz-Engineered-Stone', target: '_blank' %></li>
+          </ul>
+
+          <h2>Natural stone suppliers</h2>
+          <ul>
+            <li><%= link_to 'CDK Stone', 'https://www.cdkstone.com.au/', target: '_blank' %></li>
+            <li><%= link_to 'WK Stone', 'https://www.wk.com.au/', target: '_blank' %></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Contact and business information -->
+      <div class="business-info columns">
+        <div class="column">
+
+          <h2>Address</h2>
+          <address>
+            North Coast Marble &amp; Granite<br/>
+            207 Lake Road<br/>
+            Port Macquarie, NSW 2444
+          </address>
+
+          <!-- Phone numbers -->
+          <div class="numbers">
+            <div>
+              <h2>Phone</h2>
+              <p>(02) 6581 1355</p>
+            </div>
+            <div>
+              <h2>Fax</h2>
+              <p>(02) 6581 0949</p>
+            </div>
+          </div>
+
+          <h2>Email</h2>
+          <p><%= link_to 'sales@ncmg.com.au', 'mailto:sales@ncmg.com.au' %></p>
+
+        </div>
+      </div>
     </div>
 
-    <div class="business-info">
+    <!-- Helps split the background into two sections -->
+    <div class="spacer"></div>
 
-    </div>
   </div>
 
   <div class="base">

@@ -2,23 +2,38 @@
   background: $licorice;
   border-bottom: 4px solid $zesty;
 
+  // Wraps links and business info beside each other.
   .footer-wrapper {
     display: grid;
+    grid-template-columns: 1fr $wrapper-width 1fr;
+
+    $padding: 2rem;
+
+    & > div:not(.spacer) {
+      grid-column: 2;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .links {
+      padding: $padding 1rem;
+    }
+
+    .business-info {
+      background: $licorice-light;
+      padding: $padding;
+      width: 328px;
+    }
+
+    .spacer {
+      grid-column: 3;
+      background: $licorice-light;
+    }
   }
 
   .base {
     background: $licorice-dark;
     padding: 1.5rem 0;
-
-      .logo {
-        display: block;
-        height: 25px;
-        line-height: 1.0;
-
-        img {
-          height: 100%;
-        }
-    }
 
     .wrapper {
       display: flex;
@@ -29,6 +44,58 @@
     p {
       margin: 0;
       color: darken($licorice-dark-inverted, 15%);
+    }
+
+  }
+
+  h2 {
+    font-weight: normal;
+    font-size: $font-size;
+    color: $licorice-inverted;
+    margin: 1.25rem 0 0.25rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .columns {
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.75;
+
+    .column {
+      margin: 0 1.5rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .numbers {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 1.25rem;
+      grid-gap: 1.5rem;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    p,
+    a,
+    address {
+      color: darken($licorice-inverted, 12%);
+      text-decoration: none;
+      font-style: normal;
+      margin: 0;
     }
 
   }

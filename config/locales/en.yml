@@ -35,3 +35,7 @@ en:
       index:
         title: "North Coast Marble & Granite"
         description: "TODO"
+  mail:
+    contact_us:
+      confirmation:
+        subject: "Thanks for contacting us. We'll be in touch shortly."

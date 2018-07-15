@@ -1,0 +1,56 @@
+label {
+  color: darken($text, 15%);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  background: $creme;
+  color: $creme-inverted;
+  border-radius: $border-radius - 1px;
+  border: 1px solid $grey;
+  padding: 12px;
+  width: 100%;
+  line-height: 1.0;
+  margin-top: 0.3rem;
+}
+
+textarea {
+  line-height: 1.6;
+  min-height: 8em;
+  height: 8em;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.field {
+  margin: 1.5rem 0;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  .field-errors {
+    margin: 0 0 1rem;
+    padding: 0 0 0 1.5rem;
+    color: $text;
+  }
+}
+
+.inverted {
+  label {
+    color: $licorice-inverted;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    background: $licorice-lighter;
+    color: $licorice-lighter-inverted;
+    border: none;
+  }
+
+  .field .field-errors {
+    color: $licorice-light-inverted;
+  }
+}

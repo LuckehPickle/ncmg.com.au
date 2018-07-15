@@ -2,5 +2,15 @@
 <%- content_for :description, t('view.landing.index.description') %>
 <%- content_for :canonical_url, root_url %>
 
-<h1>Landing#index</h1>
-<p>Find me in app/views/landing/index.html.erb</p>
+<!-- Contact and map -->
+<div id="contact-us" class="contact-us inverted">
+  <div class="wrapper">
+    <span class="subheading">Start a Discussion</span>
+    <h1>Contact Us</h1>
+
+    <!-- Contact form -->
+    <div class="js-contact-form">
+      <%= render 'contact-form' %>
+    </div>
+  </div>
+</div>

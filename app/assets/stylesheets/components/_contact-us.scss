@@ -1,0 +1,13 @@
+.contact-us {
+  background: $licorice-light;
+  padding: $section-padding-vertical 0;
+
+  form,
+  .success {
+    border-radius: $border-radius;
+    background: $licorice;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+  }
+}

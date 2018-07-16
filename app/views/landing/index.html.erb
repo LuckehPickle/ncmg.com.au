@@ -2,6 +2,37 @@
 <%- content_for :description, t('view.landing.index.description') %>
 <%- content_for :canonical_url, root_url %>
 
+<!-- Products & Services -->
+<div id="products-and-services" class="products-and-services">
+  <div class="wrapper">
+    <!-- Wraps together an image and some copy -->
+    <div class="image-and-content">
+
+      <!-- Image -->
+      <div class="image-wrapper">
+        <%= image_tag "sample-kitchen.jpg" %>
+      </div>
+
+      <!-- Copy -->
+      <div>
+        <span class="subheading">What we do</span>
+        <h1>Products &amp; Services</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim sem, eleifend pretium lectus eget, convallis venenatis tellus. Praesent sem turpis, vulputate vitae mattis at, vestibulum eu risus. Praesent consequat, odio eget vulputate feugiat, odio orci maximus leo, quis sodales felis orci ut felis.</p>
+        <p><%= link_to 'View our work.', '#gallery', class: 'anchor' %></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Gallery -->
+<div id="gallery" class="gallery inverted">
+  <div class="wrapper">
+    <span class="subheading">Our Work</span>
+    <h1>Gallery</h1>
+  </div>
+</div>
+
 <!-- Contact and map -->
 <div id="contact-us" class="contact-us inverted">
   <div class="wrapper">
@@ -13,4 +44,14 @@
       <%= render 'contact-form' %>
     </div>
   </div>
+  <div id="js-map" class="map"></div>
+  <script>
+    function initMap () {
+      var ncmg = { lat: -31.447172, lng: 152.887135 };
+      var image = '<%= asset_url 'map-pin.png' %>';
+      var map = new google.maps.Map(document.querySelector("#js-map"), {zoom: 12, center: ncmg, styles: [ { "elementType": "geometry", "stylers": [ { "color": "#29252c" } ] }, { "elementType": "labels.text.fill", "stylers": [ { "color": "#2cc36b" } ] }, { "elementType": "labels.text.stroke", "stylers": [ { "color": "#262c2c" } ] }, { "featureType": "poi.park", "elementType": "geometry", "stylers": [ { "color": "#393f3f" } ] }, { "featureType": "poi.park", "elementType": "labels.text.fill", "stylers": [ { "color": "#51cd85" } ] }, { "featureType": "road", "elementType": "geometry", "stylers": [ { "color": "#353e4a" } ] }, { "featureType": "road", "elementType": "geometry.stroke", "stylers": [ { "color": "#212a37" } ] }, { "featureType": "road", "elementType": "labels.text.fill", "stylers": [ { "color": "#9ca5b3" } ] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [ { "color": "#29b362" } ] }, { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [ { "color": "#1f2835" } ] }, { "featureType": "road.highway", "elementType": "labels.text.fill", "stylers": [ { "color": "#fcfdfc" } ] }, { "featureType": "transit", "elementType": "geometry", "stylers": [ { "color": "#2f3948" } ] }, { "featureType": "water", "elementType": "geometry", "stylers": [ { "color": "#4f5454" } ] }, { "featureType": "water", "elementType": "labels.text.fill", "stylers": [ { "color": "#515c6d" } ] }, { "featureType": "water", "elementType": "labels.text.stroke", "stylers": [ { "color": "#17263c" } ] } ]});
+      var marker = new google.maps.Marker({position: ncmg, map: map, icon: image});
+    }
+  </script>
 </div>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbsmGItLMYNDZHylorgS9bJ-hj13BR4XQ&callback=initMap"></script>

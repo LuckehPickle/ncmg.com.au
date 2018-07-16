@@ -1,13 +1,34 @@
 .contact-us {
+  position: relative;
   background: $licorice-light;
   padding: $section-padding-vertical 0;
+  min-height: 80vh;
 
-  form,
-  .success {
-    border-radius: $border-radius;
-    background: $licorice;
-    padding: 1.5rem;
-    width: 100%;
-    max-width: 400px;
+  .subheading,
+  h1 {
+    position: relative;
+    z-index: 10;
   }
+
+  .map {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50vw;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.40) 58%, rgba(0, 0, 0, 0) 100%);
+    z-index: 5;
+    pointer-events: none;
+  }
+
 }

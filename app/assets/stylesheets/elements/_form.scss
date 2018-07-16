@@ -1,0 +1,18 @@
+form,
+.form-success {
+  position: relative;
+  border-radius: $border-radius;
+  border: 1px solid $grey-light;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  z-index: 10;
+  background: $creme;
+  margin-top: 3rem;
+}
+
+.inverted form,
+.inverted .form-success {
+  background: $licorice;
+  border: none;
+}

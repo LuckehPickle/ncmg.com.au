@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :staff_members,
+             path: 'auth',
+             path_names: { sign_in: 'login', sign_out: 'logout' }
   root 'landing#index'
   post '/contact', to: 'landing#contact'
+  namespace :staff do
+    root to: 'staff#index'
+  end
 end

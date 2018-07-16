@@ -1,0 +1,23 @@
+.products-and-services {
+  padding: $section-padding-vertical 0;
+
+  .image-and-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5rem;
+    align-items: center;
+
+    .image-wrapper {
+      background: linear-gradient(135deg, $creme, $zesty);
+      border-radius: $border-radius;
+      overflow: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      line-height: 1;
+      mix-blend-mode: multiply;
+    }
+  }
+}

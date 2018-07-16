@@ -8,7 +8,7 @@ class LandingController < ApplicationController
   def contact
     @message = Message.new message_params
 
-    if @message.valid?
+    if @message.save
       ContactUsMailer.confirmation_email(@message).deliver_now
       render 'success'
     else

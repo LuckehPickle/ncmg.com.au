@@ -35,6 +35,10 @@ en:
       index:
         title: "North Coast Marble & Granite"
         description: "TODO"
+    auth:
+      login:
+        title: "Staff Area Login"
+        description: "Log into your NCMG staff account to access the staff area."
   mail:
     contact_us:
       confirmation:

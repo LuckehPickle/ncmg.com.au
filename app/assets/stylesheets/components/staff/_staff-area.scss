@@ -1,0 +1,54 @@
+.staff-area {
+  padding: $section-padding-vertical 0;
+
+  &:not(#index) .wrapper {
+    max-width: $staff-wrapper-width;
+  }
+
+  p {
+    max-width: 60ch;
+  }
+
+  .head-and-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.staff-dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 2rem;
+  margin: 3rem 0 0;
+
+  & > a {
+    display: block;
+    text-decoration: none;
+
+    &:hover h2 {
+      color: $zesty;
+    }
+  }
+
+  .image-wrapper {
+    position: relative;
+    line-height: 1.0;
+    vertical-align: middle;
+
+    img {
+      width: 100%;
+      border: 1px solid $grey-light;
+      border-radius: $border-radius;
+    }
+  }
+
+  h2 {
+    margin: 1rem 0 0.25rem;
+    transition: color 200ms;
+  }
+
+  p {
+    margin: 0;
+  }
+}

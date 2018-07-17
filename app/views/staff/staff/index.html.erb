@@ -1,2 +1,48 @@
-<h1>Staff::Staff#index</h1>
-<p>Find me in app/views/staff/staff/index.html.erb</p>
+<%- content_for :title, t('view.staff.index.title') %>
+<%- content_for :canonical_url, staff_root_url %>
+
+<div class="staff-area" id="index">
+  <div class="wrapper">
+    <span class="subheading">Staff Controls</span>
+    <h1>Staff Area</h1>
+    <div class="staff-dash">
+
+      <!-- Messages -->
+      <%= link_to staff_messages_path do %>
+        <div class="image-wrapper">
+          <%= image_tag 'staff-banner.png' %>
+        </div>
+        <h2>Message History</h2>
+        <p>View a history of all messages sent using the contact us form.</p>
+      <% end %>
+
+      <!-- Images -->
+      <%= link_to staff_images_path do %>
+        <div class="image-wrapper">
+          <%= image_tag 'staff-banner.png' %>
+        </div>
+        <h2>Images</h2>
+        <p>Upload new images, manage labels, and change which images get featured.</p>
+      <% end %>
+
+      <!-- Staff Members -->
+      <%= link_to staff_members_path do %>
+        <div class="image-wrapper">
+          <%= image_tag 'staff-banner.png' %>
+        </div>
+        <h2>Staff Members</h2>
+        <p>Add new staff members, alter their permissions, and more.</p>
+      <% end %>
+
+      <!-- Settings -->
+      <%= link_to staff_settings_path do %>
+        <div class="image-wrapper">
+          <%= image_tag 'staff-banner.png' %>
+        </div>
+        <h2>Settings</h2>
+        <p>Make a variety of adjustments to how the site performs.</p>
+      <% end %>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<%- content_for :title, t('view.staff.images.new.title') %>
+<%- content_for :canonical_url, staff_images_url %>
+
+<div class="staff-area">
+  <div class="wrapper">
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+      <ul>
+        <li><%= link_to 'Staff Area', staff_root_path %></li>
+        <li><%= link_to 'Images', staff_images_path %></li>
+        <li><%= link_to 'Upload Images', new_staff_image_path %></li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <div>
+      <span class="subheading">Staff Controls</span>
+      <h1>Upload Images</h1>
+      <p>Add one or many new images to the gallery. You may click any image to set it's title, add labels, and more.</p>
+    </div>
+
+    <hr/>
+
+    <%= form_with url: staff_images_path do |form| %>
+      <%= form.file_field :images, multiple: true, direct_upload: true %>
+    <% end %>
+
+  </div>
+</div>

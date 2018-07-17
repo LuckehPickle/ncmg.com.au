@@ -1,0 +1,33 @@
+<%- content_for :title, t('view.staff.messages.index.title') %>
+<%- content_for :canonical_url, staff_messages_url %>
+
+<div class="staff-area">
+  <div class="wrapper">
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+      <ul>
+        <li><%= link_to 'Staff Area', staff_root_path %></li>
+        <li><%= link_to 'Message History', staff_messages_path %></li>
+      </ul>
+    </nav>
+
+    <span class="subheading">Staff Controls</span>
+    <h1>Message History</h1>
+    <p>View an exhaustive history of all messages sent using the contact us form.</p>
+
+    <hr/>
+
+    <table class="model-list" id="messages">
+      <tr>
+        <th>From</th>
+        <th class="stretch">Preview</th>
+        <th>Sent at</th>
+      </tr>
+      <%= render @messages %>
+    </table>
+
+    <%= paginate @messages %>
+
+  </div>
+</div>

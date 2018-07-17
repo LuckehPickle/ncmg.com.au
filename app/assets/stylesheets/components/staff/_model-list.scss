@@ -1,0 +1,39 @@
+.model-list {
+  border: 2px solid $grey-light;
+  border-radius: $border-radius;
+  border-collapse: collapse;
+
+  tr:not(:last-child) {
+    td,
+    th {
+      border-bottom: 1px solid $grey-light;
+    }
+  }
+
+  td,
+  th {
+    color: $text;
+    white-space: nowrap;
+    padding: 1rem;
+    text-align: left;
+  }
+
+  th {
+    color: $text-bold;
+    background: $grey-lighter;
+    padding: 0.5rem 1rem;
+  }
+
+  .stretch {
+    width: 100%;
+  }
+
+  .vert-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin: 0;
+    }
+  }
+}

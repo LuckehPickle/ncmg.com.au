@@ -2,12 +2,12 @@
 <%- content_for :description, t('view.auth.login.description') %>
 <%- content_for :canonical_url, new_staff_member_session_url %>
 
-<div class="auth inverted">
+<div class="auth">
   <div class="wrapper">
     <span class="subheading">Welcome back</span>
     <h1>Staff Login</h1>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: staff_member_session_path) do |f| %>
       <div class="field">
         <%= f.label :username %><br/>
         <%= f.text_field :username, autofocus: true %>
@@ -28,8 +28,8 @@
       <div class="actions">
         <%= f.submit 'Log me in', class: 'button wide' %>
       </div>
+
+      <p><%= link_to 'Forgot your password?', new_staff_member_password_path, class: 'anchor' %></p>
     <% end %>
   </div>
-
-  <%= render 'devise/shared/links' %>
 </div>

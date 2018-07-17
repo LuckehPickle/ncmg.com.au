@@ -39,6 +39,17 @@ en:
       login:
         title: "Staff Area Login"
         description: "Log into your NCMG staff account to access the staff area."
+    staff:
+      index:
+        title: "Staff Area"
+      messages:
+        index:
+          title: "Message History"
+      images:
+        index:
+          title: "Images"
+        new:
+          title: "Upload Images"
   mail:
     contact_us:
       confirmation:

@@ -1,0 +1,11 @@
+<tr>
+  <td>
+    <div class="vert-wrapper">
+      <p><%= message.name %></p>
+      <p><%= message.email %></p>
+    </div>
+  </td>
+  <td class="stretch"><%= truncate message.body, length: 60 %></td>
+  <td><%= local_time message.created_at %></td>
+</tr>
+<%#= link_to staff_message_path(message), class: 'model' do %><%# end %>

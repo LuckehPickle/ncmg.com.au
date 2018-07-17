@@ -14,6 +14,8 @@ class LandingController < ApplicationController
     else
       render 'failure'
     end
+
+    respond_to :js
   end
 
   private

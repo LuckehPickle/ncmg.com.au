@@ -1,0 +1,63 @@
+.dropzone {
+  position: relative;
+  background: $grey-light;
+  padding: 0 0 1rem;
+  margin-top: $section-padding-vertical / 2;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    border: 3px dashed $zesty;
+    background: transparentize($zesty, 0.9);
+    opacity: 0;
+    transition: opacity 200ms;
+  }
+
+  &.active:after {
+    opacity: 1;
+  }
+
+  .head {
+    background: $grey-lighter;
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 1rem;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .hint {
+      display: flex;
+      align-items: center;
+      font-size: $font-size - 1px;
+      color: lighten($text, 25%);
+      fill: lighten($text, 25%);
+
+      svg {
+        margin-right: 0.5rem;
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    .button {
+      font-size: $font-size - 1px;
+
+      svg {
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+
+}

@@ -24,6 +24,10 @@ textarea {
   max-width: 100%;
 }
 
+input[type="file"] {
+  @include hidden();
+}
+
 .field {
   margin: 1.5rem 0;
 

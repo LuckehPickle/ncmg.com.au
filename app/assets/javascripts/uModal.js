@@ -2,7 +2,7 @@
   "use strict";
 
   function defineLib() {
-    let uModal = {};
+    var uModal = {};
 
     uModal.queue = [];
     uModal.currentlyDisplayed = false;
@@ -25,7 +25,7 @@
 
       // Check if a new modal can be displayed
       if (uModal.queue.length !== 0 && !uModal.currentlyDisplayed) {
-        let modal = uModal.queue.pop();
+        var modal = uModal.queue.pop();
         renderModal(modal);
       }
 
@@ -38,7 +38,7 @@
      */
     function renderModal (modal) {
 
-      let overlay = document.querySelector(".modal-overlay");
+      var overlay = document.querySelector(".modal-overlay");
 
       // Build overlay if it doesn't yet exist
       if (overlay === null) {
@@ -50,7 +50,7 @@
         overlay.classList.add("active");
       }
 
-      const m = buildModal(modal);
+      var m = buildModal(modal);
       overlay.appendChild(m);
       uModal.currentlyDisplayed = true;
 
@@ -61,7 +61,7 @@
      * Constructs a new overlay
      */
     function buildOverlay () {
-      let overlay = document.createElement("div");
+      var overlay = document.createElement("div");
       overlay.classList.add("modal-overlay");
       document.body.appendChild(overlay);
       return overlay;

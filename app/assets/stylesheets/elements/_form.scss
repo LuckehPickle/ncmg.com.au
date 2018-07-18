@@ -1,4 +1,4 @@
-form,
+form:not(.unstyled),
 .form-success {
   position: relative;
   border-radius: $border-radius;
@@ -11,13 +11,13 @@ form,
   margin-top: 3rem;
 }
 
-.inverted form,
+.inverted form:not(.unstyled),
 .inverted .form-success {
   background: $licorice;
   border: none;
 }
 
-form > p {
+form:not(.unstyled) > p {
   text-align: center;
   margin-bottom: 0;
 

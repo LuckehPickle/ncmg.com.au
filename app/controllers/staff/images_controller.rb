@@ -5,4 +5,8 @@ class Staff::ImagesController < ApplicationController
 
   def new
   end
+
+  def create
+    @images = Image.create(params[:images])
+  end
 end

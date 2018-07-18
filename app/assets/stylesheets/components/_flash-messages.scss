@@ -1,6 +1,52 @@
 .flashes {
   position: fixed;
-  top: 77px;
+  top: 0;
   right: 0;
   padding: 1rem;
+  max-width: 450px;
+  width: 100%;
+
+  .flash {
+    display: grid;
+    grid-template-columns: 1fr 36px;
+    grid-gap: 1rem;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+    background: white;
+    border: 2px solid $zesty;
+    border-left-width: 16px;
+    border-radius: $border-radius;
+    padding: 1rem 1.5rem 1rem 1rem;
+
+    &.flash-error {
+      border-color: $danger;
+      .flash-close svg.material-icons {
+        fill: $danger;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .flash-close {
+      width: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin: 0;
+      padding: 0.75rem 0.5rem;
+      line-height: 1.0;
+      vertical-align: middle;
+
+      svg.material-icons {
+        fill: $zesty;
+      }
+
+      &:focus {
+        outline: 2px solid $grey;
+      }
+    }
+  }
 }

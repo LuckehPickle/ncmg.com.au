@@ -8,6 +8,10 @@
       renderFlash("error", message);
     };
 
+    uFlash.info = function (message) {
+      renderFlash("info", message);
+    };
+
 
     /**
      * Renders a flash message.

@@ -1,3 +1,17 @@
+.buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: -0.5rem;
+  margin-top: 1.5rem;
+
+  .button,
+  .button-secondary,
+  .button-tertiary {
+    margin: 0.5rem;
+  }
+}
+
 .button,
 .button-secondary,
 .button-tertiary {
@@ -52,5 +66,27 @@
 
   svg.material-icons {
     fill: $zesty-inverted;
+  }
+}
+
+.button-secondary {
+  position: relative;
+  color: $text;
+  background: none;
+  border: 1px solid $grey-light;
+  padding: 13px 21px;
+  transition: color 200ms;
+
+  .material-icons {
+    color: $zesty;
+    fill: $zesty;
+  }
+
+  &:hover {
+    color: $zesty-dark;
+  }
+
+  &.danger {
+    color: $danger-dark;
   }
 }

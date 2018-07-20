@@ -8,7 +8,6 @@
     align-items: center;
 
     .image-wrapper {
-      background: linear-gradient(135deg, $creme, $zesty);
       border-radius: $border-radius;
       overflow: hidden;
     }
@@ -17,7 +16,69 @@
       width: 100%;
       display: block;
       line-height: 1;
-      mix-blend-mode: multiply;
+    }
+  }
+
+  .suppliers {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 6rem;
+
+    .links {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    h2 {
+      text-align: center;
+      color: lighten($text, 10%);
+    }
+
+    a {
+      display: block;
+      line-height: 1.0;
+      vertical-align: middle;
+      padding: 1rem;
+
+      img {
+        height: 40px;
+      }
+    }
+
+    .caesarstone img {
+      height: 40px;
+    }
+
+    .silestone img {
+      height: 30px;
+      margin-top: 5px;
+    }
+
+    .smartstone img {
+      height: 45px;
+      margin-top: 2px;
+    }
+
+    .essastone img {
+      height: 28px;
+      margin-top: 4px;
+    }
+
+    .quantum-quartz img {
+      height: 46px;
+      margin-top: 6px;
+    }
+
+    .cdk img {
+      height: 52px;
+      margin-top: -9px;
+    }
+
+    .wk img {
+      height: 47px;
+      margin-top: -3px;
     }
   }
 }

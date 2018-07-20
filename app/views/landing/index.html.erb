@@ -5,12 +5,13 @@
 <!-- Products & Services -->
 <div id="products-and-services" class="products-and-services">
   <div class="wrapper">
+
     <!-- Wraps together an image and some copy -->
     <div class="image-and-content">
 
       <!-- Image -->
       <div class="image-wrapper">
-        <%= image_tag "sample-kitchen.jpg" %>
+        <%= image_tag 'stock-3.jpeg' %>
       </div>
 
       <!-- Copy -->
@@ -19,6 +20,67 @@
         <h1>Products &amp; Services</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim sem, eleifend pretium lectus eget, convallis venenatis tellus. Praesent sem turpis, vulputate vitae mattis at, vestibulum eu risus. Praesent consequat, odio eget vulputate feugiat, odio orci maximus leo, quis sodales felis orci ut felis.</p>
         <p><%= link_to 'View our work.', '#gallery', class: 'anchor' %></p>
+      </div>
+
+    </div>
+
+    <div class="suppliers">
+
+      <!-- Engineered stone suppliers -->
+      <div>
+
+        <h2>Engineered Stone</h2>
+
+        <div class="links">
+
+          <!-- Caeserstone -->
+          <%= link_to 'http://www.caesarstone.com.au/', target: '_blank', class: 'caesarstone' do %>
+            <%= image_tag 'caesarstone.png' %>
+          <% end %>
+
+          <!-- Silestone -->
+          <%= link_to 'https://www.silestoneoceania.com/', target: '_blank', class: 'silestone' do %>
+            <%= image_tag 'silestone.png' %>
+          <% end %>
+
+          <!-- Smartstone -->
+          <%= link_to 'https://www.smartstone.com.au/', target: '_blank', class: 'smartstone' do %>
+            <%= image_tag 'smartstone.png' %>
+          <% end %>
+
+          <!-- essastone -->
+          <%= link_to 'http://www.essastone.com.au/', target: '_blank', class: 'essastone' do %>
+            <%= image_tag 'essastone.png' %>
+          <% end %>
+
+          <!-- Quantum Quartz -->
+          <%= link_to 'https://www.wk.com.au/pages/Quantum-Quartz-Engineered-Stone', target: '_blank', class: 'quantum-quartz' do %>
+            <%= image_tag 'quantum-quartz.png' %>
+          <% end %>
+
+        </div>
+
+      </div>
+
+      <!-- Natural stone suppliers -->
+      <div>
+
+        <h2>Natural Stone</h2>
+
+        <div class="links">
+
+          <!-- CDK Stone -->
+          <%= link_to 'https://www.cdkstone.com.au/', target: '_blank', class: 'cdk' do %>
+            <%= image_tag 'cdk.png' %>
+          <% end %>
+
+          <!-- WK Stone -->
+          <%= link_to 'https://www.wk.com.au/', target: '_blank', class: 'wk' do %>
+            <%= image_tag 'wk.png' %>
+          <% end %>
+
+        </div>
+
       </div>
 
     </div>

@@ -57,8 +57,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'autoprefixer-rails'
+gem 'aws-sdk-s3', '~> 1'
 gem 'devise'
-gem 'js-routes'
 gem 'kaminari'
 gem 'letter_opener', group: :development
 gem 'local_time'

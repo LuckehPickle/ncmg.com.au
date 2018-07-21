@@ -1,51 +1,44 @@
 "use strict";
 
+import * as ActiveStorage from "activestorage";
+import { DirectUpload } from "activestorage";
 import FileController from "./file_controller";
 
 const fileController = new FileController("input.auto-submit");
+ActiveStorage.start();
 
 
 /**
- * Attempts to remove an image. Fired from click listeners.
- * @param event Click event.
+ * An event handler that is fired whenever a remove button is clicked.
+ * @param event Click event object.
  */
-function removeImage(event) {
+const onRemove = (event) => {
+  const element = event.target.closest(".file");
+  if (element === null) return;
 
-  const file = event.target.closest(".file");
-
-  // Ensure file is not null
-  if (file === null) return;
-
-  // Remove file and delete element
+  // Remove file from file manager, and delete element
   const id = file.getAttribute("data-id");
   fileController.removeFile(id);
-  file.parentNode.removeChild(file);
+  element.parentNode.removeChild(element);
 
+  // Show empty states if no more files
   if (fileController.isEmpty()) {
-
-    // Show empty state
     const fileArea = document.querySelector(".file-area");
-    fileArea.classList.add("empty");
-
     const emptyState = fileArea.querySelector(".empty-state");
-    emptyState.style.display = null;
-
-    // Disabled button
     const uploadButton = document.querySelector("button.upload");
+    fileArea.classList.add("empty");
+    emptyState.style.display = null;
     uploadButton.setAttribute("disabled", "");
-
   }
-
-}
+};
 
 
 /**
- * Renders a preview for a single file.
- * @param file File to render preview for.
+ * Constructs an element for previewing a specific file.
+ * @param file File to create preview element for.
  * @param id File id.
  */
-function renderPreview(file, id) {
-
+const constructPreview = (file, id) => {
   const fileArea = document.querySelector(".file-area");
 
   // Construct file
@@ -64,7 +57,7 @@ function renderPreview(file, id) {
   remove.classList.add("remove-button");
   remove.innerHTML = "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"  x=\"0px\" y=\"0px\" width=\"24px\" height=\"24px\" viewBox=\"0 0 24 24\" enable-background=\"new 0 0 24 24\" xml:space=\"preserve\"><g id=\"Bounding_Boxes\"><path fill=\"none\" d=\"M0,0h24v24H0V0z\"/></g><g id=\"Rounded\"><path d=\"M18.3,5.71L18.3,5.71c-0.39-0.39-1.02-0.39-1.41,0L12,10.59L7.11,5.7c-0.39-0.39-1.02-0.39-1.41,0l0,0 c-0.39,0.39-0.39,1.02,0,1.41L10.59,12L5.7,16.89c-0.39,0.39-0.39,1.02,0,1.41h0c0.39,0.39,1.02,0.39,1.41,0L12,13.41l4.89,4.89\n\t\tc0.39,0.39,1.02,0.39,1.41,0l0,0c0.39-0.39,0.39-1.02,0-1.41L13.41,12l4.89-4.89C18.68,6.73,18.68,6.09,18.3,5.71z\"/></g></svg>";
   remove.innerHTML += "<span>Remove</span>";
-  remove.addEventListener("click", removeImage);
+  remove.addEventListener("click", onRemove);
   image.appendChild(remove);
 
   // Construct body
@@ -93,34 +86,86 @@ function renderPreview(file, id) {
     };
   })(image);
   reader.readAsDataURL(file);
+};
 
-}
+
+const constructField = (signed_id, index) => {
+  const form = document.querySelector("form.file-upload-form");
+
+  // Create file
+  const fileField = document.createElement("input");
+  fileField.setAttribute("type", "hidden");
+  fileField.setAttribute("value", signed_id);
+  fileField.name = `images[${index}][file]`;
+  form.appendChild(fileField);
+
+  // Add title
+  const titleField = document.createElement("input");
+  titleField.setAttribute("type", "hidden");
+  titleField.setAttribute("value", "Untitled Image");
+  titleField.name = `images[${index}][title]`;
+  form.appendChild(titleField);
+
+  // Create fields for labels
+  
+
+};
 
 
 /**
  * Begin the process of uploading the images.
  */
-function beginUpload() {
+const beginUpload = () => {
 
   // Ensure there are actually files to upload
   if (fileController.isEmpty()) return;
+
+  // Ensure that entered information is valid
+  if (!validateImages()) return;
+
+  const input = document.querySelector("input.auto-submit");
+  const url = input.dataset.directUploadUrl;
+  const files = fileController.files;
+  let index = 0;
+
+  Object.keys(files).forEach(key => {
+    const upload = new DirectUpload(files[key], url)
+    upload.create((error, blob) => {
+      if (error) {
+        uFlash.error(error);
+      } else {
+        constructField(blob.signed_id, index);
+        index++;
+      }
+    });
+  });
+
+};
+
+
+/**
+ * Validate the images, their titles, and labels once the user clicks upload. This method also shows flash messages
+ * where appropriate.
+ * @return {boolean} Whether the images are valid.
+ */
+const validateImages = () => {
 
   // Iterate over fields, ensuring title's have been added
   const files = document.querySelectorAll(".file-area .file");
   let valid = true;
   files.forEach(file => {
     // Find title input
-    var input = file.querySelector(".title");
+    const input = file.querySelector(".title");
     valid = valid && input.value.trim() !== "";
   });
 
-  // Handle missing titles
   if (!valid) {
     uFlash.error("Upload cancelled. Please give every image a title.");
-    return;
   }
 
-}
+  return valid;
+
+};
 
 
 // Listen for files being added to the file controller
@@ -129,7 +174,7 @@ document.addEventListener("files:added", (event) => {
   // Iterate over and render files
   const files = event.detail;
   Object.keys(files).forEach(key => {
-    renderPreview(files[key], key);
+    constructPreview(files[key], key);
   });
 
   const fileArea = document.querySelector(".file-area");

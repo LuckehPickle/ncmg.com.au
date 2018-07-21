@@ -62,3 +62,4 @@ gem 'js-routes'
 gem 'kaminari'
 gem 'letter_opener', group: :development
 gem 'local_time'
+gem 'webpacker', '~> 3.5'

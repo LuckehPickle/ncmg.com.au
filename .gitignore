@@ -26,3 +26,8 @@
 /config/master.key
 
 .idea/
+/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity

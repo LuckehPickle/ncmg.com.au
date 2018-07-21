@@ -1,4 +1,4 @@
-.uFile-dropzone {
+body {
 
   &:after {
     content: '';
@@ -15,7 +15,7 @@
     transition: opacity 200ms;
   }
 
-  &.active:after {
+  &.dropzone:after {
     opacity: 1;
   }
 

@@ -1,7 +1,7 @@
 <%- content_for :title, t('view.staff.images.new.title') %>
 <%- content_for :canonical_url, staff_images_url %>
 
-<div class="staff-area uFile-dropzone">
+<div class="staff-area">
   <div class="wrapper">
 
     <!-- Breadcrumbs -->
@@ -55,7 +55,7 @@
           </svg>
           <span>Browse this device</span>
         <% end %>
-        <%= file_field_tag :file, class: 'auto-submit', multiple: true %>
+        <%= file_field_tag :file, class: 'auto-submit', multiple: true, direct_upload: true %>
       </div>
 
     </div>

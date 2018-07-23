@@ -1,11 +1,9 @@
 "use strict";
 
-import * as ActiveStorage from "activestorage";
-import { DirectUpload } from "activestorage";
 import FileController from "./file_controller";
+import Uploader from "./uploader";
 
 const fileController = new FileController("input.auto-submit");
-ActiveStorage.start();
 
 
 /**
@@ -89,6 +87,11 @@ const constructPreview = (file, id) => {
 };
 
 
+/**
+ * Constructs the form fields required for submitting a particular. file
+ * @param signed_id Signed id of the blob.
+ * @param index An index for the image being uploading.
+ */
 const constructField = (signed_id, index) => {
   const form = document.querySelector("form.file-upload-form");
 
@@ -107,7 +110,7 @@ const constructField = (signed_id, index) => {
   form.appendChild(titleField);
 
   // Create fields for labels
-  
+
 
 };
 
@@ -116,7 +119,6 @@ const constructField = (signed_id, index) => {
  * Begin the process of uploading the images.
  */
 const beginUpload = () => {
-
   // Ensure there are actually files to upload
   if (fileController.isEmpty()) return;
 
@@ -129,16 +131,11 @@ const beginUpload = () => {
   let index = 0;
 
   Object.keys(files).forEach(key => {
-    const upload = new DirectUpload(files[key], url)
-    upload.create((error, blob) => {
-      if (error) {
-        uFlash.error(error);
-      } else {
-        constructField(blob.signed_id, index);
-        index++;
-      }
-    });
-  });
+    // Upload each file
+    const element = document.querySelector(`.file[data-id='${key}']`);
+    const uploader = new Uploader(element, files[key], url);
+    uploader.start();
+  })
 
 };
 
@@ -169,13 +166,10 @@ const validateImages = () => {
 
 
 // Listen for files being added to the file controller
-document.addEventListener("files:added", (event) => {
-
+addEventListener("files:added", (event) => {
   // Iterate over and render files
   const files = event.detail;
-  Object.keys(files).forEach(key => {
-    constructPreview(files[key], key);
-  });
+  Object.keys(files).forEach(key => constructPreview(files[key], key));
 
   const fileArea = document.querySelector(".file-area");
   if (fileArea.classList.contains("empty")) {
@@ -189,12 +183,11 @@ document.addEventListener("files:added", (event) => {
   // Enable upload button
   const uploadButton = document.querySelector("button.upload");
   uploadButton.removeAttribute("disabled");
-
 });
 
 
 // Handle files adding errors
-document.addEventListener("files:error", (event) => {
+addEventListener("files:error", (event) => {
   const type = event.detail.type.length === 0 ? "other" : event.detail.type;
   uFlash.error(
       "Unsupported file type",
@@ -207,6 +200,41 @@ document.addEventListener("files:error", (event) => {
 document.addEventListener("turbolinks:load", function () {
   const uploadButton = document.querySelector("button.upload");
   if (uploadButton !== null) {
-    uploadButton.addEventListener("click", beginUpload);
+    uploadButton.addEventListener("click", beginUpload)
   }
+});
+
+
+// Bind to upload init
+addEventListener("direct-upload:initialize", event => {
+  const { id, element } = event.detail;
+
+  // Disable inputs
+  const inputs = element.querySelectorAll("input");
+  inputs.forEach(input => input.setAttribute("disabled", ""));
+  element.querySelector(".remove-button").style.display = "none";
+  element.querySelector(".image").style.filter = "grayscale(100%)";
+
+  // Create progress bar
+  const progressBar = document.createElement("div");
+  progressBar.classList.add(`direct-upload-${id}`, "direct-upload-progress");
+  element.appendChild(progressBar);
+});
+
+
+// Bind to direct upload progress
+addEventListener("direct-upload:progress", event => {
+  const { id, progress, element } = event.detail;
+  const progressElement = document.querySelector(`.direct-upload-${id}`);
+  progressElement.style.transform = `scaleX(${progress / 100})`;
+  element.querySelector(".image").style.filter = `grayscale(${100 - progress}%)`;
+});
+
+// Bind to direct upload completion
+addEventListener("direct-upload:end", event => {
+  const { id, element } = event.detail;
+  const image = element.querySelector(".image");
+  const tick = document.createElement("div");
+  tick.classList.add("success");
+  image.appendChild(tick);
 });

@@ -73,6 +73,21 @@
   }
 
   .file {
+    position: relative;
+    border-radius: 2px 2px 0 0;
+    overflow: hidden;
+
+    .direct-upload-progress {
+      height: 8px;
+      background: $zesty;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 1s;
+    }
 
     .image {
       position: relative;
@@ -83,6 +98,9 @@
       background-size: cover;
       border-radius: $border-radius - 1px;
       margin-bottom: 1rem;
+      filter: grayscale(0%);
+      transition: filter 300ms;
+      overflow: hidden;
     }
 
     .remove-button {

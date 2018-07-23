@@ -36,7 +36,7 @@ class FileController {
 
       // Ensure file is an image
       if (!file.type.startsWith("image/")) {
-        const event = new CustomEvent("files:error", {bubbles: true, detail: file});
+        const event = new CustomEvent("files:error", { bubbles: true, detail: file });
         document.body.dispatchEvent(event);
         continue;
       }
@@ -49,7 +49,7 @@ class FileController {
 
     // Only fire event if there are valid files
     if (validFiles.length !== 0) {
-      const event = new CustomEvent('files:added', {bubbles: true, detail: validFiles});
+      const event = new CustomEvent('files:added', { bubbles: true, detail: validFiles });
       document.body.dispatchEvent(event);
     }
 

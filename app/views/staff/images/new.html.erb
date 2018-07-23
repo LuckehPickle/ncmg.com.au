@@ -76,7 +76,5 @@
     </div>
   </div>
 
-  <%= form_with url: staff_images_path, scope: :images, class: 'unstyled file-upload-form' do |form| %>
-    <%= form.file_field :file, direct_upload: true %>
-  <% end %>
+  <%= form_with url: staff_images_path, scope: :images, class: 'unstyled file-upload-form' %>
 </div>

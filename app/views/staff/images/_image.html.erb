@@ -1,0 +1,4 @@
+<%= link_to edit_staff_image_path(image), remote: true, class: 'image-wrapper' do %>
+  <div class="image" style="background-image: url(<%= url_for(image.file) %>)"></div>
+  <p><%= image.title %> <span class="unique-id">#<%= image.unique_id %></span></p>
+<% end %>

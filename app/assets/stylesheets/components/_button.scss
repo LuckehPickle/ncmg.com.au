@@ -57,10 +57,11 @@
 .button {
   background: $zesty;
   color: $zesty-inverted;
+  transition: background 300ms;
 
   &[disabled] {
     background: $grey;
-    color: $grey-inverted;
+    //color: $grey-inverted;
     cursor: no-drop;
   }
 

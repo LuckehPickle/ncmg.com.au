@@ -1,5 +1,5 @@
 import { DirectUpload } from "activestorage"
-import { dispatchEvent } from "../helpers"
+import { dispatchEvent } from "../../helpers"
 
 export class Uploader {
 

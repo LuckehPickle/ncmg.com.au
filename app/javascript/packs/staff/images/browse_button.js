@@ -1,6 +1,6 @@
 "use strict";
 
-import { Flash } from "../flashes/flash";
+import { Flash } from "../../flashes/flash";
 
 export class BrowseButton {
 

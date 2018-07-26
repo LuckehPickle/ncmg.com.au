@@ -1,0 +1,3 @@
+<%= link_to image_path(image), remote: true, method: :get do %>
+  <div style="background-image: url(<%= url_for image.file %>)"></div>
+<% end %>

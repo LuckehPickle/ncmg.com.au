@@ -5,7 +5,7 @@ import { FileController } from "./file_controller"
 import { DragAndDrop } from "./drag_and_drop"
 import { BrowseButton } from "./browse_button";
 import { DirectUploadsController } from "./direct_uploads_controller";
-import { Flash } from "../flashes/flash";
+import { Flash } from "../../flashes/flash";
 
 let fileController;
 let directUploadURL;
@@ -287,5 +287,4 @@ addEventListener("direct-upload:end", event => {
   if (processed !== fileController.size) return;
   const form = document.querySelector("form.file-upload-form");
   form.submit();
-  console.log("done");
 });

@@ -1,5 +1,45 @@
 .header {
   border-top: 4px solid $zesty;
   background: $licorice-dark;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    color: $licorice-inverted;
+
+    .button {
+      color: $licorice-light-inverted;
+      background: $licorice-light;
+      padding: 11px 18px;
+      font-weight: 400;
+    }
+
+    a {
+      color: inherit;
+      margin: 0 0.5rem;
+      text-decoration: none;
+      padding: 0.25rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.header-placeholder {
+  height: 75.6px;
+  display: block;
 }

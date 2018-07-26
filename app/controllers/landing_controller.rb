@@ -2,6 +2,7 @@ class LandingController < ApplicationController
   # GET /
   def index
     @message = Message.new
+    @images = Image.where(hidden: false).limit(12)
   end
 
   # POST /contact

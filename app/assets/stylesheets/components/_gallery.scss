@@ -22,6 +22,11 @@
       width: 22px;
     }
   }
+
+  .wrapper {
+    position: relative;
+    z-index: 15;
+  }
 }
 
 // This is the gallery that actually contains images.
@@ -32,7 +37,7 @@
   border-radius: $border-radius;
   overflow: hidden;
   margin: 1rem 0 2rem;
-  background: $zesty;
+  background: $licorice-light;
 
   a {
     display: block;
@@ -46,4 +51,26 @@
       background-size: cover;
     }
   }
+}
+
+$dot-size: 56px;
+
+.dots {
+  position: absolute;
+  background-image: image-url('dots.png');
+  z-index: 10;
+}
+
+.dots-1 {
+  top: 50px;
+  left: 6%;
+  width: $dot-size * 8;
+  height: $dot-size * 5;
+}
+
+.dots-2 {
+  bottom: 5px;
+  right: 10%;
+  width: $dot-size * 8;
+  height: $dot-size * 4;
 }

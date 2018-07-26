@@ -1,5 +1,5 @@
 import { Uploader } from "./uploader";
-import { dispatchEvent } from "../helpers";
+import { dispatchEvent } from "../../helpers";
 
 export class DirectUploadsController {
 

@@ -34,11 +34,18 @@ en:
     landing:
       index:
         title: "North Coast Marble & Granite"
-        description: "TODO"
+        description: "Lorem ipsum."
     auth:
       login:
         title: "Staff Area Login"
         description: "Log into your NCMG staff account to access the staff area."
+      password:
+        new:
+          title: "Password Reset"
+          description: "If you've forgotten your NCMG staff account password, you can rest it here."
+        edit:
+          title: "Change your password"
+          description: "Change your NCMG staff account password."
     staff:
       index:
         title: "Staff Area"
@@ -50,6 +57,14 @@ en:
           title: "Images"
         new:
           title: "Upload Images"
+        edit:
+          title: "Edit Image"
+      staff_members:
+        index:
+          title: "Staff Members"
+      settings:
+        index:
+          title: "Site Settings"
   mail:
     contact_us:
       confirmation:

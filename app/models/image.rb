@@ -1,3 +1,5 @@
+require 'uploads'
+
 class Image < ApplicationRecord
   has_one_attached :file
   has_many :labels
@@ -6,6 +8,11 @@ class Image < ApplicationRecord
 
   def to_param
     unique_id
+  end
+
+  def file_variant(width:, height:)
+    variation = ActiveStorage::Variation.new(Uploads.resize_to_fill(width: width, height: height, blob: file.blob))
+    ActiveStorage::Variant.new(file.blob, variation)
   end
 
   private

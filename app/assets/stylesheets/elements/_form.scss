@@ -2,7 +2,7 @@ form:not(.unstyled),
 .form-success {
   position: relative;
   border-radius: $border-radius;
-  border: 1px solid $grey-light;
+  border: 2px solid $grey-light;
   padding: 1.5rem;
   width: 100%;
   max-width: 400px;
@@ -15,6 +15,11 @@ form:not(.unstyled),
 .inverted .form-success {
   background: $licorice;
   border: none;
+
+  em {
+    color: darken($licorice-inverted, 10%);
+    line-height: 1.8;
+  }
 }
 
 form:not(.unstyled) > p {
@@ -22,7 +27,11 @@ form:not(.unstyled) > p {
   margin-bottom: 0;
 
   a.anchor {
-    color: lighten($text, 15%);
+    color: darken($licorice-inverted, 15%);
     text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

@@ -2,15 +2,15 @@
 <%- content_for :description, t('view.auth.login.description') %>
 <%- content_for :canonical_url, new_staff_member_session_url %>
 
-<div class="auth">
+<div class="auth inverted">
   <div class="wrapper">
     <span class="subheading">Welcome back</span>
     <h1>Staff Login</h1>
 
     <%= form_for(resource, as: resource_name, url: staff_member_session_path) do |f| %>
       <div class="field">
-        <%= f.label :username %><br/>
-        <%= f.text_field :username, autofocus: true %>
+        <%= f.label :email %><br/>
+        <%= f.email_field :email, autofocus: true, placeholder: 'e.g. john@example.com', spellcheck: false, autocomplete: 'email' %>
       </div>
 
       <div class="field">
@@ -32,4 +32,7 @@
       <p><%= link_to 'Forgot your password?', new_staff_member_password_path, class: 'anchor' %></p>
     <% end %>
   </div>
+
+  <div class="dot-matrix dots-1"></div>
+  <div class="dot-matrix dots-2"></div>
 </div>

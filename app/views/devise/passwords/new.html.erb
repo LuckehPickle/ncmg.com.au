@@ -1,16 +1,27 @@
-<h2>Forgot your password?</h2>
+<%- content_for :title, t('view.auth.password.new.title') %>
+<%- content_for :description, t('view.auth.password.new.description') %>
+<%- content_for :canonical_url, new_staff_member_session_url %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+<div class="auth inverted">
+  <div class="wrapper">
+    <span class="subheading">Staff tools</span>
+    <h1>Password Reset</h1>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field">
+        <%= f.label :email %><br/>
+        <%= f.email_field :email, autofocus: true, placeholder: 'e.g. john@example.com', spellcheck: false, autocomplete: 'email' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit 'Send me password reset instructions', class: 'button wide' %>
+      </div>
+
+      <p><%= link_to 'Return to staff login', new_staff_member_session_path, class: 'anchor' %></p>
+    <% end %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <div class="dot-matrix dots-3"></div>
+  <div class="dot-matrix dots-4"></div>
+</div>

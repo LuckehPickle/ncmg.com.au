@@ -6,10 +6,19 @@
 
     <!-- Navigation -->
     <nav>
-      <%= link_to 'Home', controller_name == 'landing' ? '#landing' : root_path(anchor: 'landing') %>
-      <%= link_to 'Products & Services', controller_name == 'landing' ? '#products-and-services' : root_path(anchor: 'products-and-services') %>
-      <%= link_to 'Gallery', controller_name == 'landing' ? '#gallery' : root_path(anchor: 'gallery') %>
-      <%= link_to 'Contact Us', controller_name == 'landing' ? '#contact-us' : root_path(anchor: 'contact-us'), class: 'button' %>
+      <%- if staff_member_signed_in? && %w(images members messages settings staff).include?(controller_name) %>
+        <%= link_to 'Staff Area', staff_root_path %>
+        <%= link_to 'Message History', staff_messages_path %>
+        <%= link_to 'Images', staff_images_path %>
+        <%= link_to 'Staff Members', staff_members_path %>
+        <%= link_to 'Settings', staff_settings_path %>
+        <%= link_to 'Logout', destroy_staff_member_session_path, method: :delete, data: { confirm: 'Are you sure you wish to logout?' }, class: 'button'  %>
+      <%- else %>
+        <%= link_to 'Home', controller_name == 'landing' ? '#landing' : root_path(anchor: 'landing') %>
+        <%= link_to 'Products & Services', controller_name == 'landing' ? '#products-and-services' : root_path(anchor: 'products-and-services') %>
+        <%= link_to 'Gallery', controller_name == 'landing' ? '#gallery' : root_path(anchor: 'gallery') %>
+        <%= link_to 'Contact Us', controller_name == 'landing' ? '#contact-us' : root_path(anchor: 'contact-us'), class: 'button' %>
+      <%- end %>
     </nav>
   </div>
 </div>

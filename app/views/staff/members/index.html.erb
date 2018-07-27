@@ -1,2 +1,21 @@
-<h1>Staff::Members#index</h1>
-<p>Find me in app/views/staff/members/index.html.erb</p>
+<%- content_for :title, t('view.staff.staff_members.index.title') %>
+<%- content_for :canonical_url, staff_members_url %>
+
+<div class="staff-area">
+  <div class="wrapper">
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+      <ul>
+        <li><%= link_to 'Staff Area', staff_root_path %></li>
+        <li><%= link_to 'Staff Members', staff_members_path %></li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <span class="subheading">Staff Controls</span>
+    <h1>Staff Members</h1>
+    <p>View all staff members that currently have access to this site. You may also alter some basic permissions.</p>
+
+  </div>
+</div>

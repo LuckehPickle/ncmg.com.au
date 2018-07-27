@@ -17,6 +17,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application' %>
+    <%= yield(:scripts) if content_for?(:scripts) %>
   </head>
 
   <body class="<%= yield(:body_class) if content_for?(:body_class) %>">

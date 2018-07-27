@@ -1,4 +1,6 @@
 class Staff::ImagesController < ApplicationController
+  before_action :authenticate_staff_member!
+
   def index
     @images = Image.order(updated_at: :desc).page params[:page]
   end
@@ -16,7 +18,6 @@ class Staff::ImagesController < ApplicationController
 
   def edit
     @image = Image.find_by!(unique_id: params[:unique_id])
-    respond_to :js
   end
 
   private

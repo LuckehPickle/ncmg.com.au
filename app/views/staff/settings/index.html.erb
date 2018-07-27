@@ -1,2 +1,21 @@
-<h1>Staff::Settings#index</h1>
-<p>Find me in app/views/staff/settings/index.html.erb</p>
+<%- content_for :title, t('view.staff.settings.index.title') %>
+<%- content_for :canonical_url, staff_settings_url %>
+
+<div class="staff-area">
+  <div class="wrapper">
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+      <ul>
+        <li><%= link_to 'Staff Area', staff_root_path %></li>
+        <li><%= link_to 'Site Settings', staff_settings_path %></li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <span class="subheading">Staff Controls</span>
+    <h1>Site Settings</h1>
+    <p>Make various minor modifications to the operation of this website.</p>
+
+  </div>
+</div>

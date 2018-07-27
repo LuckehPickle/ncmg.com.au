@@ -1,5 +1,6 @@
 label {
   color: darken($text, 15%);
+  line-height: 1.8;
 }
 
 input[type="text"],
@@ -9,7 +10,7 @@ textarea {
   background: $creme;
   color: $creme-inverted;
   border-radius: $border-radius - 1px;
-  border: 1px solid $grey;
+  border: 2px solid $grey;
   padding: 12px;
   width: 100%;
   line-height: 1.0;

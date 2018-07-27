@@ -65,7 +65,8 @@
     cursor: no-drop;
   }
 
-  svg.material-icons {
+  .material-icons {
+    color: $zesty-inverted;
     fill: $zesty-inverted;
   }
 }
@@ -90,4 +91,8 @@
   &.danger {
     color: $danger-dark;
   }
+}
+
+.button-tertiary {
+
 }

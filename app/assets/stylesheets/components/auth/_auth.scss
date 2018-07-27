@@ -1,7 +1,52 @@
 .auth {
+  position: relative;
   padding: $section-padding-vertical 0;
+  background: $licorice-light asset_url('marble.jpg');
+  min-height: 80vh;
 
-  form {
-    border: 1px solid $grey-light;
+  .wrapper {
+    position: relative;
+    z-index: 15;
   }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50vw;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.40) 58%, rgba(0, 0, 0, 0) 100%);
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .dots-1 {
+    top: 250px;
+    left: 6%;
+    width: $dot-size * 7;
+    height: $dot-size * 9;
+  }
+
+  .dots-2 {
+    top: 5px;
+    right: 14%;
+    width: $dot-size * 8;
+    height: $dot-size * 3;
+  }
+
+  .dots-3 {
+    top: 80px;
+    left: 10%;
+    width: $dot-size * 5;
+    height: $dot-size * 10;
+  }
+
+  .dots-4 {
+    bottom: 5px;
+    right: 14%;
+    width: $dot-size * 6;
+    height: $dot-size * 4;
+  }
+
 }

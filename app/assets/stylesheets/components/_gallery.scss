@@ -27,6 +27,20 @@
     position: relative;
     z-index: 15;
   }
+
+  .dots-1 {
+    top: 40px;
+    left: 8%;
+    width: $dot-size * 6;
+    height: $dot-size * 8;
+  }
+
+  .dots-2 {
+    bottom: 10px;
+    right: 11%;
+    width: $dot-size * 9;
+    height: $dot-size * 4;
+  }
 }
 
 // This is the gallery that actually contains images.
@@ -42,35 +56,13 @@
   a {
     display: block;
     width: 100%;
+    line-height: 1.0;
+    vertical-align: middle;
+    background-color: $zesty;
 
-    & > div {
+    img {
+      display: block;
       width: 100%;
-      height: 200px;
-      background-color: $zesty;
-      background-position: center;
-      background-size: cover;
     }
   }
-}
-
-$dot-size: 56px;
-
-.dots {
-  position: absolute;
-  background-image: image-url('dots.png');
-  z-index: 10;
-}
-
-.dots-1 {
-  top: 50px;
-  left: 6%;
-  width: $dot-size * 8;
-  height: $dot-size * 5;
-}
-
-.dots-2 {
-  bottom: 5px;
-  right: 10%;
-  width: $dot-size * 8;
-  height: $dot-size * 4;
 }

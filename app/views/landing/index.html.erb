@@ -2,10 +2,57 @@
 <%- content_for :description, t('view.landing.index.description') %>
 <%- content_for :canonical_url, root_url %>
 
-<div id="landing" class="landing">
+<div id="landing" class="landing inverted">
   <div class="wrapper">
     <%= image_tag 'logo-verbose.svg' %>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sem augue, convallis in pharetra id, fringilla et
+      elit.</p>
+    <div class="buttons">
+
+      <!-- Gallery -->
+      <%= link_to '#gallery', class: 'button-secondary' do %>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+             height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" class="material-icons" style="margin-left: -3px;">
+          <g id="Bounding_Boxes">
+            <g id="ui_x5F_spec_x5F_header_copy_3">
+            </g>
+            <path fill="none" d="M0,0h24v24H0V0z"></path>
+          </g>
+          <g id="Rounded">
+            <g id="ui_x5F_spec_x5F_header_copy_7">
+            </g>
+            <path d="M22,16V4c0-1.1-0.9-2-2-2H8C6.9,2,6,2.9,6,4v12c0,1.1,0.9,2,2,2h12C21.1,18,22,17.1,22,16z M11.4,12.53l1.63,2.18
+        		l2.58-3.22c0.2-0.25,0.58-0.25,0.78,0l2.96,3.7c0.26,0.33,0.03,0.81-0.39,0.81H9c-0.41,0-0.65-0.47-0.4-0.8l2-2.67
+        		C10.8,12.27,11.2,12.27,11.4,12.53z M2,7v13c0,1.1,0.9,2,2,2h13c0.55,0,1-0.45,1-1v0c0-0.55-0.45-1-1-1H5c-0.55,0-1-0.45-1-1V7
+        		c0-0.55-0.45-1-1-1h0C2.45,6,2,6.45,2,7z"></path>
+          </g>
+        </svg>
+        <span>View our gallery</span>
+      <% end %>
+
+      <!-- Contact -->
+      <%= link_to '#contact-us', class: 'button' do %>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+             height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" class="material-icons" style="margin-left: -3px;">
+          <g id="Bounding_Boxes">
+            <g id="ui_x5F_spec_x5F_header_copy_2">
+            </g>
+            <path fill="none" d="M0,0h24v24H0V0z"></path>
+          </g>
+          <g id="Rounded_1_">
+            <g id="ui_x5F_spec_x5F_header_copy_6">
+            </g>
+            <path d="M20,2H4C2.9,2,2.01,2.9,2.01,4L2,22l4-4h14c1.1,0,2-0.9,2-2V4C22,2.9,21.1,2,20,2z M9,11H7V9h2V11z M13,11h-2V9h2V11z
+        		 M17,11h-2V9h2V11z"></path>
+          </g>
+        </svg>
+        <span>Let's get talking</span>
+      <% end %>
+
+    </div>
   </div>
+  <div class="dot-matrix dots-1"></div>
+  <div class="dot-matrix dots-2"></div>
 </div>
 
 <!-- Products & Services -->
@@ -17,14 +64,16 @@
 
       <!-- Image -->
       <div class="image-wrapper">
-        <%= image_tag 'stock-3.jpeg' %>
+        <%= image_tag 'stock-2.jpg' %>
       </div>
 
       <!-- Copy -->
       <div>
         <span class="subheading">What we do</span>
         <h1>Products &amp; Services</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim sem, eleifend pretium lectus eget, convallis venenatis tellus. Praesent sem turpis, vulputate vitae mattis at, vestibulum eu risus. Praesent consequat, odio eget vulputate feugiat, odio orci maximus leo, quis sodales felis orci ut felis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim sem, eleifend pretium lectus eget,
+          convallis venenatis tellus. Praesent sem turpis, vulputate vitae mattis at, vestibulum eu risus. Praesent
+          consequat, odio eget vulputate feugiat, odio orci maximus leo, quis sodales felis orci ut felis.</p>
         <p><%= link_to 'View our work.', '#gallery', class: 'anchor' %></p>
       </div>
 
@@ -130,8 +179,8 @@
     </div>
   </div>
 
-  <div class="dots dots-1"></div>
-  <div class="dots dots-2"></div>
+  <div class="dot-matrix dots-1"></div>
+  <div class="dot-matrix dots-2"></div>
 </div>
 
 <!-- Contact and map -->
@@ -147,12 +196,36 @@
   </div>
   <div id="js-map" class="map"></div>
   <script>
-    function initMap () {
+    function initMap() {
       var ncmg = { lat: -31.447172, lng: 152.887135 };
       var image = '<%= asset_url 'map-pin.png' %>';
-      var map = new google.maps.Map(document.querySelector("#js-map"), {zoom: 12, center: ncmg, styles: [ { "elementType": "geometry", "stylers": [ { "color": "#29252c" } ] }, { "elementType": "labels.text.fill", "stylers": [ { "color": "#2cc36b" } ] }, { "elementType": "labels.text.stroke", "stylers": [ { "color": "#262c2c" } ] }, { "featureType": "poi.park", "elementType": "geometry", "stylers": [ { "color": "#393f3f" } ] }, { "featureType": "poi.park", "elementType": "labels.text.fill", "stylers": [ { "color": "#51cd85" } ] }, { "featureType": "road", "elementType": "geometry", "stylers": [ { "color": "#353e4a" } ] }, { "featureType": "road", "elementType": "geometry.stroke", "stylers": [ { "color": "#212a37" } ] }, { "featureType": "road", "elementType": "labels.text.fill", "stylers": [ { "color": "#9ca5b3" } ] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [ { "color": "#29b362" } ] }, { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [ { "color": "#1f2835" } ] }, { "featureType": "road.highway", "elementType": "labels.text.fill", "stylers": [ { "color": "#fcfdfc" } ] }, { "featureType": "transit", "elementType": "geometry", "stylers": [ { "color": "#2f3948" } ] }, { "featureType": "water", "elementType": "geometry", "stylers": [ { "color": "#4f5454" } ] }, { "featureType": "water", "elementType": "labels.text.fill", "stylers": [ { "color": "#515c6d" } ] }, { "featureType": "water", "elementType": "labels.text.stroke", "stylers": [ { "color": "#17263c" } ] } ]});
-      var marker = new google.maps.Marker({position: ncmg, map: map, icon: image});
+      var map = new google.maps.Map(document.querySelector("#js-map"), {
+        zoom: 12,
+        center: ncmg,
+        styles: [
+          { "elementType": "geometry", "stylers": [{ "color": "#29252c" }] },
+          { "elementType": "labels.text.fill", "stylers": [{ "color": "#2cc36b" }] },
+          { "elementType": "labels.text.stroke", "stylers": [{ "color": "#262c2c" }] },
+          { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "color": "#393f3f" }] },
+          { "featureType": "poi.park", "elementType": "labels.text.fill", "stylers": [{ "color": "#51cd85" }] },
+          { "featureType": "road", "elementType": "geometry", "stylers": [{ "color": "#353e4a" }] },
+          { "featureType": "road", "elementType": "geometry.stroke", "stylers": [{ "color": "#212a37" }] },
+          { "featureType": "road", "elementType": "labels.text.fill", "stylers": [{ "color": "#9ca5b3" }] },
+          { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#29b362" }] },
+          { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [{ "color": "#1f2835" }] },
+          { "featureType": "road.highway", "elementType": "labels.text.fill", "stylers": [{ "color": "#fcfdfc" }] },
+          { "featureType": "transit", "elementType": "geometry", "stylers": [{ "color": "#2f3948" }] },
+          { "featureType": "water", "elementType": "geometry", "stylers": [{ "color": "#4f5454" }] },
+          { "featureType": "water", "elementType": "labels.text.fill", "stylers": [{ "color": "#515c6d" }] },
+          { "featureType": "water", "elementType": "labels.text.stroke", "stylers": [{ "color": "#17263c" }] }
+        ],
+        fullscreenControl: false,
+        mapTypeControl: false,
+        streetViewControl: false
+      });
+      map.panBy(-340, -10);
+      var marker = new google.maps.Marker({ position: ncmg, map: map, icon: image });
     }
   </script>
 </div>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbsmGItLMYNDZHylorgS9bJ-hj13BR4XQ&callback=initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbsmGItLMYNDZHylorgS9bJ-hj13BR4XQ&callback=initMap" data-no-turbolink></script>

@@ -4,7 +4,7 @@
   justify-content: space-between;
   padding: 1rem 0;
   border-top: 1px solid $grey-light;
-  margin-top: $section-padding-vertical / 2;
+  margin-top: $section-padding-vertical / 3;
 
   p {
     margin: 0;
@@ -91,10 +91,33 @@
 
     .state-wrapper {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
       bottom: 0;
+      right: 0;
+      background: $zesty;
+      color: $zesty-inverted;
+      fill: $zesty-inverted;
+      border-top-left-radius: $border-radius - 1px;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 0.75rem;
+      overflow: hidden;
+
+      .material-icons {
+        margin-right: 0.5rem;
+      }
+
+      .rotating {
+        animation-name: rotate;
+        animation-duration: 1.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+
+      .uploading {
+        animation-name: upload;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+      }
     }
 
     .image {
@@ -171,5 +194,33 @@
 
   .buttons {
     margin-top: 0;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(-360deg);
+  }
+}
+
+@keyframes upload {
+  10% {
+    transform: translateY(0);
+  }
+
+  54% {
+    transform: translateY(-40px);
+  }
+
+  56% {
+    transform: translateY(40px);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }

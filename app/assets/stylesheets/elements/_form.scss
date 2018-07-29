@@ -35,3 +35,9 @@ form:not(.unstyled) > p {
     }
   }
 }
+
+.staff-area form:not(.unstyled) {
+  max-width: 430px;
+  padding: 0;
+  border: none;
+}

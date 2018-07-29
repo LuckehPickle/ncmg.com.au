@@ -3,6 +3,8 @@ require 'uploads'
 class Image < ApplicationRecord
   has_one_attached :file
   has_many :labels
+
+  validates :title, presence: true
   validate :attached_file_is_image
   before_create :create_unique_identifier
 

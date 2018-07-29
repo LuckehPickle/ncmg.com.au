@@ -1,5 +1,5 @@
 .staff-area {
-  padding: $section-padding-vertical 0;
+  padding: ($section-padding-vertical - 2rem) 0;
 
   &:not(#index) .wrapper {
     max-width: $staff-wrapper-width;

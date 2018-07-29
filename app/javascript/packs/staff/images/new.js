@@ -237,6 +237,7 @@ addEventListener("direct-upload:initialize", event => {
   const image = element.querySelector(".image");
   const stateWrapper = document.createElement("div");
   stateWrapper.classList.add("state-wrapper");
+  stateWrapper.innerHTML = `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="material-icons" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g id="Bounding_Boxes"><g id="ui_x5F_spec_x5F_header_copy_2"></g><path fill="none" d="M0,0h24v24H0V0z"/></g><g id="Rounded"><g id="ui_x5F_spec_x5F_header_copy_6"></g><path d="M14,1h-4C9.45,1,9,1.45,9,2v0c0,0.55,0.45,1,1,1h4c0.55,0,1-0.45,1-1v0C15,1.45,14.55,1,14,1z M12,14L12,14c0.55,0,1-0.45,1-1V9c0-0.55-0.45-1-1-1h0c-0.55,0-1,0.45-1,1v4C11,13.55,11.45,14,12,14z M19.03,7.39l0.75-0.75c0.38-0.38,0.39-1.01,0-1.4c0,0-0.01-0.01-0.01-0.01c-0.39-0.39-1.01-0.38-1.4,0l-0.75,0.75C16.07,4.74,14.12,4,12,4c-4.8,0-8.88,3.96-9,8.76C2.87,17.84,6.94,22,12,22c4.98,0,9-4.03,9-9C21,10.88,20.26,8.93,19.03,7.39z M12,20c-3.87,0-7-3.13-7-7s3.13-7,7-7s7,3.13,7,7S15.87,20,12,20z"/></g></svg><span>Waiting...</span>`;
   image.appendChild(stateWrapper);
 
 });
@@ -252,9 +253,12 @@ addEventListener("direct-upload:progress", event => {
   element.querySelector(".image").style.filter = `grayscale(${100 - progress}%)`;
 
   // Update state icon if necessary
+  const stateWrapper = element.querySelector(".state-wrapper");
   if (progress === 100) {
-    const stateWrapper = element.querySelector(".state-wrapper");
-    stateWrapper.innerText = "Processing...";
+    stateWrapper.innerHTML = `<svg class="material-icons rotating" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g id="Header_x2F_BG" display="none"><rect x="-270" y="-182" display="inline" fill="#F1F1F2" width="520" height="520"/></g><g id="Bounding_Boxes"><g id="ui_x5F_spec_x5F_header_copy_3"></g><path fill="none" d="M0,0h24v24H0V0z"/></g><g id="Rounded"><g id="ui_x5F_spec_x5F_header_copy_5"></g><path d="M18.65,8.35l-2.79,2.79C15.54,11.46,15.76,12,16.21,12H18c0,3.31-2.69,6-6,6c-0.79,0-1.56-0.15-2.25-0.44 c-0.36-0.15-0.77-0.04-1.04,0.23h0c-0.51,0.51-0.33,1.37,0.34,1.64C9.96,19.8,10.96,20,12,20c4.42,0,8-3.58,8-8h1.79 c0.45,0,0.67-0.54,0.35-0.85l-2.79-2.79C19.16,8.16,18.84,8.16,18.65,8.35z M6,12c0-3.31,2.69-6,6-6c0.79,0,1.56,0.15,2.25,0.44 c0.36,0.15,0.77,0.04,1.04-0.23l0,0c0.51-0.51,0.33-1.37-0.34-1.64C14.04,4.2,13.04,4,12,4c-4.42,0-8,3.58-8,8H2.21 c-0.45,0-0.67,0.54-0.35,0.85l2.79,2.79c0.2,0.2,0.51,0.2,0.71,0l2.79-2.79C8.46,12.54,8.24,12,7.79,12H6z"/></g></svg><span>Processing...</span>`;
+  } else if (!stateWrapper.classList.contains("uploading")) {
+    stateWrapper.classList.add("uploading");
+    stateWrapper.innerHTML = `<svg class="material-icons uploading" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g id="Bounding_Boxes"><path fill="none" d="M0,0h24v24H0V0z"/></g><g id="Rounded"><path d="M13,19V7.83l4.88,4.88c0.39,0.39,1.03,0.39,1.42,0l0,0c0.39-0.39,0.39-1.02,0-1.41l-6.59-6.59c-0.39-0.39-1.02-0.39-1.41,0L4.7,11.29c-0.39,0.39-0.39,1.02,0,1.41l0,0c0.39,0.39,1.02,0.39,1.41,0L11,7.83V19c0,0.55,0.45,1,1,1h0C12.55,20,13,19.55,13,19z"/></g></svg><span>Uploading...</span>`;
   }
 });
 
@@ -265,7 +269,7 @@ addEventListener("direct-upload:success", event => {
 
   // Update state icon
   const stateWrapper = element.querySelector(".state-wrapper");
-  stateWrapper.innerText = "Done";
+  stateWrapper.innerHTML = `<svg version="1.1" class="material-icons" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g id="Bounding_Boxes"><g id="ui_x5F_spec_x5F_header_copy_3"></g><path fill="none" d="M0,0h24v24H0V0z"/></g><g id="Rounded"><g id="ui_x5F_spec_x5F_header_copy_5"></g><path d="M9,16.2l-3.5-3.5c-0.39-0.39-1.01-0.39-1.4,0l0,0c-0.39,0.39-0.39,1.01,0,1.4l4.19,4.19c0.39,0.39,1.02,0.39,1.41,0 L20.3,7.7c0.39-0.39,0.39-1.01,0-1.4l0,0c-0.39-0.39-1.01-0.39-1.4,0L9,16.2z"/></g></svg><span>Complete</span>`;
 
   constructFileFields(signedId, uploadId, elementId);
 });

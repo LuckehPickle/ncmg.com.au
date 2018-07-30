@@ -3,6 +3,7 @@ class LandingController < ApplicationController
   def index
     @message = Message.new
     @images = Image.where(hidden: false).limit(12).order(created_at: :desc)
+    @featured_images = Image.where(featured: true, hidden: false).limit(6).order(created_at: :desc)
   end
 
   # POST /contact

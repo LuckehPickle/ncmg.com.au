@@ -6,17 +6,17 @@
     <%= form.text_field :title, autofocus: true %>
   </div>
 
-  <!-- Labels -->
-  <div class="field">
-    <%= form.label :labels %><br/>
-    <%= form.text_field :labels %>
-  </div>
-
   <!-- Options -->
   <div class="field">
     <h2>Options</h2>
-    <%= form.check_box :featured %><%= form.label :featured %><br/>
-    <%= form.check_box :hidden %><%= form.label :hidden %>
+    <div class="checkbox">
+      <%= form.check_box :featured %>
+      <%= form.label :featured %>
+    </div>
+    <div class="checkbox">
+      <%= form.check_box :hidden %>
+      <%= form.label :hidden %>
+    </div>
   </div>
 
   <!-- Submit -->

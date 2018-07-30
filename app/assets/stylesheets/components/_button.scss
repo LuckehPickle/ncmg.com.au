@@ -69,6 +69,12 @@
     color: $zesty-inverted;
     fill: $zesty-inverted;
   }
+
+  &.danger {
+    background: $danger-dark;
+    fill: $danger-dark-inverted;
+    color: $danger-dark-inverted;
+  }
 }
 
 .button-secondary {

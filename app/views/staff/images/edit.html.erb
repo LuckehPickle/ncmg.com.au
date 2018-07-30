@@ -22,5 +22,13 @@
     <div class="js-form-wrapper">
       <%= render 'form' %>
     </div>
+
+    <div class="danger-zone">
+      <h2>Danger Zone</h2>
+      <p>The following actions can be potentially dangerous, and may result in unforeseen consequences. Continue at your own risk.</p>
+      <div class="buttons">
+        <%= link_to "Delete #{@image.title}", staff_image_path(@image), class: 'button danger', method: :delete, data: { confirm: 'Are you sure you wish to delete this image? This action cannot be undone.', disable: true }, remote: true %>
+      </div>
+    </div>
   </div>
 </div>

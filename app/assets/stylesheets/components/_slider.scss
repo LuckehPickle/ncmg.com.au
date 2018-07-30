@@ -1,0 +1,15 @@
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 8rem;
+  margin-bottom: -14rem;
+  overflow-y: visible;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 15;
+
+  & > * {
+    flex-shrink: 0;
+  }
+}

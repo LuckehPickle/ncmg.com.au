@@ -33,6 +33,12 @@ class Staff::ImagesController < ApplicationController
     end
   end
 
+  def destroy
+    @image = Image.find_by!(unique_id: params[:unique_id])
+    @image.destroy
+    redirect_to staff_images_path, notify: 'Successfully deleted image.'
+  end
+
   private
 
   def images_params

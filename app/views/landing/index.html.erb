@@ -4,7 +4,7 @@
 
 <div id="landing" class="landing inverted">
   <div class="wrapper">
-    <%= image_tag 'logo-verbose.svg' %>
+    <%= image_tag 'logo-verbose.svg', class: 'landing-logo' %>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sem augue, convallis in pharetra id, fringilla et
       elit.</p>
     <div class="buttons">
@@ -51,6 +51,11 @@
 
     </div>
   </div>
+
+  <div class="slider">
+    <%= render collection: @featured_images, partial: 'featured' %>
+  </div>
+
   <div class="dot-matrix dots-1"></div>
   <div class="dot-matrix dots-2"></div>
 </div>

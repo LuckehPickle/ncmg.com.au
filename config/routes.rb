@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     root to: 'staff#index'
     resources :messages, only: [:index, :show]
     resources :images, except: :show, param: :unique_id
-    resources :members
-    get '/settings', to: 'settings#index'
+    resources :members, except: :show
+    resources :settings, only: [:index, :update]
   end
 end

@@ -3,20 +3,20 @@
 
   input[type='checkbox'] {
     @include hidden();
+  }
 
-    & + label:after {
-      content: none;
+  input[type='checkbox'] + label:after {
+    content: none;
+  }
+
+  input[type='checkbox']:checked + label{
+    &:before {
+      border-color: $zesty;
+      background: $zesty;
     }
 
-    &:checked + label{
-      &:before {
-        border-color: $zesty;
-        background: $zesty;
-      }
-
-      &:after {
-        content: "";
-      }
+    &:after {
+      content: "";
     }
   }
 
@@ -50,6 +50,15 @@
       border-left: 2.5px solid $creme;
       border-bottom: 2.5px solid $creme;
       transform: rotate(-45deg);
+    }
+  }
+}
+
+.inverted .checkbox {
+  label {
+    &:before {
+      background: $licorice;
+      border-color: $licorice-lighter;
     }
   }
 }

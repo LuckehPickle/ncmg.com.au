@@ -2,11 +2,12 @@
   border: 2px solid $grey-light;
   border-radius: $border-radius;
   border-collapse: collapse;
+  width: 100%;
 
   tr:not(:last-child) {
     td,
     th {
-      border-bottom: 1px solid $grey-light;
+      border-bottom: 2px solid $grey-light;
     }
   }
 
@@ -14,8 +15,16 @@
   th {
     color: $text;
     white-space: nowrap;
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: left;
+
+    &:first-child {
+      padding-left: 1.5rem;
+    }
+
+    &:last-child {
+      padding-right: 1.5rem;
+    }
   }
 
   th {
@@ -35,5 +44,28 @@
     p {
       margin: 0;
     }
+  }
+
+  tr:hover .actions {
+    opacity: 1;
+  }
+
+  .actions {
+    //opacity: 0;
+    transition: opacity 100ms;
+
+    .buttons {
+      margin: 0;
+      justify-content: flex-end;
+    }
+
+    .button-tertiary {
+      padding: 8px 18px;
+    }
+  }
+
+  .highlight {
+    font-weight: 500;
+    color: $text-bold;
   }
 }

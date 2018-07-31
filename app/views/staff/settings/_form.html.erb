@@ -1,0 +1,12 @@
+<%= form_with model: @settings, url: staff_setting_path(@settings) do |form| %>
+
+  <!-- Contact email -->
+  <div class="field">
+    <%= form.label :contact_email %>
+    <%= form.email_field :contact_email, autofocus: true, spellcheck: false %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Save Settings', class: 'button' %>
+  </div>
+<% end %>

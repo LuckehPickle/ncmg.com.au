@@ -4,6 +4,8 @@
 <div class="staff-area">
   <div class="wrapper">
 
+    <%= render 'staff/shared/password_banner' %>
+
     <!-- Breadcrumbs -->
     <nav class="breadcrumbs">
       <ul>
@@ -19,11 +21,6 @@
     <hr/>
 
     <table class="model-list" id="messages">
-      <tr>
-        <th>From</th>
-        <th class="stretch">Preview</th>
-        <th>Sent at</th>
-      </tr>
       <%= render @messages %>
     </table>
 

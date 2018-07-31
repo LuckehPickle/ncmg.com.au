@@ -1,2 +1,28 @@
-<h1>Staff::Members#new</h1>
-<p>Find me in app/views/staff/members/new.html.erb</p>
+<%- content_for :title, t('view.staff.members.new.title') %>
+<%- content_for :canonical_url, staff_members_url %>
+
+<div class="staff-area">
+  <div class="wrapper">
+
+    <%= render 'staff/shared/password_banner' %>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+      <ul>
+        <li><%= link_to 'Staff Area', staff_root_path %></li>
+        <li><%= link_to 'Staff Members', staff_members_path %></li>
+        <li><%= link_to 'Create Staff Account', new_staff_member_path %></li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <span class="subheading">Staff Controls</span>
+    <h1>Create Account</h1>
+
+    <hr/>
+
+    <div class="js-form-wrapper">
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>

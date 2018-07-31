@@ -4,6 +4,8 @@
 <div class="staff-area">
   <div class="wrapper">
 
+    <%= render 'staff/shared/password_banner' %>
+
     <!-- Breadcrumbs -->
     <nav class="breadcrumbs">
       <ul>
@@ -16,6 +18,12 @@
     <span class="subheading">Staff Controls</span>
     <h1>Site Settings</h1>
     <p>Make various minor modifications to the operation of this website.</p>
+
+    <hr/>
+
+    <div class="js-form-wrapper">
+      <%= render 'form' %>
+    </div>
 
   </div>
 </div>

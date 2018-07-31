@@ -1,0 +1,32 @@
+<%- content_for :title, t('view.staff.messages.show.title') %>
+<%- content_for :canonical_url, staff_messages_url %>
+
+<div class="staff-area">
+  <div class="wrapper">
+
+    <%= render 'staff/shared/password_banner' %>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+      <ul>
+        <li><%= link_to 'Staff Area', staff_root_path %></li>
+        <li><%= link_to 'Message History', staff_messages_path %></li>
+        <li><%= link_to 'Read Message', staff_message_path(@message) %></li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <span class="subheading">Staff Controls</span>
+    <h1>Read Message</h1>
+
+    <hr/>
+
+    <div class="message-header">
+      <p><strong>From:</strong> <%= @message.name %> &lt;<%= @message.email %>&gt;</p>
+      <p><strong>Sent:</strong> <%= local_time_ago @message.created_at %></p>
+    </div>
+
+    <pre class="message-body"><%= @message.body %></pre>
+
+  </div>
+</div>

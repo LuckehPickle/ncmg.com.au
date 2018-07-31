@@ -1,0 +1,67 @@
+<%= form_with model: @staff do |form| %>
+
+  <%- if @staff.errors.any? %>
+    <div id="error-explanation">
+
+      <h4>
+        <%= pluralize(@staff.errors.count, 'error') %>
+        prohibited this project from being saved:
+      </h4>
+
+      <ul>
+        <%- @staff.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <%- end %>
+      </ul>
+
+    </div>
+  <%- end %>
+
+  <!-- Name -->
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, autofocus: true, spellcheck: false, placeholder: 'e.g. John Smith' %>
+  </div>
+
+  <!-- Email -->
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email, spellcheck: false, placeholder: 'john@ncmg.com.au' %>
+  </div>
+
+  <!-- Permissions -->
+  <div class="field field-section">
+    <h2>Permissions</h2>
+
+    <!-- Messages -->
+    <div class="checkbox">
+      <%= form.check_box :can_access_messages %>
+      <%= form.label :can_access_messages, 'Read message history' %>
+    </div>
+
+    <!-- Images -->
+    <div class="checkbox">
+      <%= form.check_box :can_access_images %>
+      <%= form.label :can_access_images, 'View, upload, and modify images' %>
+    </div>
+
+    <!-- Staff Members -->
+    <div class="checkbox">
+      <%= form.check_box :can_access_staff %>
+      <%= form.label :can_access_staff, 'View, create, and modify staff members' %>
+    </div>
+
+    <!-- Settings -->
+    <div class="checkbox">
+      <%= form.check_box :can_access_settings %>
+      <%= form.label :can_access_settings, 'Change site wide settings' %>
+    </div>
+
+  </div>
+
+  <!-- Submit -->
+  <div class="actions">
+    <%= form.submit class: 'button' %>
+  </div>
+
+<% end %>

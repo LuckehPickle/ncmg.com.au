@@ -52,6 +52,8 @@ en:
       messages:
         index:
           title: "Message History"
+        show:
+          title: "Read Message"
       images:
         index:
           title: "Images"
@@ -65,7 +67,17 @@ en:
       settings:
         index:
           title: "Site Settings"
+      members:
+        edit:
+          title: "Edit Staff Member"
+        new:
+          title: "Create Staff Account"
+        show:
+          title: "%{member_name}"
+    password_change_prompt: "The password we sent you is only temporary. You should change your password immediately."
   mail:
     contact_us:
       confirmation:
         subject: "Thanks for contacting us. We'll be in touch shortly."
+      contact:
+        subject: "New message from %{name}"

@@ -1,5 +1,5 @@
 class Staff::ImagesController < ApplicationController
-  before_action :authenticate_staff_member!
+  before_action :require_login
 
   def index
     @images = Image.order(created_at: :desc).page params[:page]
@@ -47,5 +47,14 @@ class Staff::ImagesController < ApplicationController
 
   def image_params(my_params)
     my_params.permit(:title, :file, :featured, :hidden)
+  end
+
+  def require_login
+    authenticate_staff_member!
+
+    if staff_member_signed_in? and !current_staff_member.can_access_images
+      flash[:notice] = 'You do not have permission to access this page.'
+      redirect_to staff_root_path
+    end
   end
 end

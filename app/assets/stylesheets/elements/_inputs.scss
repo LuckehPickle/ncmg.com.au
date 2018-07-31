@@ -14,7 +14,7 @@ textarea {
   padding: 12px;
   width: 100%;
   line-height: 1.0;
-  margin-top: 0.3rem;
+  margin-top: 0.1rem;
 }
 
 textarea {
@@ -29,18 +29,30 @@ input[type="file"] {
   @include hidden();
 }
 
+input[type='submit'].button.wide {
+  margin-top: 1.25rem;
+}
+
 .field {
-  margin: 1.5rem 0;
+  margin: 1.25rem 0;
 
   &:first-of-type {
     margin-top: 0;
   }
 
   .field-errors {
-    margin: 0 0 1rem;
+    margin: .25rem 0 1rem;
     padding: 0 0 0 1.5rem;
     color: $text;
   }
+
+  &.field-section {
+    margin: 2rem 0;
+  }
+}
+
+.actions {
+  margin-top: 2rem;
 }
 
 .inverted {
@@ -58,6 +70,6 @@ input[type="file"] {
   }
 
   .field .field-errors {
-    color: $licorice-light-inverted;
+    color: darken($licorice-light-inverted, 15%);
   }
 }

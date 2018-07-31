@@ -12,6 +12,7 @@ class LandingController < ApplicationController
 
     if @message.save
       ContactUsMailer.confirmation_email(@message).deliver_now
+      ContactUsMailer.contact_email(@message).deliver_now
       render 'success'
     else
       render 'failure'

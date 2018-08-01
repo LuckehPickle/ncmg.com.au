@@ -1,0 +1,48 @@
+nav.pagination {
+  margin: 2.5rem 0 -1rem;
+
+  & > div {
+    display: flex;
+    justify-content: center;
+
+    .page {
+      border-top: 1px solid $grey-light;
+      border-bottom: 1px solid $grey-light;
+      border-right: 1px solid $grey-light;
+      padding-left: 1px;
+
+      &:last-child {
+        border-radius: 0 3px 3px 0;
+      }
+
+      &:first-child {
+        padding-left: 0;
+        border-radius: 3px 0 0 3px;
+        border-left: 1px solid $grey-light;
+      }
+
+      line-height: 1;
+
+      a, &.current, &.gap {
+        display: block;
+        padding: 8px 11px;
+        text-decoration: none;
+        color: $text;
+      }
+
+      &.current {
+        background: $zesty;
+        color: $zesty-inverted;
+        border-color: $zesty;
+      }
+
+    }
+
+  }
+
+}
+
+.pagination-info {
+  text-align: center;
+  margin: 2rem auto 0;
+}

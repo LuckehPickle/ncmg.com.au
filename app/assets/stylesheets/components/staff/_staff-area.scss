@@ -31,18 +31,6 @@
     }
   }
 
-  .image-wrapper {
-    position: relative;
-    line-height: 1.0;
-    vertical-align: middle;
-
-    img {
-      width: 100%;
-      border: 1px solid $grey-light;
-      border-radius: $border-radius;
-    }
-  }
-
   h2 {
     margin: 1rem 0 0.25rem;
     transition: color 200ms;

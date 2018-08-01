@@ -2,7 +2,7 @@ class Staff::MessagesController < ApplicationController
   before_action :require_login
 
   def index
-    @messages = Message.order(created_at: :desc).page params[:page]
+    @messages = Message.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def show

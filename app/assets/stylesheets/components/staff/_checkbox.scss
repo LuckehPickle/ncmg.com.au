@@ -34,7 +34,7 @@
       height: 1.2rem;
       width: 1.2rem;
       border: 2px solid $grey;
-      border-radius: $border-radius;
+      border-radius: $border-radius - 1px;
       background: $creme;
       transition: background 200ms, border-color 200ms;
     }

@@ -34,7 +34,7 @@ en:
     landing:
       index:
         title: "North Coast Marble & Granite"
-        description: "Lorem ipsum."
+        description: "Lorem ipsum dolor sit amet."
     auth:
       login:
         title: "Staff Area Login"
@@ -74,6 +74,8 @@ en:
           title: "Create Staff Account"
         show:
           title: "%{member_name}"
+      preferences:
+        title: "Account Preferences"
     password_change_prompt: "The password we sent you is only temporary. You should change your password immediately."
   mail:
     contact_us:

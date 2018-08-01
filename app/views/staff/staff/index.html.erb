@@ -6,43 +6,60 @@
 
     <%= render 'staff/shared/password_banner' %>
 
-    <span class="subheading">Staff Controls</span>
-    <h1>Staff Area</h1>
+    <div class="head-and-button">
+
+      <!-- Header -->
+      <div>
+        <span class="subheading">Staff Controls</span>
+        <h1>Staff Area</h1>
+      </div>
+
+      <!-- Button -->
+      <div>
+        <%= link_to edit_staff_member_registration_path, class: 'button-secondary' do %>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+               height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" class="material-icons" style="margin-left: -3px;">
+            <g id="Bounding_Boxes">
+              <g id="ui_x5F_spec_x5F_header_copy_3">
+              </g>
+              <path fill="none" d="M0,0h24v24H0V0z"></path>
+            </g>
+            <g id="Rounded">
+              <g id="ui_x5F_spec_x5F_header_copy_5">
+              </g>
+              <path d="M12.09,2.91c-2.01-2.01-5.02-2.42-7.44-1.24L8.28,5.3c0.39,0.39,0.39,1.02,0,1.41L6.69,8.3C6.3,8.7,5.67,8.7,5.28,8.3
+          		L1.65,4.67C0.48,7.1,0.89,10.09,2.9,12.1c1.86,1.86,4.58,2.35,6.89,1.48l7.96,7.96c1.03,1.03,2.69,1.03,3.71,0l0,0
+          		c1.03-1.03,1.03-2.69,0-3.71L13.54,9.9C14.46,7.56,13.98,4.8,12.09,2.91z"></path>
+            </g>
+          </svg>
+          <span>Account Preferences</span>
+        <%- end %>
+      </div>
+
+    </div>
 
     <div class="staff-dash">
 
       <!-- Messages -->
       <%= link_to staff_messages_path do %>
-        <div class="image-wrapper">
-          <%= image_tag 'staff-banner.png' %>
-        </div>
         <h2>Message History</h2>
         <p>View a history of all messages sent using the contact us form.</p>
       <% end %>
 
       <!-- Images -->
       <%= link_to staff_images_path do %>
-        <div class="image-wrapper">
-          <%= image_tag 'staff-banner.png' %>
-        </div>
         <h2>Images</h2>
         <p>Upload new images, manage labels, and change which images get featured.</p>
       <% end %>
 
       <!-- Staff Members -->
       <%= link_to staff_members_path do %>
-        <div class="image-wrapper">
-          <%= image_tag 'staff-banner.png' %>
-        </div>
         <h2>Staff Members</h2>
         <p>Add new staff members, alter their permissions, and more.</p>
       <% end %>
 
       <!-- Settings -->
       <%= link_to staff_settings_path do %>
-        <div class="image-wrapper">
-          <%= image_tag 'staff-banner.png' %>
-        </div>
         <h2>Site Settings</h2>
         <p>Make a variety of adjustments to how the site performs.</p>
       <% end %>

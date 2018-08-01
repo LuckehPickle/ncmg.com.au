@@ -2,7 +2,7 @@ class Staff::ImagesController < ApplicationController
   before_action :require_login
 
   def index
-    @images = Image.order(created_at: :desc).page params[:page]
+    @images = Image.order(created_at: :desc).page(params[:page]).per(25)
   end
 
   def new

@@ -28,7 +28,8 @@
     color: $licorice-inverted;
     border-bottom: 4px solid $zesty;
 
-    a {
+    & > a,
+    .js-overflow-link {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -37,18 +38,56 @@
       color: inherit;
       margin: 0;
       text-decoration: none;
-      padding: 0.75rem;
+      padding: 0.75rem 0.5rem;
       font-size: 14px;
       text-align: center;
-      max-width: 100px;
+      width: 94px;
       line-height: 1.4;
+      cursor: pointer;
 
       svg {
         margin-bottom: 0.25rem;
       }
 
+      &.overflow {
+        display: none;
+      }
+
       &:last-child {
         margin-right: 0;
+      }
+    }
+
+    .js-overflow-link:not([active]) {
+      display: none;
+    }
+
+    .js-overflow-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      left: 0;
+      bottom: 100%;
+      width: 100%;
+      background: $licorice;
+      padding: 0.5rem 0;
+      border-top: 4px solid $zesty;
+
+      &[active] {
+        display: flex;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        color: $licorice-inverted;
+        fill: $licorice-inverted;
+        text-decoration: none;
+
+        svg {
+          margin-right: 0.5rem;
+        }
       }
     }
   }
@@ -68,6 +107,11 @@
 }
 
 @media (min-width: 780px) {
+
+  .js-overflow-link,
+  .js-overflow-menu {
+    display: none !important;
+  }
 
   .header-placeholder {
     display: block;
@@ -98,7 +142,7 @@
 
       a {
         font-size: $font-size;
-        max-width: unset;
+        width: unset;
         margin: 0 0.5rem;
         padding: 0.25rem;
         line-height: 1.1;
@@ -107,7 +151,11 @@
           display: none;
         }
 
-        &:last-child {
+        &.overflow {
+          display: unset;
+        }
+
+        &:last-of-type {
           color: $licorice-light-inverted;
           background: $licorice-light;
           padding: 11px 18px;

@@ -9,3 +9,4 @@
 
 import "./staff/images/index"
 import "./staff/images/new"
+import "./navigation/nav_controller"

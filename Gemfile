@@ -63,4 +63,5 @@ gem 'image_processing', '~> 1.2'
 gem 'kaminari'
 gem 'letter_opener', group: :development
 gem 'local_time'
+gem 'rails-observers'
 gem 'webpacker', '~> 3.5'

@@ -1,3 +1,8 @@
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
 .model-list {
   border: 2px solid $grey-light;
   border-radius: $border-radius;

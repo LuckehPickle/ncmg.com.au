@@ -20,9 +20,11 @@
 
     <hr/>
 
-    <table class="model-list" id="messages">
-      <%= render @messages %>
-    </table>
+    <div class="table-wrapper">
+      <table class="model-list" id="messages">
+        <%= render @messages %>
+      </table>
+    </div>
 
     <%= paginate @messages %>
     <p class="pagination-info"><%= page_entries_info @messages %></p>

@@ -1,5 +1,5 @@
 .staff-area {
-  padding: ($section-padding-vertical - 2rem) 0;
+  padding: ($section-padding-vertical - 6rem) 0;
 
   &:not(#index) .wrapper {
     max-width: $staff-wrapper-width;
@@ -11,8 +11,13 @@
 
   .head-and-button {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+
+    .button,
+    .button-secondary {
+      margin-top: 1.25rem;
+      justify-content: center;
+    }
   }
 }
 
@@ -38,5 +43,22 @@
 
   p {
     margin: 0;
+  }
+}
+
+@media (min-width: 780px) {
+  .staff-area {
+    padding: ($section-padding-vertical - 2rem) 0;
+
+    .head-and-button {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      .button,
+      .button-secondary {
+        margin-top: 0;
+      }
+    }
   }
 }

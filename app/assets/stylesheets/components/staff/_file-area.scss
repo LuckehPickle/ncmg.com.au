@@ -1,7 +1,6 @@
 .file-area-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 1rem 0;
   border-top: 1px solid $grey-light;
   margin-top: $section-padding-vertical / 3;
@@ -27,8 +26,14 @@
     }
   }
 
+  & > div:not(.hint) {
+    flex-grow: 1;
+  }
+
   .button {
     font-size: $font-size - 1px;
+    justify-content: center;
+    margin-top: .75rem;
 
     svg {
       height: 20px;
@@ -49,6 +54,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
     img {
       display: block;
@@ -56,7 +62,7 @@
     }
 
     h2 {
-      font-size: 1.25rem;
+      font-size: 1rem;
       margin: 1.25rem 0 0.25rem;
     }
 
@@ -217,5 +223,25 @@
 
   100% {
     transform: translateY(0);
+  }
+}
+
+@media (min-width: 780px) {
+  .file-area-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    & > div:not(.hint) {
+      flex-grow: unset;
+    }
+
+    .button {
+      margin-top: 0;
+    }
+  }
+
+  .file-area .empty-state h2 {
+    font-size: 1.25rem;
   }
 }

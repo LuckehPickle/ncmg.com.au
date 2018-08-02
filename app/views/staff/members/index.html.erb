@@ -33,9 +33,11 @@
 
     <hr/>
 
-    <table class="model-list" id="staff-members">
-      <%= render collection: @staff, partial: 'member' %>
-    </table>
+    <div class="table-wrapper">
+      <table class="model-list" id="staff-members">
+        <%= render collection: @staff, partial: 'member' %>
+      </table>
+    </div>
 
     <%= paginate @staff %>
     <p class="pagination-info"><%= page_entries_info @staff %></p>

@@ -1,7 +1,7 @@
 .landing {
   position: relative;
   background: $licorice;
-  padding: $section-padding-vertical 0;
+  padding: ($section-padding-vertical / 2) 0;
   margin-bottom: 12rem;
 
   .wrapper {
@@ -12,7 +12,8 @@
   img.landing-logo {
     display: block;
     width: 100%;
-    max-width: 290px;
+    max-width: 270px;
+    padding: 0 1rem;
     margin: 0 auto;
   }
 
@@ -21,7 +22,7 @@
     width: 100%;
     max-width: 60ch;
     margin: 3rem auto;
-    font-size: $font-size + 2px;
+    font-size: $font-size + 1px;
   }
 
   .buttons {
@@ -39,16 +40,48 @@
   }
 
   .dots-1 {
-    top: 250px;
-    left: 6%;
-    width: $dot-size * 7;
-    height: $dot-size * 9;
+    top: 290px;
+    left: 2%;
+    width: $dot-size * 2;
+    height: $dot-size * 4;
   }
 
   .dots-2 {
     top: 5px;
-    right: 14%;
-    width: $dot-size * 8;
-    height: $dot-size * 3;
+    right: 0;
+    width: $dot-size * 3;
+    height: $dot-size * 5;
+  }
+}
+
+@media (min-width: 700px) {
+  .landing {
+    img.landing-logo {
+      padding: 0;
+    }
+
+    p {
+      font-size: $font-size + 2px;
+    }
+  }
+}
+
+@media (min-width: 780px) {
+  .landing {
+    padding: $section-padding-vertical 0;
+
+    .dots-1 {
+      top: 250px;
+      left: 6%;
+      width: $dot-size * 7;
+      height: $dot-size * 9;
+    }
+
+    .dots-2 {
+      top: 5px;
+      right: 14%;
+      width: $dot-size * 8;
+      height: $dot-size * 3;
+    }
   }
 }

@@ -1,5 +1,5 @@
 .products-and-services {
-  padding: $section-padding-vertical 0;
+  padding: ($section-padding-vertical / 2) 0;
 
   .image-and-content {
     display: grid;
@@ -80,5 +80,11 @@
       height: 47px;
       margin-top: -3px;
     }
+  }
+}
+
+@media (min-width: 780px) {
+  .products-and-services {
+    padding: $section-padding-vertical 0;
   }
 }

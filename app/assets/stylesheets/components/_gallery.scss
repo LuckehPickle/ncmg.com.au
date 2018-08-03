@@ -2,10 +2,11 @@
 .gallery {
   position: relative;
   background: $licorice;
-  padding: $section-padding-vertical 0;
+  padding: ($section-padding-vertical / 2) 0;
 
   .head {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
   }
@@ -46,7 +47,7 @@
 // This is the gallery that actually contains images.
 .gallery-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   width: 100%;
   border-radius: $border-radius;
   overflow: hidden;
@@ -64,5 +65,11 @@
       display: block;
       width: 100%;
     }
+  }
+}
+
+@media (min-width: 780px) {
+  .gallery {
+    padding: $section-padding-vertical 0;
   }
 }

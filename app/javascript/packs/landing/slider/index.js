@@ -107,3 +107,9 @@ const init = () => {
 };
 
 addEventListener("turbolinks:load", init);
+addEventListener("resize:optimized", () => {
+  if (slider !== null) {
+    imageSize = slider.firstElementChild.clientWidth;
+    slider.style.transform = `translateX(${-counter * imageSize}px)`;
+  }
+});

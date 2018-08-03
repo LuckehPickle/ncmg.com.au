@@ -50,10 +50,48 @@
       <% end %>
 
     </div>
-  </div>
 
-  <div class="slider">
-    <%= render collection: @featured_images, partial: 'featured' %>
+    <div class="slide-wrapper">
+
+      <!-- Previous -->
+      <button class="js-previous-button">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+             height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" class="material-icons">
+          <g id="Bounding_Boxes">
+            <path fill="none" d="M0,0h24v24H0V0z"></path>
+          </g>
+          <g id="Rounded">
+            <path d="M14.71,6.71L14.71,6.71c-0.39-0.39-1.02-0.39-1.41,0l-4.59,4.59c-0.39,0.39-0.39,1.02,0,1.41l4.59,4.59
+		c0.39,0.39,1.02,0.39,1.41,0l0,0c0.39-0.39,0.39-1.02,0-1.41L10.83,12l3.88-3.88C15.1,7.73,15.09,7.09,14.71,6.71z"></path>
+          </g>
+        </svg>
+      </button>
+
+      <!-- Image slider -->
+      <div class="slide-window">
+        <div class="slide">
+          <%= render collection: @featured_images, partial: 'featured' %>
+        </div>
+      </div>
+
+      <!-- Next -->
+      <button class="js-next-button">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+             height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" class="material-icons">
+          <g id="Bounding_Boxes">
+            <path fill="none" d="M0,0h24v24H0V0z"></path>
+          </g>
+          <g id="Rounded">
+            <path d="M9.29,6.71L9.29,6.71c-0.39,0.39-0.39,1.02,0,1.41L13.17,12l-3.88,3.88c-0.39,0.39-0.39,1.02,0,1.41l0,0
+        		c0.39,0.39,1.02,0.39,1.41,0l4.59-4.59c0.39-0.39,0.39-1.02,0-1.41l-4.59-4.59C10.32,6.32,9.68,6.32,9.29,6.71z"></path>
+          </g>
+        </svg>
+      </button>
+
+      <!-- Count visualiser -->
+      <div class="count-visualiser"></div>
+
+    </div>
   </div>
 
   <div class="dot-matrix dots-1"></div>
@@ -233,4 +271,4 @@
     }
   </script>
 </div>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbsmGItLMYNDZHylorgS9bJ-hj13BR4XQ&callback=initMap" data-no-turbolink></script>
+<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbsmGItLMYNDZHylorgS9bJ-hj13BR4XQ&callback=initMap" data-no-turbolink></script>-->

@@ -25,7 +25,9 @@
   <body class="<%= yield(:body_class) if content_for?(:body_class) %>">
     <%= render 'application/flashes' %>
     <%= render 'application/header' %>
-    <%= yield %>
-    <%= render 'application/footer' %>
+    <div class="lightbox-background">
+      <%= yield %>
+      <%= render 'application/footer' %>
+    </div>
   </body>
 </html>

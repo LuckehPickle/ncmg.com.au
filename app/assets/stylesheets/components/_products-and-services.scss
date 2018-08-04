@@ -2,27 +2,29 @@
   padding: ($section-padding-vertical / 2) 0;
 
   .image-and-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 5rem;
-    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
 
     .image-wrapper {
       border-radius: $border-radius;
       overflow: hidden;
+      margin-top: 1rem;
     }
 
     img {
       width: 100%;
       display: block;
       line-height: 1;
+      max-width: 500px;
+    }
+
+    p {
+      max-width: 70ch;
     }
   }
 
   .suppliers {
-    display: grid;
-    grid-template-columns: 1fr 345px;
-    margin-top: 6rem;
+    margin-top: 3rem;
 
     .links {
       display: flex;
@@ -43,41 +45,43 @@
       padding: 1rem;
 
       img {
-        height: 40px;
+        height: 100%;
+        max-height: 32px;
+        max-width: 100%;
       }
     }
 
     .caesarstone img {
-      height: 40px;
+      max-height: 40px;
     }
 
     .silestone img {
-      height: 30px;
+      max-height: 30px;
       margin-top: 5px;
     }
 
     .smartstone img {
-      height: 45px;
+      max-height: 45px;
       margin-top: 2px;
     }
 
     .essastone img {
-      height: 28px;
+      max-height: 28px;
       margin-top: 4px;
     }
 
     .quantum-quartz img {
-      height: 46px;
+      max-height: 46px;
       margin-top: 6px;
     }
 
     .cdk img {
-      height: 52px;
+      max-height: 52px;
       margin-top: -9px;
     }
 
     .wk img {
-      height: 47px;
+      max-height: 47px;
       margin-top: -3px;
     }
   }
@@ -86,5 +90,37 @@
 @media (min-width: 780px) {
   .products-and-services {
     padding: $section-padding-vertical 0;
+
+    .suppliers {
+      margin-top: 6rem;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .products-and-services {
+    .image-and-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 5rem;
+      align-items: center;
+
+      .image-wrapper {
+        margin-top: 0;
+      }
+
+      img {
+        max-width: unset;
+      }
+    }
+
+    .suppliers {
+      display: grid;
+      grid-template-columns: 1fr 345px;
+
+      a img {
+        height: 40px;
+      }
+    }
   }
 }

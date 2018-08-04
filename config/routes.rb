@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   root 'landing#index'
   post '/contact', to: 'landing#contact'
-  resources :images, only: [:show], param: :unique_id
+  resources :images, only: [:index, :show], param: :unique_id
 
   namespace :staff do
     root to: 'staff#index'

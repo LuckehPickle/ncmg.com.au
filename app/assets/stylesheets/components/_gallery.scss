@@ -42,19 +42,32 @@
     width: $dot-size * 9;
     height: $dot-size * 4;
   }
+
+  .buttons {
+    position: relative;
+    justify-content: center;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+    z-index: 30;
+
+    .button {
+      background: $licorice-lighter;
+    }
+  }
 }
 
 // This is the gallery that actually contains images.
 .gallery-wrapper {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   width: 100%;
   border-radius: $border-radius;
   overflow: hidden;
-  margin: 1rem 0 2rem;
+  margin: 1rem 0 0;
   background: $licorice-light;
 
-  a {
+  a:not(.button) {
     display: block;
     width: 100%;
     line-height: 1.0;

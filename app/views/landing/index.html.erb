@@ -220,6 +220,30 @@
     <div class="gallery-wrapper">
       <%= render @images %>
     </div>
+
+    <div class="buttons">
+      <%= link_to images_path, class: 'button' do %>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+             height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" class="material-icons" style="margin-left: -3px;">
+          <g id="Bounding_Boxes">
+            <g id="ui_x5F_spec_x5F_header_copy_3">
+            </g>
+            <path fill="none" d="M0,0h24v24H0V0z"></path>
+          </g>
+          <g id="Rounded">
+            <g id="ui_x5F_spec_x5F_header_copy_5">
+            </g>
+            <path d="M5,11h3c0.55,0,1-0.45,1-1V6c0-0.55-0.45-1-1-1H5C4.45,5,4,5.45,4,6v4C4,10.55,4.45,11,5,11z M5,18h3c0.55,0,1-0.45,1-1v-4
+		c0-0.55-0.45-1-1-1H5c-0.55,0-1,0.45-1,1v4C4,17.55,4.45,18,5,18z M11,18h3c0.55,0,1-0.45,1-1v-4c0-0.55-0.45-1-1-1h-3
+		c-0.55,0-1,0.45-1,1v4C10,17.55,10.45,18,11,18z M17,18h3c0.55,0,1-0.45,1-1v-4c0-0.55-0.45-1-1-1h-3c-0.55,0-1,0.45-1,1v4
+		C16,17.55,16.45,18,17,18z M11,11h3c0.55,0,1-0.45,1-1V6c0-0.55-0.45-1-1-1h-3c-0.55,0-1,0.45-1,1v4C10,10.55,10.45,11,11,11z
+		 M16,6v4c0,0.55,0.45,1,1,1h3c0.55,0,1-0.45,1-1V6c0-0.55-0.45-1-1-1h-3C16.45,5,16,5.45,16,6z"></path>
+          </g>
+        </svg>
+        <span>View full gallery</span>
+      <%- end %>
+    </div>
+
   </div>
 
   <div class="dot-matrix dots-1"></div>
@@ -271,4 +295,4 @@
     }
   </script>
 </div>
-<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbsmGItLMYNDZHylorgS9bJ-hj13BR4XQ&callback=initMap" data-no-turbolink></script>-->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbsmGItLMYNDZHylorgS9bJ-hj13BR4XQ&callback=initMap" data-no-turbolink></script>

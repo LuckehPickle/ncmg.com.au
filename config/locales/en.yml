@@ -77,6 +77,10 @@ en:
       preferences:
         title: "Account Preferences"
     password_change_prompt: "The password we sent you is only temporary. You should change your password immediately."
+    images:
+      index:
+        title: "Gallery"
+        description: "View the full NCMG gallery."
   mail:
     contact_us:
       confirmation:

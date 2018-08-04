@@ -64,4 +64,5 @@ gem 'kaminari'
 gem 'letter_opener', group: :development
 gem 'local_time'
 gem 'rails-observers'
+gem 'sidekiq'
 gem 'webpacker', '~> 3.5'

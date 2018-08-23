@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2018_07_31_055836) do
   end
 
   create_table "images", force: :cascade do |t|
-    t.string "title", default: "Untitled Image"
+    t.string "title"
     t.boolean "featured", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

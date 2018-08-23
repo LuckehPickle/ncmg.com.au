@@ -1,8 +1,6 @@
 .slide-wrapper {
   display: grid;
-  grid-template-columns: 3.5rem 1fr 3.5rem;
-  grid-gap: 1.5rem;
-  align-items: center;
+  grid-template-columns: 2.5rem 1fr 2.5rem;
   margin-top: 8rem;
   margin-bottom: -18rem;
 
@@ -32,7 +30,6 @@
   .slide-window {
     overflow-y: visible;
     overflow-x: hidden;
-    border-radius: $border-radius;
   }
 
   .slide {
@@ -55,16 +52,41 @@
   .js-next-button {
     background: $licorice-dark;
     border: none;
-    border-radius: 50%;
     fill: $licorice-dark-inverted;
     cursor: pointer;
-    padding: 10px;
+    padding: 4px;
 
     svg {
       width: 36px;
       height: 36px;
       line-height: 1.0;
       vertical-align: middle;
+    }
+  }
+
+  .js-previous-button {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  .js-next-button {
+    border-radius: 0 $border-radius $border-radius 0;
+  }
+}
+
+@media (min-width: 800px) {
+  .slide-wrapper {
+    grid-template-columns: 3.5rem 1fr 3.5rem;
+    grid-gap: 1.5rem;
+    align-items: center;
+
+    .slide-window {
+      border-radius: $border-radius;
+    }
+
+    .js-next-button,
+    .js-previous-button {
+      border-radius: 50%;
+      padding: 10px;
     }
   }
 }

@@ -9,4 +9,4 @@ I recently had the pleasure of designing and developing a website for North Coas
 
 If you're interested, this website has a corresponding [style guide](https://github.com/LuckehPickle/ncmg-style-guide).
 
-Here's what's changed (old on left): ![comparison](https://i.imgur.com/vQtplMb.png)
+Here's what's changed (old on bottom): ![comparison](https://i.imgur.com/KGKbQb5.png)

@@ -1,31 +1,9 @@
 .slide-wrapper {
-  display: grid;
-  grid-template-columns: 2.5rem 1fr 2.5rem;
-  margin-top: 8rem;
+  position: relative;
+  margin-top: 6rem;
   margin-bottom: -18rem;
-
-  .count-visualiser {
-    grid-column: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    & > div {
-      box-sizing: content-box;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      border: 2px solid $grey;
-      background: $creme;
-      margin: 0.25rem;
-      transition: all 300ms;
-
-      &[active] {
-        background: $zesty;
-        border-color: $zesty;
-      }
-    }
-  }
+  border-radius: $border-radius;
+  overflow: hidden;
 
   .slide-window {
     overflow-y: visible;
@@ -50,11 +28,15 @@
 
   .js-previous-button,
   .js-next-button {
-    background: $licorice-dark;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: transparentize($licorice-dark, 0.6);
     border: none;
     fill: $licorice-dark-inverted;
     cursor: pointer;
     padding: 4px;
+    z-index: 17;
 
     svg {
       width: 36px;
@@ -64,20 +46,22 @@
     }
   }
 
-  .js-previous-button {
-    border-radius: $border-radius 0 0 $border-radius;
+  .js-next-button {
+    right: 0;
   }
 
-  .js-next-button {
-    border-radius: 0 $border-radius $border-radius 0;
+  .js-previous-button {
+    left: 0;
   }
 }
 
 @media (min-width: 800px) {
   .slide-wrapper {
+    display: grid;
     grid-template-columns: 3.5rem 1fr 3.5rem;
     grid-gap: 1.5rem;
     align-items: center;
+    margin-top: 8rem;
 
     .slide-window {
       border-radius: $border-radius;
@@ -85,6 +69,12 @@
 
     .js-next-button,
     .js-previous-button {
+      position: unset;
+      top: unset;
+      bottom: unset;
+      right: unset;
+      left: unset;
+      background: $licorice-dark;
       border-radius: 50%;
       padding: 10px;
     }

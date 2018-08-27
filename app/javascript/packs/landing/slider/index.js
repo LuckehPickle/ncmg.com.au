@@ -24,7 +24,6 @@ const nextImage = () => {
   counter++;
   slider.style.transition = "transform 500ms ease-in-out";
   slider.style.transform = `translateX(${-counter * imageSize}px)`;
-  updateStateVisualiser();
 };
 
 /**
@@ -35,7 +34,6 @@ const previousImage = () => {
   counter--;
   slider.style.transition = "transform 500ms ease-in-out";
   slider.style.transform = `translateX(${-counter * imageSize}px)`;
-  updateStateVisualiser();
 };
 
 /**
@@ -51,18 +49,6 @@ const onTransitionEnd = () => {
     counter = 1;
     slider.style.transform = `translateX(${-counter * imageSize}px)`;
   }
-  updateStateVisualiser();
-};
-
-/**
- * Updates the state visualiser according to which image is currently active.
- */
-const updateStateVisualiser = () => {
-  const counters = document.querySelectorAll(".count-visualiser > div");
-  counters.forEach(c => c.removeAttribute("active"));
-  if (counters.item(counter - 1) !== null) {
-    counters.item(counter - 1).setAttribute("active", "");
-  }
 };
 
 /**
@@ -76,14 +62,6 @@ const init = () => {
   // Retrieve elements
   previousButton = document.querySelector(".js-previous-button");
   nextButton = document.querySelector(".js-next-button");
-
-  // Construct state visualiser
-  const countVisualiser = document.querySelector(".count-visualiser");
-  slider.querySelectorAll("img").forEach(() => {
-    const c = document.createElement("div");
-    countVisualiser.appendChild(c);
-  });
-  updateStateVisualiser();
 
   // Clone first and last images
   const firstImageClone = cloneImage(slider.firstElementChild);

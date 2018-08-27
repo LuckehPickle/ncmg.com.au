@@ -1,7 +1,7 @@
 .landing {
   position: relative;
   background: $licorice;
-  padding: ($section-padding-vertical / 2) 0;
+  padding: ($section-padding-vertical / 2) 0 $section-padding-vertical;
   margin-bottom: 12rem;
 
   .wrapper {
@@ -72,7 +72,7 @@
 
     .dots-1 {
       top: 250px;
-      left: 6%;
+      left: 10%;
       width: $dot-size * 7;
       height: $dot-size * 9;
     }

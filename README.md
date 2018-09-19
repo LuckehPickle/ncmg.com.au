@@ -1,5 +1,7 @@
 # North Coast Marble & Granite
 
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=sean0x42/ncmg.com.au)](https://dependabot.com)
+
 I recently had the pleasure of designing and developing a website for North Coast Marble & Granite (NCMG). The website has the following features:
 
  * **Staff area:** With a simple yet powerful permissions system. Here staff can upload new images, review past messages from the contact us form, and alter some website settings.

@@ -64,6 +64,7 @@ GEM
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.0)
     aws-sigv4 (1.0.3)
+    bcrypt (3.1.12)
     bcrypt (3.1.12-x64-mingw32)
     bindex (0.5.0)
     bootsnap (1.3.1)
@@ -100,6 +101,7 @@ GEM
       warden (~> 1.2.3)
     erubi (1.7.1)
     execjs (2.7.0)
+    ffi (1.9.25)
     ffi (1.9.25-x64-mingw32)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -143,15 +145,19 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
+    msgpack (1.2.4)
     msgpack (1.2.4-x64-mingw32)
     multi_json (1.13.1)
     nio4r (2.3.1)
+    nokogiri (1.8.4)
+      mini_portile2 (~> 2.3.0)
     nokogiri (1.8.4-x64-mingw32)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
+    pg (1.0.0)
     pg (1.0.0-x64-mingw32)
     public_suffix (3.0.2)
-    puma (3.11.4)
+    puma (3.12.0)
     rack (2.0.5)
     rack-protection (2.0.3)
       rack
@@ -252,6 +258,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
@@ -270,7 +277,7 @@ DEPENDENCIES
   local_time
   mini_magick (~> 4.8)
   pg (>= 0.18, < 2.0)
-  puma (~> 3.11)
+  puma (~> 3.12)
   rails (~> 5.2.0)
   rails-observers
   sass-rails (~> 5.0)

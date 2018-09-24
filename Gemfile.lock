@@ -141,7 +141,7 @@ GEM
       mimemagic (~> 0.3.2)
     method_source (0.9.0)
     mimemagic (0.3.2)
-    mini_magick (4.8.0)
+    mini_magick (4.9.2)
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
@@ -274,7 +274,7 @@ DEPENDENCIES
   kaminari
   letter_opener
   local_time
-  mini_magick (~> 4.8)
+  mini_magick (~> 4.9)
   pg (>= 0.18, < 2.0)
   puma (~> 3.12)
   rails (~> 5.2.1)

@@ -90,4 +90,4 @@ production:
   <<: *default
   database: ncmg_com_au_production
   username: ncmg_com_au
-  password: <%= ENV['NCMG_COM_AU_DATABASE_PASSWORD'] %>
+  password: <%= Rails.application.credentials.dig(:database, :password) %>

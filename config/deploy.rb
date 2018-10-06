@@ -7,6 +7,8 @@ set :application, 'ncmg'
 set :repo_url, 'git@github.com:sean0x42/ncmg.com.au.git'
 set :domain, 'ncmg.com.au'
 set :rvm_ruby_version, '2.5.1'
+set :rvm_type, :system
+set :rvm_custom_path, '/usr/share/rvm'
 set :rails_env, 'production'
 
 # Default branch is :master
@@ -26,10 +28,10 @@ set :rails_env, 'production'
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, 'config/database.yml', 'master.key'
+append :linked_files, 'config/database.yml', 'config/master.key'
 
 # Default value for linked_dirs is []
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets',
        'public/system', 'vendor/bundle', '.bundle'
 
 # Default value for default_env is {}

@@ -11,6 +11,7 @@
 
 server '206.189.73.65',
        user: 'deploy',
+       password: 'aqwe1234',
        roles: %w[app db web]
 
 # role-based syntax

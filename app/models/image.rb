@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'uploads'
 
 class Image < ApplicationRecord
@@ -19,9 +21,7 @@ class Image < ApplicationRecord
   private
 
   def attached_file_is_image
-    if file.attached? && !file.image?
-      errors.add(:file, 'must be an image')
-    end
+    errors.add(:file, 'must be an image') if file.attached? && !file.image?
   end
 
   def create_unique_identifier

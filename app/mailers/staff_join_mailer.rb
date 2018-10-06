@@ -1,5 +1,6 @@
-class StaffJoinMailer < ApplicationMailer
+# frozen_string_literal: true
 
+class StaffJoinMailer < ApplicationMailer
   def join_email(staff, password)
     @staff = staff
     @password = password

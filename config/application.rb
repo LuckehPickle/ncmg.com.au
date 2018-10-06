@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -16,6 +18,5 @@ module NcmgComAu
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.time_zone = 'Sydney'
-    config.active_record.observers = [:staff_member_observer]
   end
 end

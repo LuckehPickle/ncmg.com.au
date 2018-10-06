@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ImagesController < ApplicationController
   def index
     @images = Image.with_attached_file.page(params[:page]).per(24)

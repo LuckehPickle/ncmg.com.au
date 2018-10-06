@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Staff::SettingsController < ApplicationController
   before_action :require_login
 
@@ -23,7 +25,7 @@ class Staff::SettingsController < ApplicationController
   def require_login
     authenticate_staff_member!
 
-    if staff_member_signed_in? and !current_staff_member.can_access_settings
+    if staff_member_signed_in? && !current_staff_member.can_access_settings
       flash[:notice] = 'You do not have permission to access this page.'
       redirect_to staff_root_path
     end

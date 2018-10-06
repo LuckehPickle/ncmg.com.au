@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Uploads
   def self.jpeg?(blob)
     blob.content_type.include? 'jpeg'
@@ -19,6 +21,7 @@ class Uploads
 
   def self.optimize_hash(blob)
     return optimize_jpeg if jpeg? blob
+
     optimize
   end
 

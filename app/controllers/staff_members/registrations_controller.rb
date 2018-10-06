@@ -47,7 +47,7 @@ class StaffMembers::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :email])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[name email])
   end
 
   # The path used after sign up.
@@ -60,7 +60,7 @@ class StaffMembers::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
-  def after_update_path_for(resource)
+  def after_update_path_for(_resource)
     staff_root_path
   end
 end

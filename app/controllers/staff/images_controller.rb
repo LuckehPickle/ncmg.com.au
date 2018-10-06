@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Staff::ImagesController < ApplicationController
   before_action :require_login
 
@@ -5,15 +7,14 @@ class Staff::ImagesController < ApplicationController
     @images = Image.order(created_at: :desc).page(params[:page]).per(25)
   end
 
-  def new
-  end
+  def new; end
 
   def create
     params[:images].each do |image|
       i = Image.new image_params(image)
       i.save
     end
-    redirect_to staff_images_path, notice: "Upload complete!"
+    redirect_to staff_images_path, notice: 'Upload complete!'
   end
 
   def edit
@@ -52,7 +53,7 @@ class Staff::ImagesController < ApplicationController
   def require_login
     authenticate_staff_member!
 
-    if staff_member_signed_in? and !current_staff_member.can_access_images
+    if staff_member_signed_in? && !current_staff_member.can_access_images
       flash[:notice] = 'You do not have permission to access this page.'
       redirect_to staff_root_path
     end

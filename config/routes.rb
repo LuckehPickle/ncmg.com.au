@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :staff_members,
              path: 'auth',
@@ -12,13 +14,13 @@ Rails.application.routes.draw do
 
   root 'landing#index'
   post '/contact', to: 'landing#contact'
-  resources :images, only: [:index, :show], param: :unique_id
+  resources :images, only: %i[index show], param: :unique_id
 
   namespace :staff do
     root to: 'staff#index'
-    resources :messages, only: [:index, :show]
+    resources :messages, only: %i[index show]
     resources :images, except: :show, param: :unique_id
     resources :members, except: :show
-    resources :settings, only: [:index, :update]
+    resources :settings, only: %i[index update]
   end
 end

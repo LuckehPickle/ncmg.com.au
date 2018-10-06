@@ -13,8 +13,8 @@ class DeviseCreateStaffMembers < ActiveRecord::Migration[5.2]
       t.boolean :can_access_settings, null: false, default: false
 
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
-      t.string :encrypted_password, null: false, default: ""
+      t.string :email,              null: false, default: ''
+      t.string :encrypted_password, null: false, default: ''
 
       ## Recoverable
       t.string   :reset_password_token

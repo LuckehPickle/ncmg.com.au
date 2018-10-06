@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Staff::MembersController < ApplicationController
   before_action :require_login
 
@@ -11,7 +13,7 @@ class Staff::MembersController < ApplicationController
 
   def create
     @staff = StaffMember.new staff_params
-    password = SecureRandom.base58(6 + rand(4))
+    password = SecureRandom.base58(rand(6..9))
     @staff.password = password
 
     if @staff.save
@@ -64,7 +66,7 @@ class Staff::MembersController < ApplicationController
   def require_login
     authenticate_staff_member!
 
-    if staff_member_signed_in? and !current_staff_member.can_access_staff
+    if staff_member_signed_in? && !current_staff_member.can_access_staff
       flash[:notice] = 'You do not have permission to access this page.'
       redirect_to staff_root_path
     end

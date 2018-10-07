@@ -5,10 +5,18 @@
     display: flex;
     flex-direction: column-reverse;
 
+    &:not(:first-of-type) {
+      margin-top: 4rem;
+    }
+
+    &.reversed {
+      flex-direction: column;
+    }
+
     .image-wrapper {
       border-radius: $border-radius;
       overflow: hidden;
-      margin-top: 1rem;
+      margin-top: 2rem;
     }
 
     img {
@@ -20,6 +28,7 @@
 
     p {
       max-width: 70ch;
+      line-height: 1.7;
     }
   }
 
@@ -104,6 +113,10 @@
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 5rem;
       align-items: center;
+
+      &:not(:first-of-type) {
+        margin-top: 6rem;
+      }
 
       .image-wrapper {
         margin-top: 0;

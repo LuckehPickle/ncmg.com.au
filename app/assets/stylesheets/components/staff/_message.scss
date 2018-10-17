@@ -8,10 +8,11 @@
 
 pre.message-body {
   border-left: 3px solid $grey;
-  padding: 0.5rem 0 0.5rem 1.5rem;
-  max-width: 70ch !important;
-  font-family: $font-stack;
-  white-space: pre-wrap;
-  line-height: 1.8;
   color: $text;
+  font-family: $font-stack;
+  line-height: 1.8;
+  max-width: 70ch !important;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  white-space: pre-wrap;
 }
+

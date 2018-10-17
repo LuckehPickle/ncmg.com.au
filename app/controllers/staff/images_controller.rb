@@ -1,12 +1,15 @@
 # frozen_string_literal: true
 
+# Image controller
 class Staff::ImagesController < ApplicationController
   before_action :require_login
 
+  # GET /staff/images
   def index
     @images = Image.order(created_at: :desc).page(params[:page]).per(25)
   end
 
+  # GET /staff/images/new
   def new; end
 
   def create

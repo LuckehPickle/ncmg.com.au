@@ -2,6 +2,7 @@
 
 require 'uploads'
 
+# An image uploaded by a staff member
 class Image < ApplicationRecord
   has_one_attached :file
 
@@ -14,7 +15,8 @@ class Image < ApplicationRecord
   end
 
   def file_variant(width:, height:)
-    variation = ActiveStorage::Variation.new(Uploads.resize_to_fill(width: width, height: height, blob: file.blob))
+    spec = Uploads.resize_to_fill width: width, height: height, blob: file.blob
+    variation = ActiveStorage::Variation.new spec
     ActiveStorage::Variant.new(file.blob, variation)
   end
 

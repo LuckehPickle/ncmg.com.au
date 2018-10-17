@@ -1,21 +1,21 @@
 .images-header {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem 0;
   border-top: 1px solid $grey-light;
-  margin-top: $section-padding-vertical / 3;
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 1rem;
+  margin-top: $section-padding-vertical / 3;
+  padding: 1.5rem 0;
 
   .hint {
-    display: flex;
     align-items: center;
-    font-size: $font-size - 1px;
+    display: flex;
     fill: lighten($text, 25%);
+    font-size: $font-size - 1px;
 
     svg {
-      margin-right: 0.5rem;
       height: 22px;
+      margin-right: 0.5rem;
       width: 22px;
     }
 
@@ -28,8 +28,8 @@
 
 .images {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
   a {
     display: block;
@@ -37,15 +37,15 @@
   }
 
   .image {
-    position: relative;
-    width: 100%;
     background: $grey center;
     background-size: cover;
     border-radius: $border-radius - 1px;
-    overflow: hidden;
+    line-height: 1;
     margin-bottom: 1rem;
-    line-height: 1.0;
+    overflow: hidden;
+    position: relative;
     vertical-align: middle;
+    width: 100%;
 
     img {
       display: block;
@@ -54,32 +54,32 @@
   }
 
   .badges {
-    position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
     list-style-type: none;
     margin: 0;
     padding: 0;
+    position: absolute;
+    right: 0;
 
     li {
-      display: flex;
       align-items: center;
+      background: $creme;
+      display: flex;
       justify-content: center;
       padding: 0.5rem 0.75rem;
-      background: $creme;
 
       .material-icons {
-        margin-right: 0.5rem;
         height: 22px;
+        margin-right: 0.5rem;
         width: 22px;
       }
     }
 
     .featured-badge {
       background: $zesty-light;
-      fill: $zesty-light-inverted;
       color: $zesty-light-inverted;
+      fill: $zesty-light-inverted;
     }
 
     .hidden-badge {
@@ -90,12 +90,13 @@
   }
 
   p {
-    font-weight: 500;
     color: $text-bold;
+    font-weight: 500;
 
     .unique-id {
-      font-weight: 400;
       color: lighten($text, 15%);
+      font-weight: 400;
     }
   }
 }
+

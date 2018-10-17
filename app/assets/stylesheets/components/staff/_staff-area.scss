@@ -15,19 +15,19 @@
 
     .button,
     .button-secondary {
-      margin-top: 1.25rem;
       justify-content: center;
+      margin-top: 1.25rem;
     }
   }
 }
 
 .staff-dash {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   margin: 3rem 0 0;
 
-  & > a {
+  > a {
     display: block;
     text-decoration: none;
 
@@ -51,8 +51,8 @@
     padding: ($section-padding-vertical - 2rem) 0;
 
     .head-and-button {
-      flex-direction: row;
       align-items: center;
+      flex-direction: row;
       justify-content: space-between;
 
       .button,
@@ -62,3 +62,4 @@
     }
   }
 }
+

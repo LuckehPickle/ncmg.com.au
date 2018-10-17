@@ -1,20 +1,20 @@
 form:not(.unstyled),
 .form-success {
-  position: relative;
-  border-radius: $border-radius;
-  border: 2px solid $grey-light;
-  padding: 1.5rem;
-  width: 100%;
-  max-width: 400px;
-  z-index: 10;
   background: $creme;
+  border: 2px solid $grey-light;
+  border-radius: $border-radius;
   margin-top: 3rem;
+  max-width: 400px;
+  padding: 1.5rem;
+  position: relative;
+  width: 100%;
+  z-index: 10;
 }
 
 .inverted form:not(.unstyled),
 .inverted .form-success {
   background: $licorice;
-  border: none;
+  border: 0;
 
   em {
     color: darken($licorice-inverted, 10%);
@@ -23,8 +23,8 @@ form:not(.unstyled),
 }
 
 form:not(.unstyled) > p {
-  text-align: center;
   margin-bottom: 0;
+  text-align: center;
 
   a.anchor {
     color: darken($licorice-inverted, 15%);
@@ -37,7 +37,8 @@ form:not(.unstyled) > p {
 }
 
 .staff-area form:not(.unstyled) {
+  border: 0;
   max-width: 430px;
   padding: 0;
-  border: none;
 }
+

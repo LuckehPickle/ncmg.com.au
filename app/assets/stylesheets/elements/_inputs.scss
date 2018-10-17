@@ -8,21 +8,21 @@ input[type="email"],
 input[type="password"],
 textarea {
   background: $grey-lighter;
-  color: $creme-inverted;
-  border-radius: $border-radius - 1px;
   border: 1px solid $grey;
+  border-radius: $border-radius - 1px;
+  color: $creme-inverted;
+  line-height: 1;
+  margin-top: 0.1rem;
   padding: 12px;
   width: 100%;
-  line-height: 1.0;
-  margin-top: 0.1rem;
 }
 
 textarea {
-  line-height: 1.6;
-  min-height: 8em;
   height: 8em;
-  min-width: 100%;
+  line-height: 1.6;
   max-width: 100%;
+  min-height: 8em;
+  min-width: 100%;
 }
 
 input[type="file"] {
@@ -41,9 +41,9 @@ input[type='submit'].button.wide {
   }
 
   .field-errors {
-    margin: .25rem 0 1rem;
-    padding: 0 0 0 1.5rem;
     color: $text;
+    margin: 0.25rem 0 1rem;
+    padding: 0 0 0 1.5rem;
   }
 
   &.field-section {
@@ -65,11 +65,12 @@ input[type='submit'].button.wide {
   input[type="password"],
   textarea {
     background: $licorice-lighter;
+    border: 0;
     color: $licorice-lighter-inverted;
-    border: none;
   }
 
   .field .field-errors {
     color: darken($licorice-light-inverted, 15%);
   }
 }
+

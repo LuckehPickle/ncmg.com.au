@@ -3,7 +3,6 @@
 
 <div class="staff-area">
   <div class="wrapper">
-
     <%= render 'staff/shared/password_banner' %>
 
     <!-- Breadcrumbs -->
@@ -15,7 +14,6 @@
     </nav>
 
     <div class="head-and-button">
-
       <!-- Header -->
       <div>
         <span class="subheading">Staff Controls</span>
@@ -26,18 +24,15 @@
       <!-- Button -->
       <div>
         <%= link_to new_staff_image_path, class: 'button' do %>
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
-               height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" class="material-icons" style="margin-left: -2px;">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" class="material-icons" style="margin-left: -2px;">
             <path d="M19.35,10.04C18.67,6.59,15.64,4,12,4C9.11,4,6.6,5.64,5.35,8.04C2.34,8.36,0,10.91,0,14c0,3.31,2.69,6,6,6h13c2.76,0,5-2.24,5-5C24,12.36,21.95,10.22,19.35,10.04z M14,13v4h-4v-4H7l4.65-4.65c0.2-0.2,0.51-0.2,0.71,0L17,13H14z"></path>
           </svg>
           <span>Upload images</span>
         <% end %>
       </div>
-
     </div>
 
     <div class="images-header">
-
       <!-- Hint -->
       <div class="hint">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
@@ -46,7 +41,6 @@
         </svg>
         <p>Hint: Click any image to edit</p>
       </div>
-
     </div>
 
     <div class="images">
@@ -55,6 +49,5 @@
 
     <%= paginate @images %>
     <p class="pagination-info"><%= page_entries_info @images %></p>
-
   </div>
 </div>

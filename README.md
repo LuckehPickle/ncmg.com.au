@@ -1,6 +1,6 @@
 # North Coast Marble & Granite
 
-Current version: 1.0.4
+Current version: 1.1.0
 
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=sean0x42/ncmg.com.au)](https://dependabot.com)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5aaf31b49bf84a73ab3dd0d323c7a919)](https://www.codacy.com/app/sean_19/ncmg.com.au?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sean0x42/ncmg.com.au&amp;utm_campaign=Badge_Grade)

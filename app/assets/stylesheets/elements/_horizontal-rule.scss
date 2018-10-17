@@ -1,6 +1,7 @@
 hr {
-  margin: ($section-padding-vertical / 3) 0;
-  border: none;
-  border-bottom: 1px solid $grey-light;
   background: none;
+  border: 0;
+  border-bottom: 1px solid $grey-light;
+  margin: ($section-padding-vertical / 3) 0;
 }
+

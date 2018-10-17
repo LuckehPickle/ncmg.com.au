@@ -33,4 +33,3 @@ class Image < ApplicationRecord
     end
   end
 end
-

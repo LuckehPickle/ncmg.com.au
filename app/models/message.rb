@@ -11,4 +11,3 @@ class Message < ApplicationRecord
 
   attr_writer :subject
 end
-

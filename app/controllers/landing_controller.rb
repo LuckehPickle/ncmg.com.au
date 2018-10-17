@@ -31,4 +31,3 @@ class LandingController < ApplicationController
     params.require(:message).permit(:name, :email, :subject, :body)
   end
 end
-

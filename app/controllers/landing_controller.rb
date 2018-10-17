@@ -10,6 +10,8 @@ class LandingController < ApplicationController
 
   # POST /contact
   def contact
+    return if params[:message][:subject].present?
+
     @message = Message.new message_params
 
     if @message.save
@@ -26,6 +28,7 @@ class LandingController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:name, :email, :body)
+    params.require(:message).permit(:name, :email, :subject, :body)
   end
 end
+

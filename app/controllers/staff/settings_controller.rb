@@ -1,12 +1,15 @@
 # frozen_string_literal: true
 
+# A controller for managing settings
 class Staff::SettingsController < ApplicationController
   before_action :require_login
 
+  # GET /staff/settings
   def index
     @settings = Setting.first_or_create
   end
 
+  # PATCH /staff/settings/:id
   def update
     @settings = Setting.first_or_create
 

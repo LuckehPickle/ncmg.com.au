@@ -67,7 +67,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'autoprefixer-rails'
 gem 'aws-sdk-s3', '~> 1'
 gem 'devise'
-gem 'image_processing', '~> 1.7'
+gem 'image_processing', '~> 1.8'
 gem 'kaminari'
 gem 'local_time'
 gem 'sidekiq'

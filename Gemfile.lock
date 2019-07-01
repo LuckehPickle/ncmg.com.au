@@ -182,7 +182,8 @@ GEM
     pg (1.1.4)
     pg (1.1.4-x64-mingw32)
     public_suffix (3.1.0)
-    puma (3.12.1)
+    puma (4.0.0)
+      nio4r (~> 2.0)
     rack (2.0.7)
     rack-protection (2.0.5)
       rack
@@ -322,7 +323,7 @@ DEPENDENCIES
   local_time
   mini_magick (~> 4.9)
   pg (>= 0.18, < 2.0)
-  puma (~> 3.12)
+  puma (~> 4.0)
   rails (~> 5.2.3)
   rubocop
   sass-rails (~> 5.0)

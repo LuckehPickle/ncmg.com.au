@@ -1,6 +1,7 @@
 module.exports = {
   plugins: [
     'gatsby-plugin-typescript',
+    'gatsby-plugin-postcss',
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',

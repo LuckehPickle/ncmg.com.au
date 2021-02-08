@@ -2,21 +2,47 @@ import React, { FunctionComponent } from 'react'
 
 interface BaseButtonProps {
   className?: string
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
+}
+
+const styles = {
+  common: 'leading-none py-4 px-6 rounded',
+  primary: 'bg-zesty-500 text-grey-900',
+  secondary: 'bg-grey-700 text-white',
 }
 
 const BaseButton: FunctionComponent<BaseButtonProps> = (props) => {
-  const className = props.className ? props.className : ''
+  const classes = [styles.common]
+  props.className && classes.push(props.className)
+
   return (
-    <button className={`leading-none p-4 ${className}`}>
+    <button className={classes.join(' ')} onClick={props.onClick}>
       {props.children}
     </button>
   )
 }
 
-export const PrimaryButton: FunctionComponent = (props) => (
-  <BaseButton className="bg-indigo-500 rounded">{props.children}</BaseButton>
-)
+type PrimaryButtonProps = BaseButtonProps
 
-export const SecondaryButton: FunctionComponent = (props) => (
-  <BaseButton className="bg-gray-700 text-white rounded">{props.children}</BaseButton>
+export const PrimaryButton: FunctionComponent<PrimaryButtonProps> = (props) => {
+  const { className, ...otherProps } = props
+
+  const classes = [styles.primary]
+  className && classes.push(className)
+
+  return (
+    <BaseButton className={classes.join(' ')} {...otherProps}>
+      {props.children}
+    </BaseButton>
+  )
+}
+
+type SecondaryButtonProps = Omit<BaseButtonProps, 'className'>
+
+export const SecondaryButton: FunctionComponent<SecondaryButtonProps> = (
+  props,
+) => (
+  <BaseButton className="bg-grey-700 text-white rounded" {...props}>
+    {props.children}
+  </BaseButton>
 )

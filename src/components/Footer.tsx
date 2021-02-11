@@ -16,7 +16,7 @@ const Footer: FunctionComponent = () => {
 
   return (
     <footer className="bg-grey-800 border-b-4 border-zesty-600">
-      <Wrapper className="grid grid-cols-footer gap-20 py-8">
+      <Wrapper className="grid grid-cols-footer gap-20 py-12">
         <Logo size="medium" variant="labelled" />
 
         <div>

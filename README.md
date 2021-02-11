@@ -1,17 +1,7 @@
 # North Coast Marble & Granite
 
-Current version: 1.1.1
+[![Netlify Status](https://api.netlify.com/api/v1/badges/781d6137-bbcc-41cb-899f-0567ad1b4106/deploy-status)](https://app.netlify.com/sites/ncmg/deploys)
 
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=sean0x42/ncmg.com.au)](https://dependabot.com)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5aaf31b49bf84a73ab3dd0d323c7a919)](https://www.codacy.com/app/sean_19/ncmg.com.au?utm_source=github.com&utm_medium=referral&utm_content=sean0x42/ncmg.com.au&utm_campaign=Badge_Grade)
-
-I recently had the pleasure of designing and developing a website for North Coast Marble & Granite (NCMG). The website has the following features:
-
-- **Staff area:** With a simple yet powerful permissions system. Here staff can upload new images, review past messages from the contact us form, and alter some website settings.
-- **Landing page:** Anyone can visit, at [ncmg.com.au](https://www.ncmg.com.au).
-  - **Contact form:** Users can send messages to the sales team at NCMG. It's quick, and easy.
-  - **Gallery:** Staff members can add new images, add labels and more.
-
-If you're interested, this website has a corresponding [style guide](https://github.com/LuckehPickle/ncmg-style-guide).
+Current version: 2.0
 
 Here's what's changed (old on bottom): ![comparison](https://i.imgur.com/KGKbQb5.png)

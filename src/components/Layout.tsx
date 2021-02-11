@@ -1,10 +1,12 @@
 import React, { FunctionComponent, useState } from 'react'
 import { Helmet } from 'react-helmet'
 
+import Footer from './Footer'
 import Header from './Header'
 import MessageUsModal from './MessageUsModal'
 import SkipLink from './SkipLink'
 import { MessageUsContext } from '../context/messageUs'
+import GrowLayout from './GrowLayout'
 
 const Layout: FunctionComponent = (props) => {
   const [isShowingModal, setShowingModal] = useState(false)
@@ -25,18 +27,34 @@ const Layout: FunctionComponent = (props) => {
         disableModal,
       }}
     >
-      <Helmet defaultTitle="North Coast Marble & Granite">
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-      </Helmet>
+      <GrowLayout.Wrapper>
+        <Helmet defaultTitle="North Coast Marble & Granite">
+          <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        </Helmet>
 
-      <SkipLink />
-      <Header />
+        <SkipLink />
+        <Header />
 
-      <MessageUsModal />
+        <MessageUsModal />
 
-      <main id="main">{props.children}</main>
+        <GrowLayout.Content>
+          <main id="main">{props.children}</main>
+        </GrowLayout.Content>
+
+        <Footer />
+      </GrowLayout.Wrapper>
     </MessageUsContext.Provider>
   )
+}
+
+export function withLayout<T>(WrappedComponent: React.ComponentType<T>) {
+  const WithLayout: FunctionComponent<T> = (props) => (
+    <Layout>
+      <WrappedComponent {...props} />
+    </Layout>
+  )
+
+  return WithLayout
 }
 
 export default Layout

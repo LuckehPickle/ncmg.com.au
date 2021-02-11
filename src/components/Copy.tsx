@@ -1,23 +1,39 @@
 import React, { FunctionComponent } from 'react'
 
 interface CopyProps {
+  id?: string
   className?: string
   variant?: 'subtitle'
+  align?: 'left' | 'center' | 'right'
+  measure?: boolean
 }
 
 const styles = {
-  common: 'text-grey-200 max-w-prose',
+  common: 'text-grey-200 font-light',
   variants: {
     subtitle: 'text-xl',
   },
+  centerAlign: 'text-center',
+  rightAlign: 'text-right',
+  measure: 'max-w-prose',
 }
 
-const Copy: FunctionComponent<CopyProps> = (props) => {
-  const classes = [styles.common]
-  props.className && classes.push(props.className)
-  props.variant && classes.push(styles.variants[props.variant])
+export const Bold: FunctionComponent = (props) => (
+  <strong className="text-zesty-300 font-normal">{props.children}</strong>
+)
 
-  return <p className={classes.join(' ')}>{props.children}</p>
+const Copy: FunctionComponent<CopyProps> = (props) => {
+  const { className, variant, ...rest } = props
+
+  const classes = [styles.common]
+  className && classes.push(className)
+  variant && classes.push(styles.variants[variant])
+
+  props.align === 'center' && classes.push(styles.centerAlign)
+  props.align === 'right' && classes.push(styles.rightAlign)
+  ;(props.measure ?? true) && classes.push(styles.measure)
+
+  return <p className={classes.join(' ')} {...rest} />
 }
 
 export default Copy

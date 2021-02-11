@@ -12,7 +12,11 @@ const Header: FunctionComponent = () => {
   return (
     <header className="bg-grey-900 border-t-4 border-zesty-600">
       <Wrapper className="flex justify-between items-center leading-none">
-        <Link to="/" className="inline-block py-5" title="Visit NCMG homepage">
+        <Link
+          to="/"
+          className="inline-block py-5 focus:outline-zesty"
+          title="Visit NCMG homepage"
+        >
           <Logo size="small" />
         </Link>
 

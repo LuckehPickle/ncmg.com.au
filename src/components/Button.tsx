@@ -2,17 +2,22 @@ import React, { FunctionComponent } from 'react'
 
 interface BaseButtonProps {
   className?: string
+  iconClassName?: string
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
   icon?: FunctionComponent
   fullWidth?: boolean
 }
 
 const styles = {
-  common: 'flex items-center leading-none py-4 px-6 rounded',
+  common: 'flex items-center leading-none py-4 px-6 rounded focus:outline-white',
   primary:
-    'bg-zesty-500 text-grey-800 font-normal transform-gpu hover:-translate-y-0.5 transition-transform focus:outline-white',
-  secondary: 'bg-grey-700 text-white focus:outline-zesty',
+    'bg-gradient-to-tl from-zesty-500 to-zesty-400 text-grey-800 font-normal transform-gpu hover:-translate-y-0.5 transition-transform',
+  secondary: 'bg-grey-700 text-white',
   fullWidth: 'w-full justify-center',
+  icon: {
+    primary: 'mr-2 text-grey-700',
+    secondary: 'mr-2 text-white',
+  },
 }
 
 const BaseButton: FunctionComponent<BaseButtonProps> = (props) => {
@@ -24,7 +29,7 @@ const BaseButton: FunctionComponent<BaseButtonProps> = (props) => {
 
   return (
     <button className={classes.join(' ')} onClick={props.onClick}>
-      {Icon && <Icon className="w-6 mr-2 text-grey-700" />}
+      {Icon && <Icon className={props.iconClassName} />}
       {props.children}
     </button>
   )
@@ -39,7 +44,11 @@ export const PrimaryButton: FunctionComponent<PrimaryButtonProps> = (props) => {
   className && classes.push(className)
 
   return (
-    <BaseButton className={classes.join(' ')} {...otherProps}>
+    <BaseButton
+      className={classes.join(' ')}
+      iconClassName={styles.icon.primary}
+      {...otherProps}
+    >
       {props.children}
     </BaseButton>
   )
@@ -56,7 +65,11 @@ export const SecondaryButton: FunctionComponent<SecondaryButtonProps> = (
   className && classes.push(className)
 
   return (
-    <BaseButton className={classes.join(' ')} {...otherProps}>
+    <BaseButton
+      className={classes.join(' ')}
+      iconClassName={styles.icon.secondary}
+      {...otherProps}
+    >
       {props.children}
     </BaseButton>
   )

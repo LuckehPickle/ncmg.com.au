@@ -11,7 +11,7 @@ interface CopyProps {
 const styles = {
   common: 'text-grey-200 font-light',
   variants: {
-    subtitle: 'text-xl',
+    subtitle: 'text-2xl',
   },
   centerAlign: 'text-center',
   rightAlign: 'text-right',
@@ -19,7 +19,9 @@ const styles = {
 }
 
 export const Bold: FunctionComponent = (props) => (
-  <strong className="text-zesty-300 font-normal">{props.children}</strong>
+  <strong className="text-transparent font-normal bg-clip-text bg-gradient-to-tl from-zesty-400 to-zesty-300">
+    {props.children}
+  </strong>
 )
 
 const Copy: FunctionComponent<CopyProps> = (props) => {

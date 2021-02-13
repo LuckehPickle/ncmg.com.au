@@ -18,6 +18,12 @@ module.exports = {
       gridTemplateColumns: {
         footer: '1fr max-content max-content',
       },
+      boxShadow: {
+        glow: '0 0 64px 8px rgba(229, 230, 230, 0.05)',
+      },
+      backgroundImage: {
+        'contact-pattern': "url('/contact-pattern.svg')",
+      },
     },
     colors: {
       white: '#ffffff',
@@ -30,9 +36,9 @@ module.exports = {
         300: '#6EE39E',
       },
       grey: {
-        900: '#101818',
-        800: '#1A2323',
-        700: '#283131',
+        900: '#0F1515',
+        800: '#1B2323',
+        700: '#293131',
         600: '#374444',
         300: '#D8DCDC',
         200: '#E5E6E6',

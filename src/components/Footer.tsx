@@ -15,8 +15,8 @@ const Footer: FunctionComponent = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-grey-800 border-b-4 border-zesty-600">
-      <Wrapper className="grid grid-cols-footer gap-20 py-12">
+    <footer className="bg-grey-900 border-b-4 border-zesty-500">
+      <Wrapper className="grid grid-cols-footer gap-20 py-20">
         <Logo size="medium" variant="labelled" />
 
         <div>
@@ -42,28 +42,38 @@ const Footer: FunctionComponent = () => {
         <div>
           <CompanyInfo icon={PhoneIcon} label="Phone">
             <Copy>
-              <Link to="tel:65811355">(02) 6581 1355</Link>
+              <Link to="tel:65811355" internal>
+                (02) 6581 1355
+              </Link>
             </Copy>
           </CompanyInfo>
 
           <CompanyInfo icon={PrinterIcon} label="Fax">
             <Copy>
-              <Link to="tel:65810949">(02) 6581 0949</Link>
+              <Link to="tel:65810949" internal>
+                (02) 6581 0949
+              </Link>
             </Copy>
           </CompanyInfo>
 
           <CompanyInfo icon={MailOpenIcon} label="Email">
             <Copy>
-              <Link to="mailto:sales@ncmg.com.au">sales@ncmg.com.au</Link>
+              <Link to="mailto:sales@ncmg.com.au" internal>
+                sales@ncmg.com.au
+              </Link>
             </Copy>
           </CompanyInfo>
         </div>
       </Wrapper>
 
-      <div className="bg-grey-900 p-5">
+      <div className="p-6">
         <Wrapper>
           <Copy align="center" measure={false}>
             &copy; {currentYear} North Coast Marble &amp; Granite
+          </Copy>
+          <Copy align="center" measure={false} className="mt-1">
+            ncmg.com.au is created and maintained by{' '}
+            <Link to="https://www.seanbailey.dev">Sean Bailey</Link>.
           </Copy>
         </Wrapper>
       </div>

@@ -3,15 +3,27 @@ import { Link as GatsbyLink } from 'gatsby'
 
 interface LinkProps {
   to: string
+  internal?: boolean
 }
 
-const Link: FunctionComponent<LinkProps> = (props) => (
-  <GatsbyLink
-    to={props.to}
-    className="text-zesty-300 underline focus:outline-zesty"
-  >
-    {props.children}
-  </GatsbyLink>
-)
+const styles = {
+  common: 'text-zesty-400 underline focus:outline-white',
+}
+
+const Link: FunctionComponent<LinkProps> = (props) => {
+  if (props.internal) {
+    return (
+      <a href={props.to} className={styles.common}>
+        {props.children}
+      </a>
+    )
+  }
+
+  return (
+    <GatsbyLink to={props.to} className={styles.common}>
+      {props.children}
+    </GatsbyLink>
+  )
+}
 
 export default Link

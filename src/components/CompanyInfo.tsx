@@ -24,7 +24,7 @@ const CompanyInfo: React.FunctionComponent<CompanyInfoProps> = (props) => {
 
       <div>
         {props.label && (
-          <Heading level={4} className="leading-tight mb-1">
+          <Heading level={6} weight="medium" className="leading-tight mb-1">
             {props.label}
           </Heading>
         )}

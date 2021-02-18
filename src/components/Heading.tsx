@@ -4,35 +4,34 @@ interface HeadingProps {
   level: 1 | 2 | 3 | 4 | 5 | 6
   id?: string
   className?: string
-  variant?: 'title'
+  align?: 'left' | 'center' | 'right' | 'justify'
+  weight?: 'medium' | 'semibold' | 'bold'
 }
 
 const styles = {
-  common: 'font-medium text-white',
   levels: {
-    1: 'text-2xl',
-    2: 'text-xl',
-    3: 'text-lg',
-    4: '',
-    5: '',
-    6: '',
-  },
-  variants: {
-    title: 'text-5xl font-semibold',
+    1: 'text-5xl font-display font-extrabold',
+    2: 'text-4xl font-semibold',
+    3: 'text-xl',
+    4: 'text-lg',
+    5: 'text-md',
+    6: 'text-sm',
   },
 }
 
 const Heading: FunctionComponent<HeadingProps> = (props) => {
-  const { level, className, variant, ...rest } = props
+  const Elem = `h${props.level}`
 
-  const Elem = `h${level}`
+  const classes = [
+    'text-white',
+    props.weight ? `font-${props.weight}` : '',
+    styles.levels[props.level],
+  ]
 
-  const classes = [styles.common]
-  classes.push(styles.levels[level])
-  variant && classes.push(styles.variants[variant])
-  className && classes.push(className)
+  props.className && classes.push(props.className)
+  props.align && classes.push(`text-${props.align}`)
 
-  return <Elem className={classes.join(' ')} {...rest} />
+  return <Elem className={classes.join(' ')}>{props.children}</Elem>
 }
 
 export default Heading

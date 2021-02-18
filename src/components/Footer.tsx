@@ -42,7 +42,7 @@ const Footer: FunctionComponent = () => {
         <div>
           <CompanyInfo icon={PhoneIcon} label="Phone">
             <Copy>
-              <Link to="tel:65811355" internal>
+              <Link to="tel:65811355" external>
                 (02) 6581 1355
               </Link>
             </Copy>
@@ -50,7 +50,7 @@ const Footer: FunctionComponent = () => {
 
           <CompanyInfo icon={PrinterIcon} label="Fax">
             <Copy>
-              <Link to="tel:65810949" internal>
+              <Link to="tel:65810949" external>
                 (02) 6581 0949
               </Link>
             </Copy>
@@ -58,7 +58,7 @@ const Footer: FunctionComponent = () => {
 
           <CompanyInfo icon={MailOpenIcon} label="Email">
             <Copy>
-              <Link to="mailto:sales@ncmg.com.au" internal>
+              <Link to="mailto:sales@ncmg.com.au" external>
                 sales@ncmg.com.au
               </Link>
             </Copy>

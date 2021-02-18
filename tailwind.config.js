@@ -13,7 +13,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['Libre Baskerville', 'serif'],
+        display: ['Playfair Display', 'serif'],
       },
       gridTemplateColumns: {
         footer: '1fr max-content max-content',
@@ -36,11 +36,11 @@ module.exports = {
         300: '#6EE39E',
       },
       grey: {
-        900: '#0F1515',
-        800: '#1B2323',
-        700: '#293131',
-        600: '#374444',
-        300: '#D8DCDC',
+        900: '#0F1315',
+        800: '#1B2123',
+        700: '#292F31',
+        600: '#374144',
+        300: '#D8DBDC',
         200: '#E5E6E6',
         100: '#ECEDED',
       },

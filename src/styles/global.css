@@ -1,6 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600,800&display=swap');
 @import url('https://rsms.me/inter/inter.css');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  font-size: 18px;
+}
+
+::selection {
+  color: #0f1315;
+  background: #2cc36b;
+}

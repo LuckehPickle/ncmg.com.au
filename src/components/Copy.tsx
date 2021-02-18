@@ -3,18 +3,18 @@ import React, { FunctionComponent } from 'react'
 interface CopyProps {
   id?: string
   className?: string
-  variant?: 'subtitle'
-  align?: 'left' | 'center' | 'right'
+  variant?: 'large' | 'medium'
+  align?: 'left' | 'center' | 'right' | 'justify'
+  size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl'
   measure?: boolean
 }
 
 const styles = {
   common: 'text-grey-200 font-light',
   variants: {
-    subtitle: 'text-2xl',
+    large: 'text-xl',
+    medium: 'text-lg',
   },
-  centerAlign: 'text-center',
-  rightAlign: 'text-right',
   measure: 'max-w-prose',
 }
 
@@ -31,8 +31,8 @@ const Copy: FunctionComponent<CopyProps> = (props) => {
   className && classes.push(className)
   variant && classes.push(styles.variants[variant])
 
-  props.align === 'center' && classes.push(styles.centerAlign)
-  props.align === 'right' && classes.push(styles.rightAlign)
+  props.align && classes.push(`text-${props.align}`)
+  props.size && classes.push(`text-${props.size}`)
   ;(props.measure ?? true) && classes.push(styles.measure)
 
   return <p className={classes.join(' ')} {...rest} />

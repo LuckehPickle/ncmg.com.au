@@ -28,7 +28,7 @@ const Layout: FunctionComponent = (props) => {
       }}
     >
       <GrowLayout.Wrapper>
-        <Helmet defaultTitle="North Coast Marble & Granite">
+        <Helmet>
           <link
             rel="apple-touch-icon"
             sizes="180x180"

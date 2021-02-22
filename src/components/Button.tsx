@@ -3,6 +3,7 @@ import React, { FunctionComponent } from 'react'
 interface BaseButtonProps {
   className?: string
   iconClassName?: string
+  to?: string
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
   icon?: FunctionComponent
   fullWidth?: boolean
@@ -10,7 +11,7 @@ interface BaseButtonProps {
 
 const styles = {
   common:
-    'flex items-center leading-none py-4 px-6 rounded focus:outline-white',
+    'inline-flex items-center leading-none py-4 px-6 rounded focus:outline-white',
   primary:
     'bg-gradient-to-tl from-zesty-500 to-zesty-400 text-grey-800 font-normal transform-gpu hover:-translate-y-0.5 transition-transform',
   secondary: 'bg-grey-700 text-white',
@@ -27,12 +28,13 @@ const BaseButton: FunctionComponent<BaseButtonProps> = (props) => {
   props.fullWidth && classes.push(styles.fullWidth)
 
   const Icon = props.icon
+  const Base = props.to ? `a` : `button`
 
   return (
-    <button className={classes.join(' ')} onClick={props.onClick}>
+    <Base href={props.to} className={classes.join(' ')} onClick={props.onClick}>
       {Icon && <Icon className={props.iconClassName} />}
       {props.children}
-    </button>
+    </Base>
   )
 }
 

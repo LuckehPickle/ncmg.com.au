@@ -1,9 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: 'North Coast Marble & Granite',
+    titleTemplate: '%s - NCMG',
     description:
-      'We offer kitchens, bathrooms, and more. With the latest machinery and a team of highly experienced trade staff, we can service your needs. Request a quote today, to experience the NCMG advantage firsthand.',
+      'We create benchtops, vanities and more. With the latest machinery and a team of highly experienced trade staff, we can complete any job throughout the Mid North Coast.',
     siteUrl: `https://www.ncmg.com.au`,
+    image: '/ncmg.png'
   },
   plugins: [
     'gatsby-plugin-typescript',
@@ -41,5 +43,6 @@ module.exports = {
         ],
       },
     },
+    'gatsby-plugin-catch-links',
   ],
 }

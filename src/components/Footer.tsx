@@ -16,55 +16,57 @@ const Footer: FunctionComponent = () => {
 
   return (
     <footer className="bg-grey-900 border-b-4 border-zesty-500">
-      <Wrapper className="grid grid-cols-footer gap-20 py-20">
-        <Logo size="medium" variant="labelled" />
+      <address className="not-italic">
+        <Wrapper className="grid grid-cols-footer gap-20 py-20">
+          <Logo size="medium" variant="labelled" />
 
-        <div>
-          <CompanyInfo icon={LocationPinIcon} label="Address">
-            <Copy>
-              207 Lake Road
-              <br />
-              Port Macquarie, NSW 2444
-              <br />
-              Australia
-            </Copy>
-          </CompanyInfo>
+          <div>
+            <CompanyInfo icon={LocationPinIcon} label="Address">
+              <Copy>
+                207 Lake Road
+                <br />
+                Port Macquarie, NSW 2444
+                <br />
+                Australia
+              </Copy>
+            </CompanyInfo>
 
-          <CompanyInfo icon={ClockIcon} label="Open">
-            <Copy>
-              7am til 3:30pm
-              <br />
-              Monday to Friday
-            </Copy>
-          </CompanyInfo>
-        </div>
+            <CompanyInfo icon={ClockIcon} label="Open">
+              <Copy>
+                7am til 3:30pm
+                <br />
+                Monday to Friday
+              </Copy>
+            </CompanyInfo>
+          </div>
 
-        <div>
-          <CompanyInfo icon={PhoneIcon} label="Phone">
-            <Copy>
-              <Link to="tel:65811355" external>
-                (02) 6581 1355
-              </Link>
-            </Copy>
-          </CompanyInfo>
+          <div>
+            <CompanyInfo icon={PhoneIcon} label="Phone">
+              <Copy>
+                <Link to="tel:65811355" external>
+                  (02) 6581 1355
+                </Link>
+              </Copy>
+            </CompanyInfo>
 
-          <CompanyInfo icon={PrinterIcon} label="Fax">
-            <Copy>
-              <Link to="tel:65810949" external>
-                (02) 6581 0949
-              </Link>
-            </Copy>
-          </CompanyInfo>
+            <CompanyInfo icon={PrinterIcon} label="Fax">
+              <Copy>
+                <Link to="tel:65810949" external>
+                  (02) 6581 0949
+                </Link>
+              </Copy>
+            </CompanyInfo>
 
-          <CompanyInfo icon={MailOpenIcon} label="Email">
-            <Copy>
-              <Link to="mailto:sales@ncmg.com.au" external>
-                sales@ncmg.com.au
-              </Link>
-            </Copy>
-          </CompanyInfo>
-        </div>
-      </Wrapper>
+            <CompanyInfo icon={MailOpenIcon} label="Email">
+              <Copy>
+                <Link to="mailto:sales@ncmg.com.au" external>
+                  sales@ncmg.com.au
+                </Link>
+              </Copy>
+            </CompanyInfo>
+          </div>
+        </Wrapper>
+      </address>
 
       <div className="p-6">
         <Wrapper>

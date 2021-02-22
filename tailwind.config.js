@@ -15,11 +15,14 @@ module.exports = {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         display: ['Playfair Display', 'serif'],
       },
+      fontWeight: {
+        unset: 'unset',
+      },
       gridTemplateColumns: {
         footer: '1fr max-content max-content',
       },
       boxShadow: {
-        glow: '0 0 64px 8px rgba(229, 230, 230, 0.05)',
+        glow: '0 0 32px 8px rgba(229, 230, 230, 0.05)',
       },
       backgroundImage: {
         'contact-pattern': "url('/contact-pattern.svg')",
@@ -37,10 +40,11 @@ module.exports = {
       },
       grey: {
         900: '#0F1315',
-        800: '#1B2123',
-        700: '#292F31',
-        600: '#374144',
-        300: '#D8DBDC',
+        800: '#1B2023',
+        700: '#292E31',
+        600: '#374044',
+        400: '#CBCED0',
+        300: '#D8DADC',
         200: '#E5E6E6',
         100: '#ECEDED',
       },

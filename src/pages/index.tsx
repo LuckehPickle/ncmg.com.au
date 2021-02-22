@@ -2,11 +2,11 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Image from 'gatsby-image'
 
-import Columns from '../components/layout/Columns'
 import Copy, { Bold } from '../components/Copy'
 import FAQ from '../components/landing/FAQ'
 import Heading from '../components/Heading'
 import MailOpenIcon from '../components/icons/MailOpen'
+import MapIcon from '../components/icons/Map'
 import PhoneIcon from '../components/icons/Phone'
 import ProductsAndServices from '../components/landing/ProductsAndServices'
 import Wrapper from '../components/Wrapper'
@@ -40,14 +40,14 @@ const LandingPage: React.FunctionComponent = () => {
     <>
       <div className="pt-20 pb-24 bg-grey-900">
         <Wrapper>
-          <Columns columns="2" gap="20" verticalAlign="center">
+          <div className="grid grid-cols-2 gap-20 items-center">
             <div>
               <Heading level={1}>
                 The leading choice for marble and granite.
               </Heading>
 
               <Copy variant="large" className="my-6">
-                We create <Bold>kitchens, bathrooms and more</Bold>. With the
+                We create <Bold>benchtops, vanities and more</Bold>. With the
                 latest machinery and a team of highly experienced trade staff,
                 we can complete any job throughout the Mid North Coast.
               </Copy>
@@ -66,7 +66,7 @@ const LandingPage: React.FunctionComponent = () => {
               fluid={data.kitchen.childImageSharp.fluid}
               alt="An excellent kitchen"
             />
-          </Columns>
+          </div>
         </Wrapper>
       </div>
 
@@ -74,7 +74,7 @@ const LandingPage: React.FunctionComponent = () => {
 
       <div className="py-32 bg-grey-900">
         <Wrapper>
-          <Columns columns="2" gap="20" verticalAlign="center">
+          <div className="grid grid-cols-2 gap-20 items-center">
             <Image
               className="rounded"
               fluid={data.coverageMap.childImageSharp.fluid}
@@ -82,20 +82,28 @@ const LandingPage: React.FunctionComponent = () => {
             />
 
             <div>
-              <Heading level={1}>Servicing the Mid North Coast</Heading>
-              <Copy variant="medium" className="mt-4">
-                We'll take on jobs everywhere{' '}
-                <Bold>from Coffs Harbour to Forster</Bold>. We also take on
-                special projects as far away as Sydney when required.
+              <Heading level={1}>
+                Open for business on the Mid North Coast
+              </Heading>
+
+              <Copy variant="large" className="mt-6">
+                Operating out of <Bold>Port Macquarie</Bold>, we&apos;ll take on
+                jobs everywhere <Bold>from Coffs Harbour to Forster</Bold>. We
+                also take on special projects as far away as Sydney from
+                time-to-time.
               </Copy>
+
+              <SecondaryButton className="mt-8" icon={MapIcon}>
+                See us on Google Maps
+              </SecondaryButton>
             </div>
-          </Columns>
+          </div>
         </Wrapper>
       </div>
 
       <div className="pt-24 bg-grey-800">
         <Wrapper>
-          <div className="flex items-center justify-between bg-contact-pattern bg-cover rounded p-10 -mx-10">
+          <div className="flex items-center justify-between bg-contact-pattern bg-cover rounded p-10">
             <Heading level={3}>
               Ready to get started?
               <br />

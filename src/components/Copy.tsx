@@ -19,7 +19,7 @@ const styles = {
 }
 
 export const Bold: FunctionComponent = (props) => (
-  <strong className="text-transparent font-normal bg-clip-text bg-gradient-to-tl from-zesty-400 to-zesty-300">
+  <strong className="text-transparent font-unset bg-clip-text bg-gradient-to-tl from-zesty-400 to-zesty-300">
     {props.children}
   </strong>
 )

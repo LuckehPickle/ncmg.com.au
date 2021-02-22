@@ -4,7 +4,6 @@ import CalculatorIcon from './icons/Calculator'
 import ChatIcon from './icons/Chat'
 import QuestionIcon from './icons/Question'
 import { Icon } from './icons/types'
-import Columns from './layout/Columns'
 
 interface TopicProps {
   icon?: Icon
@@ -49,7 +48,7 @@ const TopicSelector: React.FunctionComponent = () => {
   const [selected, setSelected] = useState('')
 
   return (
-    <Columns columns="3" className="mt-2">
+    <div className="grid grid-cols-3 mt-2">
       <Topic
         icon={CalculatorIcon}
         label="Request quote"
@@ -71,7 +70,7 @@ const TopicSelector: React.FunctionComponent = () => {
         selected={selected}
         setSelected={setSelected}
       />
-    </Columns>
+    </div>
   )
 }
 

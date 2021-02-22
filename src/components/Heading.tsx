@@ -12,10 +12,10 @@ const styles = {
   levels: {
     1: 'text-5xl font-display font-extrabold',
     2: 'text-4xl font-semibold',
-    3: 'text-xl',
-    4: 'text-lg',
-    5: 'text-md',
-    6: 'text-sm',
+    3: 'text-xl font-semibold',
+    4: 'text-lg font-medium',
+    5: 'text-md font-medium',
+    6: 'text-sm font-medium',
   },
 }
 

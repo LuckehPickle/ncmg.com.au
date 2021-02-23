@@ -25,7 +25,7 @@ const FAQ: React.FunctionComponent = () => {
   const { enableModal } = useMessageUsModal()
 
   return (
-    <div className="py-40 bg-grey-800">
+    <div className="py-16 sm:py-40 bg-grey-800">
       <Wrapper width="prose">
         <Heading level={1} align="center">
           Frequently Asked Questions

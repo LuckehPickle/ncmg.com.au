@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import Copy, { Bold } from '../Copy'
 import Heading from '../Heading'
 import Product from './Product'
 import Wrapper from '../Wrapper'
+import ArrowNarrowRightIcon from '../icons/ArrowNarrowRight'
 
 const ProductsAndServices: React.FunctionComponent = () => {
+  const [hasSwiped, setHasSwiped] = useState(false)
+
   const data = useStaticQuery(graphql`
     query {
       kitchen: file(relativePath: { eq: "kitchen-cropped.png" }) {
@@ -55,7 +58,23 @@ const ProductsAndServices: React.FunctionComponent = () => {
       </Wrapper>
 
       <Wrapper>
-        <div className="grid grid-cols-mobile sm:grid-cols-3 gap-8 mt-10 sm:mt-16 max-w-full overflow-x-scroll sm:overflow-hidden">
+        <div
+          className={[
+            'flex items-center mt-8 sm:hidden transition-opacity',
+            hasSwiped ? 'opacity-0' : 'opacity-100',
+          ].join(' ')}
+          aria-hidden={true}
+        >
+          <Copy className="mr-2">
+            <Bold>Hint</Bold>: swipe for more
+          </Copy>
+          <ArrowNarrowRightIcon className="inline text-white animate-swipe" />
+        </div>
+
+        <div
+          className="grid grid-cols-mobile sm:grid-cols-3 gap-6 sm:gap-8 mt-2 sm:mt-16 max-w-full overflow-x-scroll sm:overflow-hidden"
+          onTouchMove={() => setHasSwiped(true)}
+        >
           <Product
             label="Kitchen Benchtops"
             image={data.kitchen.childImageSharp.fluid}

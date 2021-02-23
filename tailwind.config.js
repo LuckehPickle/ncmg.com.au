@@ -3,13 +3,14 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      outline: {
-        zesty: ['2px solid #44DA83', '3px'],
-        grey: ['2px solid #E5E6E6', '3px'],
-        white: ['2px solid white', '4px'],
+      animation: {
+        swipe: 'swipe 1s cubic-bezier(.46,.03,.52,.96)  infinite',
       },
-      margin: {
-        auto: 'auto',
+      backgroundImage: {
+        'contact-pattern': "url('/contact-pattern.svg')",
+      },
+      boxShadow: {
+        glow: '0 0 32px 8px rgba(229, 230, 230, 0.05)',
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
@@ -18,15 +19,23 @@ module.exports = {
       fontWeight: {
         unset: 'unset',
       },
+      keyframes: {
+        swipe: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(6px)' },
+        },
+      },
       gridTemplateColumns: {
-        mobile: 'repeat(6, 100%)',
+        mobile: 'repeat(6, 90%)',
         footer: '1fr max-content max-content',
       },
-      boxShadow: {
-        glow: '0 0 32px 8px rgba(229, 230, 230, 0.05)',
+      margin: {
+        auto: 'auto',
       },
-      backgroundImage: {
-        'contact-pattern': "url('/contact-pattern.svg')",
+      outline: {
+        zesty: ['2px solid #44DA83', '3px'],
+        grey: ['2px solid #E5E6E6', '3px'],
+        white: ['2px solid white', '4px'],
       },
     },
     colors: {

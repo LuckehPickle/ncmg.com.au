@@ -3,6 +3,7 @@ import React, { FunctionComponent } from 'react'
 type LogoSize = 'small' | 'medium' | 'large'
 
 interface LogoProps {
+  className?: string
   size: LogoSize
   variant?: 'labelled'
 }
@@ -17,11 +18,12 @@ const Logo: FunctionComponent<LogoProps> = (props) => {
   const size = sizeToPx[props.size]
 
   if (props.variant === 'labelled') {
-    return <Labelled size={size} />
+    return <Labelled size={size} className={props.className} />
   }
 
   return (
     <svg
+      className={props.className}
       x={0}
       y={0}
       viewBox="-351 337 576 128"
@@ -38,11 +40,13 @@ const Logo: FunctionComponent<LogoProps> = (props) => {
 }
 
 interface LabelledProps {
+  className?: string
   size: number
 }
 
 const Labelled: FunctionComponent<LabelledProps> = (props) => (
   <svg
+    className={props.className}
     x={0}
     y={0}
     viewBox="-351 337 576 172.5"

@@ -1,3 +1,4 @@
+import 'wicg-inert'
 import React, { FunctionComponent, useState } from 'react'
 import { Helmet } from 'react-helmet'
 
@@ -27,7 +28,9 @@ const Layout: FunctionComponent = (props) => {
         disableModal,
       }}
     >
-      <GrowLayout.Wrapper>
+      <MessageUsModal />
+
+      <GrowLayout.Wrapper id="non-modal-content">
         <Helmet>
           <link
             rel="apple-touch-icon"
@@ -51,8 +54,6 @@ const Layout: FunctionComponent = (props) => {
 
         <SkipLink />
         <Header />
-
-        <MessageUsModal />
 
         <GrowLayout.Content>
           <main id="main">{props.children}</main>

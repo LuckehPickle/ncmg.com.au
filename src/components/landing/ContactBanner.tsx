@@ -12,20 +12,20 @@ const ContactBanner: React.FunctionComponent = () => {
   const { enableModal } = useMessageUsModal()
 
   return (
-    <div className="pt-24 bg-grey-800">
+    <div className="pt-5 sm:pt-24 bg-grey-800">
       <Wrapper>
-        <div className="flex items-center justify-between bg-contact-pattern bg-cover rounded p-10">
-          <Heading level={3}>
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between bg-grey-900 lg:bg-contact-pattern bg-cover rounded p-8 sm:p-10">
+          <Heading level={3} className="mb-4 lg:mb-0">
             Ready to get started?
             <br />
             <Bold>Get in touch with our friendly staff.</Bold>
           </Heading>
 
-          <div className="flex items-center">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center">
             <PrimaryButton
               onClick={() => enableModal()}
               icon={MailOpenIcon}
-              className="mr-4"
+              className="mb-4 sm:mb-0 sm:mr-4"
             >
               Send a message
             </PrimaryButton>

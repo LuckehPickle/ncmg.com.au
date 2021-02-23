@@ -11,11 +11,7 @@ interface ProductProps {
 const Product: React.FunctionComponent<ProductProps> = (props) => (
   <div>
     {props.image && (
-      <Image
-        className="rounded mb-3"
-        fluid={props.image}
-        alt={props.alt}
-      />
+      <Image className="rounded mb-3" fluid={props.image} alt={props.alt} />
     )}
     <Heading level={5}>{props.label ?? 'Product'}</Heading>
   </div>

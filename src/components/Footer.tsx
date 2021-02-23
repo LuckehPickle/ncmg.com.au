@@ -17,8 +17,8 @@ const Footer: FunctionComponent = () => {
   return (
     <footer className="bg-grey-900 border-b-4 border-zesty-500">
       <address className="not-italic">
-        <Wrapper className="grid grid-cols-footer gap-20 py-20">
-          <Logo size="medium" variant="labelled" />
+        <Wrapper className="grid grid-cols-1 sm:grid-cols-footer gap-5 sm:gap-20 py-10 sm:py-20">
+          <Logo size="medium" variant="labelled" className="hidden sm:block" />
 
           <div>
             <CompanyInfo icon={LocationPinIcon} label="Address">
@@ -31,7 +31,7 @@ const Footer: FunctionComponent = () => {
               </Copy>
             </CompanyInfo>
 
-            <CompanyInfo icon={ClockIcon} label="Open">
+            <CompanyInfo icon={ClockIcon} label="Open Hours">
               <Copy>
                 7am til 3:30pm
                 <br />
@@ -75,7 +75,10 @@ const Footer: FunctionComponent = () => {
           </Copy>
           <Copy align="center" measure={false} className="mt-1">
             ncmg.com.au is created and maintained by{' '}
-            <Link to="https://www.seanbailey.dev">Sean Bailey</Link>.
+            <Link to="https://www.seanbailey.dev" external>
+              Sean Bailey
+            </Link>
+            .
           </Copy>
         </Wrapper>
       </div>

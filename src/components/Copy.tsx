@@ -5,14 +5,13 @@ interface CopyProps {
   className?: string
   variant?: 'large' | 'medium'
   align?: 'left' | 'center' | 'right' | 'justify'
-  size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl'
   measure?: boolean
 }
 
 const styles = {
   common: 'text-grey-200 font-light',
   variants: {
-    large: 'text-xl',
+    large: 'text-lg sm:text-xl',
     medium: 'text-lg',
   },
   measure: 'max-w-prose',
@@ -32,7 +31,6 @@ const Copy: FunctionComponent<CopyProps> = (props) => {
   variant && classes.push(styles.variants[variant])
 
   props.align && classes.push(`text-${props.align}`)
-  props.size && classes.push(`text-${props.size}`)
   ;(props.measure ?? true) && classes.push(styles.measure)
 
   return <p className={classes.join(' ')} {...rest} />

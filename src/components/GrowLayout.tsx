@@ -1,7 +1,11 @@
 import React from 'react'
 
-const Wrapper: React.FunctionComponent = (props) => (
-  <div className="flex flex-col">
+interface WrapperProps {
+  id?: string
+}
+
+const Wrapper: React.FunctionComponent<WrapperProps> = (props) => (
+  <div id={props.id} className="flex flex-col">
     <div className="flex flex-col min-h-screen">{props.children}</div>
   </div>
 )

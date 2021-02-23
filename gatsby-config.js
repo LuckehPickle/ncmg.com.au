@@ -5,7 +5,7 @@ module.exports = {
     description:
       'We create benchtops, vanities and more. With the latest machinery and a team of highly experienced trade staff, we can complete any job throughout the Mid North Coast.',
     siteUrl: `https://www.ncmg.com.au`,
-    image: '/ncmg.png'
+    image: '/ncmg.png',
   },
   plugins: [
     'gatsby-plugin-typescript',

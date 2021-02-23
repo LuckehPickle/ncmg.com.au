@@ -9,7 +9,7 @@ interface CompanyInfoProps {
 }
 
 const styles = {
-  common: 'flex mb-7 last:mb-0',
+  common: 'flex mb-5 sm:mb-7 last:mb-0',
 }
 
 const CompanyInfo: React.FunctionComponent<CompanyInfoProps> = (props) => {

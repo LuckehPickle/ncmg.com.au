@@ -41,13 +41,13 @@ const ProductsAndServices: React.FunctionComponent = () => {
   `)
 
   return (
-    <div className="py-32 bg-gradient-to-t from-grey-800 to-grey-900">
+    <div className="py-20 sm:py-32 bg-gradient-to-t from-grey-800 to-grey-900">
       <Wrapper width="prose">
         <Heading level={1} align="center">
           Offering a wide range of products and services
         </Heading>
 
-        <Copy className="mt-8" variant="large">
+        <Copy className="mt-4 sm:mt-8" variant="large">
           Looking for some inspiration? We can shape stone for almost anything
           you can imagine, <Bold>residential and commercial</Bold>. Just send us
           a message and we can talk through the possibilities.
@@ -55,7 +55,7 @@ const ProductsAndServices: React.FunctionComponent = () => {
       </Wrapper>
 
       <Wrapper>
-        <div className="grid grid-cols-3 gap-8 mt-16">
+        <div className="grid grid-cols-mobile sm:grid-cols-3 gap-8 mt-10 sm:mt-16 max-w-full overflow-x-scroll sm:overflow-hidden">
           <Product
             label="Kitchen Benchtops"
             image={data.kitchen.childImageSharp.fluid}

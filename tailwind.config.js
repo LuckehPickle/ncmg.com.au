@@ -19,6 +19,7 @@ module.exports = {
         unset: 'unset',
       },
       gridTemplateColumns: {
+        mobile: 'repeat(6, 100%)',
         footer: '1fr max-content max-content',
       },
       boxShadow: {

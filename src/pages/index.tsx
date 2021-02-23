@@ -36,15 +36,15 @@ const LandingPage: React.FunctionComponent = () => {
     <>
       <SEO />
 
-      <div className="pt-20 pb-24 bg-grey-900">
+      <div className="py-12 md:pt-20 bg-grey-900">
         <Wrapper>
-          <div className="grid grid-cols-2 gap-20 items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-20 items-center">
             <div>
               <Heading level={1}>
                 The leading choice for marble and granite.
               </Heading>
 
-              <Copy variant="large" className="my-6">
+              <Copy variant="large" className="my-4 sm:my-6">
                 We create <Bold>benchtops, vanities and more</Bold>. With the
                 latest machinery and a team of highly experienced trade staff,
                 we can complete any job throughout the Mid North Coast.
@@ -52,7 +52,7 @@ const LandingPage: React.FunctionComponent = () => {
 
               <PrimaryButton
                 onClick={() => enableModal()}
-                className="mt-10"
+                className="mt-4 sm:mt-4"
                 icon={MailOpenIcon}
               >
                 Request a quote! It's easy

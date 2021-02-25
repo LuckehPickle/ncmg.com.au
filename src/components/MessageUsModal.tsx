@@ -42,7 +42,8 @@ const MessageUsModal: React.FunctionComponent = () => {
 
   const styles = [
     'fixed inset-0 z-10',
-    isShowingModal ? '' : 'hidden',
+    'transition-opacity',
+    isShowingModal ? 'opacity-100' : 'pointer-events-none opacity-0',
     'flex items-start justify-center',
     'overflow-x-hidden overflow-y-auto',
     'sm:py-14',
@@ -55,6 +56,7 @@ const MessageUsModal: React.FunctionComponent = () => {
       onKeyDown={handleKeyDown}
       aria-labelledby="dialog__title"
       aria-describedby="dialog__copy"
+      aria-hidden={!isShowingModal}
     >
       <div
         id="dialog__mask"

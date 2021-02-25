@@ -22,9 +22,9 @@ const CoverageMap: React.FunctionComponent = () => {
   `)
 
   return (
-    <div className="py-32 bg-grey-900">
+    <div className="py-16 sm:py-32 bg-grey-900">
       <Wrapper>
-        <div className="grid grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-20 items-center">
           <Image
             className="rounded"
             fluid={data.coverageMap.childImageSharp.fluid}
@@ -36,7 +36,7 @@ const CoverageMap: React.FunctionComponent = () => {
               Open for business on the Mid North Coast
             </Heading>
 
-            <Copy variant="large" className="mt-6">
+            <Copy variant="large" className="mt-4 sm:mt-6">
               Operating out of <Bold>Port Macquarie</Bold>, we&apos;ll take on
               jobs everywhere <Bold>from Coffs Harbour to Forster</Bold>. We
               also take on special projects as far away as Sydney from
@@ -44,7 +44,7 @@ const CoverageMap: React.FunctionComponent = () => {
             </Copy>
 
             <SecondaryButton
-              className="mt-8"
+              className="mt-6 sm:mt-8"
               icon={MapIcon}
               to="https://goo.gl/maps/7nnbpDPfkDaQJccDA"
             >

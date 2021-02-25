@@ -60,7 +60,7 @@ const ProductsAndServices: React.FunctionComponent = () => {
       <Wrapper>
         <div
           className={[
-            'flex items-center mt-8 sm:hidden transition-opacity',
+            'flex items-center mt-8 sm:hidden transition-opacity delay-200',
             hasSwiped ? 'opacity-0' : 'opacity-100',
           ].join(' ')}
           aria-hidden={true}

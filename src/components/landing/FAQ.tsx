@@ -26,7 +26,7 @@ const FAQ: React.FunctionComponent = () => {
 
   return (
     <div className="py-16 sm:py-40 bg-grey-800">
-      <Wrapper width="prose">
+      <Wrapper width="max-w-prose">
         <Heading level={1} align="center">
           Frequently Asked Questions
         </Heading>

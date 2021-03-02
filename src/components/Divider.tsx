@@ -16,6 +16,7 @@ const Divider: React.FunctionComponent<DividerProps> = (props) => {
       viewBox="0 0 108 17"
       fill="none"
       className={styles.join(' ')}
+      aria-hidde="true"
     >
       <path
         d="M106 15L93 2 80 15 67 2 54 15 41 2 28 15 15 2 2 15"

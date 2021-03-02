@@ -1,12 +1,14 @@
 import React, { FunctionComponent } from 'react'
+import { Icon } from './icons/types'
 
 interface BaseButtonProps {
   className?: string
   iconClassName?: string
   to?: string
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
-  icon?: FunctionComponent
+  icon?: Icon
   fullWidth?: boolean
+  type?: string
 }
 
 const styles = {
@@ -31,7 +33,12 @@ const BaseButton: FunctionComponent<BaseButtonProps> = (props) => {
   const Base = props.to ? `a` : `button`
 
   return (
-    <Base href={props.to} className={classes.join(' ')} onClick={props.onClick}>
+    <Base
+      href={props.to}
+      className={classes.join(' ')}
+      onClick={props.onClick}
+      type={props.type}
+    >
       {Icon && <Icon className={props.iconClassName} />}
       {props.children}
     </Base>

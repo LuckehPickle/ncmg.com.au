@@ -7,6 +7,7 @@ interface SEOProps {
   title?: string
   description?: string
   image?: string
+  noIndex?: boolean
 }
 
 const query = graphql`
@@ -40,6 +41,8 @@ const SEO: React.FunctionComponent<SEOProps> = (props) => {
 
   return (
     <Helmet title={title} titleTemplate={titleTemplate}>
+      <html lang="en-AU" />
+      {props.noIndex && <meta name="robots" content="noindex" />}
       <meta name="description" content={description} />
       <meta name="image" content={image} />
       <meta property="og:url" content={`${siteUrl}${pathname}`} />

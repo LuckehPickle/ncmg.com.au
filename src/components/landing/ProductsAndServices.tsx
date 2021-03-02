@@ -45,7 +45,7 @@ const ProductsAndServices: React.FunctionComponent = () => {
 
   return (
     <div className="py-20 sm:py-32 bg-gradient-to-t from-grey-800 to-grey-900">
-      <Wrapper width="prose">
+      <Wrapper width="max-w-prose">
         <Heading level={1} align="center">
           Offering a wide range of products and services
         </Heading>
@@ -78,21 +78,32 @@ const ProductsAndServices: React.FunctionComponent = () => {
           <Product
             label="Kitchen Benchtops"
             image={data.kitchen.childImageSharp.fluid}
-            alt=""
+            alt="A kitchen benchtop made from marble"
           />
           <Product
             label="Bathroom Vanities"
             image={data.bathroom.childImageSharp.fluid}
+            alt="A stone vanity"
           />
           <Product
             label="Splashbacks"
             image={data.splashback.childImageSharp.fluid}
+            alt="A marble splashback in a kitchen"
           />
-          <Product label="Bar Tops" image={data.bar.childImageSharp.fluid} />
-          <Product label="BBQs" image={data.kitchen.childImageSharp.fluid} />
+          <Product
+            label="Bar Tops"
+            image={data.bar.childImageSharp.fluid}
+            alt="The front of a bar"
+          />
+          <Product
+            label="BBQs"
+            image={data.kitchen.childImageSharp.fluid}
+            alt="TBA"
+          />
           <Product
             label="Fireplaces"
             image={data.kitchen.childImageSharp.fluid}
+            alt="TBA"
           />
         </div>
       </Wrapper>

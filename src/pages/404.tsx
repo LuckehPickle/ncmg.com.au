@@ -8,7 +8,7 @@ import { SecondaryButton } from '../components/Button'
 import { withLayout } from '../components/Layout'
 
 const NotFoundPage: React.FunctionComponent = () => (
-  <Wrapper className="my-20" width="prose">
+  <Wrapper className="my-20" width="max-w-prose">
     <SEO title="Page not found" />
 
     <Heading level={1}>Page Not Found</Heading>

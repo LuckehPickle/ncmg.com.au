@@ -10,28 +10,13 @@ import { PrimaryButton } from './Button'
 import { useMessageUsModal } from '../context/messageUs'
 import CloseIcon from './icons/Close'
 
+interface HTMLElementWithInert extends HTMLElement {
+  inert?: boolean
+}
+
 const MessageUsModal: React.FunctionComponent = () => {
   const { isShowingModal, disableModal } = useMessageUsModal()
-  const [
-    previousActiveElem,
-    setPreviousActiveElem,
-  ] = useState<HTMLElement | null>(null)
   const modal = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const nonModalContent = document.getElementById('non-modal-content')
-
-    if (isShowingModal) {
-      setPreviousActiveElem(document.activeElement as HTMLElement)
-      nonModalContent.inert = true
-      document.body.classList.add('overflow-hidden')
-      modal.current.querySelector('input').focus()
-    } else {
-      nonModalContent.inert = false
-      document.body.classList.remove('overflow-hidden')
-      previousActiveElem?.focus()
-    }
-  }, [isShowingModal])
 
   function handleKeyDown(event: React.KeyboardEvent<HTMLDivElement>) {
     if (!isShowingModal) return
@@ -40,10 +25,27 @@ const MessageUsModal: React.FunctionComponent = () => {
     }
   }
 
+  // Move focus, toggle body scrolling, and more
+  const [prevActiveElem, setPrevActiveElem] = useState<HTMLElement | null>(null)
+  useEffect(() => {
+    const nonModal = document.getElementById(
+      'non-modal-content',
+    ) as HTMLElementWithInert
+    nonModal.inert = isShowingModal
+
+    if (isShowingModal) {
+      setPrevActiveElem(document.activeElement as HTMLElement)
+      document.body.classList.add('overflow-hidden')
+      modal.current.querySelector('input').focus()
+    } else {
+      document.body.classList.remove('overflow-hidden')
+      prevActiveElem?.focus()
+    }
+  }, [isShowingModal])
+
   const styles = [
     'fixed inset-0 z-10',
-    'transition-opacity',
-    isShowingModal ? 'opacity-100' : 'pointer-events-none opacity-0',
+    isShowingModal ? '' : 'hidden',
     'flex items-start justify-center',
     'overflow-x-hidden overflow-y-auto',
     'sm:py-14',
@@ -74,7 +76,7 @@ const MessageUsModal: React.FunctionComponent = () => {
       <div
         ref={modal}
         id="dialog__body"
-        className="relative z-20 bg-grey-800 max-w-screen-sm w-full px-4 py-8 sm:p-9 rounded overflow-hidden"
+        className="relative z-20 bg-grey-800 max-w-screen-sm w-full p-4 pt-10 sm:p-8 rounded overflow-hidden"
       >
         <Heading id="dialog__title" level={3}>
           Send us a message
@@ -84,27 +86,33 @@ const MessageUsModal: React.FunctionComponent = () => {
           We will respond to your message as soon as possible.
         </Copy>
 
-        <FormControl id="name" label="Full Name">
-          <Textbox />
-        </FormControl>
+        <form name="sendMessage" method="POST" data-netlify="true" action="/thanks">
+          <FormControl id="name" label="Full Name">
+            <Textbox />
+          </FormControl>
 
-        <FormControl
-          id="email"
-          label="Email Address"
-          help="We need this to respond to your message."
-        >
-          <Textbox kind="email" />
-        </FormControl>
+          <FormControl
+            id="email"
+            label="Email Address"
+            help="We need this to respond to your message."
+          >
+            <Textbox kind="email" />
+          </FormControl>
 
-        <FormControl id="message" label="Message">
-          <Textarea />
-        </FormControl>
+          <FormControl id="message" label="Message">
+            <Textarea />
+          </FormControl>
 
-        <div className="px-10 py-7 bg-grey-900 -mx-10 -mb-10">
-          <PrimaryButton onClick={() => disableModal()} icon={PaperPlaneIcon}>
-            Send message
-          </PrimaryButton>
-        </div>
+          <div className="bg-grey-900 p-4 sm:p-8 -mx-4 -mb-4 sm:-mx-8 sm:-mb-8">
+            <PrimaryButton
+              onClick={() => disableModal()}
+              icon={PaperPlaneIcon}
+              type="submit"
+            >
+              Send message
+            </PrimaryButton>
+          </div>
+        </form>
       </div>
     </div>
   )

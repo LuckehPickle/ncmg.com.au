@@ -62,7 +62,7 @@ const LandingPage: React.FunctionComponent = () => {
             <Image
               className="rounded shadow-glow"
               fluid={data.kitchen.childImageSharp.fluid}
-              alt="An excellent kitchen"
+              alt="An excellent kitchen, created by NCMG"
             />
           </div>
         </Wrapper>

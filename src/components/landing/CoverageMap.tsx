@@ -28,7 +28,7 @@ const CoverageMap: React.FunctionComponent = () => {
           <Image
             className="rounded"
             fluid={data.coverageMap.childImageSharp.fluid}
-            alt="Covering everywhere from Coffs Harbour to Forster"
+            alt="A coverage map, showing numerous locations between Coffs Harbour and Forster. Port Macquarie has a home icon."
           />
 
           <div>

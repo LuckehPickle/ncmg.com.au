@@ -12,9 +12,9 @@ const ContactBanner: React.FunctionComponent = () => {
   const { enableModal } = useMessageUsModal()
 
   return (
-    <div className="pt-5 sm:pt-24 bg-grey-800">
-      <Wrapper>
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between bg-grey-900 lg:bg-contact-pattern bg-cover rounded p-8 sm:p-10">
+    <div className="pt-10 sm:pt-24 bg-grey-800">
+      <Wrapper collapseOnMobile>
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between bg-grey-900 bg-contact-pattern bg-cover sm:rounded px-5 py-6 sm:p-10">
           <Heading level={3} className="mb-4 lg:mb-0">
             Ready to get started?
             <br />

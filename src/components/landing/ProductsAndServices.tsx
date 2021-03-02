@@ -11,33 +11,25 @@ const ProductsAndServices: React.FunctionComponent = () => {
   const [hasSwiped, setHasSwiped] = useState(false)
 
   const data = useStaticQuery(graphql`
-    query {
+    {
       kitchen: file(relativePath: { eq: "kitchen-cropped.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
       bathroom: file(relativePath: { eq: "bathroom.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
       splashback: file(relativePath: { eq: "splashback.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
       bar: file(relativePath: { eq: "bar.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }
@@ -77,32 +69,32 @@ const ProductsAndServices: React.FunctionComponent = () => {
         >
           <Product
             label="Kitchen Benchtops"
-            image={data.kitchen.childImageSharp.fluid}
+            image={data.kitchen.childImageSharp.gatsbyImageData}
             alt="A kitchen benchtop made from marble"
           />
           <Product
             label="Bathroom Vanities"
-            image={data.bathroom.childImageSharp.fluid}
+            image={data.bathroom.childImageSharp.gatsbyImageData}
             alt="A stone vanity"
           />
           <Product
             label="Splashbacks"
-            image={data.splashback.childImageSharp.fluid}
+            image={data.splashback.childImageSharp.gatsbyImageData}
             alt="A marble splashback in a kitchen"
           />
           <Product
             label="Bar Tops"
-            image={data.bar.childImageSharp.fluid}
+            image={data.bar.childImageSharp.gatsbyImageData}
             alt="The front of a bar"
           />
           <Product
             label="BBQs"
-            image={data.kitchen.childImageSharp.fluid}
+            image={data.kitchen.childImageSharp.gatsbyImageData}
             alt="TBA"
           />
           <Product
             label="Fireplaces"
-            image={data.kitchen.childImageSharp.fluid}
+            image={data.kitchen.childImageSharp.gatsbyImageData}
             alt="TBA"
           />
         </div>

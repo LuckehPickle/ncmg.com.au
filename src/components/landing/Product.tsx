@@ -1,17 +1,21 @@
 import React from 'react'
-import Image, { FluidObject } from 'gatsby-image'
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import Heading from '../Heading'
 
 interface ProductProps {
   label?: string
-  image?: FluidObject
+  image?: IGatsbyImageData
   alt?: string
 }
 
 const Product: React.FunctionComponent<ProductProps> = (props) => (
   <div>
     {props.image && (
-      <Image className="rounded mb-3" fluid={props.image} alt={props.alt} />
+      <GatsbyImage
+        image={props.image}
+        className="rounded mb-3"
+        alt={props.alt}
+      />
     )}
     <Heading level={5}>{props.label ?? 'Product'}</Heading>
   </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import Copy, { Bold } from '../Copy'
@@ -10,12 +10,10 @@ import { SecondaryButton } from '../Button'
 
 const CoverageMap: React.FunctionComponent = () => {
   const data = useStaticQuery(graphql`
-    query {
+    {
       coverageMap: file(relativePath: { eq: "coverage-map.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }
@@ -25,9 +23,9 @@ const CoverageMap: React.FunctionComponent = () => {
     <div className="py-16 md:py-32 bg-grey-900">
       <Wrapper>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 items-center">
-          <Image
+          <GatsbyImage
+            image={data.coverageMap.childImageSharp.gatsbyImageData}
             className="rounded max-w-md lg:max-w-none"
-            fluid={data.coverageMap.childImageSharp.fluid}
             alt="A coverage map, showing numerous locations between Coffs Harbour and Forster. Port Macquarie has a home icon."
           />
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import Copy, { Bold } from '../Copy'
@@ -10,12 +10,10 @@ import { PrimaryButton } from '../Button'
 import { useMessageUsModal } from '../../context/messageUs'
 
 const query = graphql`
-  query {
+  {
     kitchen: file(relativePath: { eq: "kitchen-cropped.png" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
   }
@@ -50,9 +48,9 @@ const Hero: React.FunctionComponent = () => {
             </PrimaryButton>
           </div>
 
-          <Image
+          <GatsbyImage
+            image={data.kitchen.childImageSharp.gatsbyImageData}
             className="rounded shadow-glow"
-            fluid={data.kitchen.childImageSharp.fluid}
             alt="An excellent kitchen, created by NCMG"
           />
         </div>

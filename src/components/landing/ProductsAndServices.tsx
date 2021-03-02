@@ -44,13 +44,13 @@ const ProductsAndServices: React.FunctionComponent = () => {
   `)
 
   return (
-    <div className="py-20 sm:py-32 bg-gradient-to-t from-grey-800 to-grey-900">
+    <div className="py-20 md:py-32 bg-gradient-to-t from-grey-800 to-grey-900">
       <Wrapper width="max-w-prose">
         <Heading level={1} align="center">
           Offering a wide range of products and services
         </Heading>
 
-        <Copy className="mt-4 sm:mt-8" variant="large">
+        <Copy className="mt-4 md:mt-8" variant="large">
           Looking for some inspiration? We can shape stone for almost anything
           you can imagine, <Bold>residential and commercial</Bold>. Just send us
           a message and we can talk through the possibilities.
@@ -72,7 +72,7 @@ const ProductsAndServices: React.FunctionComponent = () => {
         </div>
 
         <div
-          className="grid grid-cols-mobile sm:grid-cols-3 gap-6 sm:gap-8 mt-2 sm:mt-16 max-w-full overflow-x-scroll sm:overflow-hidden"
+          className="grid grid-cols-mobile sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-2 sm:mt-8 md:mt-16 max-w-full overflow-x-scroll sm:overflow-hidden"
           onTouchMove={() => setHasSwiped(true)}
         >
           <Product

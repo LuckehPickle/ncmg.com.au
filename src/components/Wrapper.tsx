@@ -11,7 +11,7 @@ const Wrapper: React.FunctionComponent<WrapperProps> = (props) => {
     'w-full',
     'my-0',
     'mx-auto',
-    props.collapseOnMobile ? 'sm:px-4' : 'px-4',
+    props.collapseOnMobile ? 'sm:px-5' : 'px-5',
   ]
 
   props.className && styles.push(props.className)

@@ -17,8 +17,8 @@ const Footer: FunctionComponent = () => {
   return (
     <footer className="bg-grey-900 border-b-4 border-zesty-500">
       <address className="not-italic">
-        <Wrapper className="grid grid-cols-1 sm:grid-cols-footer gap-5 sm:gap-20 py-10 sm:py-20">
-          <Logo size="medium" variant="labelled" className="hidden sm:block" />
+        <Wrapper className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-footer gap-5 md:gap-20 sm:px-6 lg:px-4 py-12 lg:py-20">
+          <Logo size="medium" variant="labelled" className="hidden lg:block" />
 
           <div>
             <CompanyInfo icon={LocationPinIcon} label="Address">

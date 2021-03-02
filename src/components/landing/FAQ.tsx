@@ -25,13 +25,13 @@ const FAQ: React.FunctionComponent = () => {
   const { enableModal } = useMessageUsModal()
 
   return (
-    <div className="py-16 sm:py-40 bg-grey-800">
+    <div className="py-16 md:py-40 bg-grey-800">
       <Wrapper width="max-w-prose">
         <Heading level={1} align="center">
           Frequently Asked Questions
         </Heading>
 
-        <Copy variant="large" className="mt-8">
+        <Copy variant="large" className="mt-6 md:mt-8">
           Here's some common questions our customers have asked us, about NCMG's
           area of service, products, and more.
         </Copy>

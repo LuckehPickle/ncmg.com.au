@@ -42,7 +42,6 @@ const SEO: React.FunctionComponent<SEOProps> = (props) => {
   return (
     <Helmet title={title} titleTemplate={titleTemplate}>
       <html lang="en-AU" />
-      {props.noIndex && <meta name="robots" content="noindex" />}
       <meta name="description" content={description} />
       <meta name="image" content={image} />
       <meta property="og:url" content={`${siteUrl}${pathname}`} />
@@ -53,6 +52,11 @@ const SEO: React.FunctionComponent<SEOProps> = (props) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
+      {props.noIndex ? (
+        <meta name="robots" content="noindex" />
+      ) : (
+        <meta name="robots" content="index,follow" />
+      )}
     </Helmet>
   )
 }

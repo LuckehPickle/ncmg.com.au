@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { navigate } from 'gatsby'
 
 import Copy from './Copy'
 import FormControl from './FormControl'
@@ -14,16 +15,19 @@ interface HTMLElementWithInert extends HTMLElement {
   inert?: boolean
 }
 
+export function encodeForm(
+  data: Record<string, string | number | boolean>,
+): string {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+
 const MessageUsModal: React.FunctionComponent = () => {
+  const [formState, setFormState] = useState({})
+
   const { isShowingModal, disableModal } = useMessageUsModal()
   const modal = useRef<HTMLDivElement>(null)
-
-  function handleKeyDown(event: React.KeyboardEvent<HTMLDivElement>) {
-    if (!isShowingModal) return
-    if (event.key === 'Escape') {
-      disableModal()
-    }
-  }
 
   // Move focus, toggle body scrolling, and more
   const [prevActiveElem, setPrevActiveElem] = useState<HTMLElement | null>(null)
@@ -42,6 +46,40 @@ const MessageUsModal: React.FunctionComponent = () => {
       prevActiveElem?.focus()
     }
   }, [isShowingModal])
+
+  function handleChange(
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) {
+    const { target } = event
+    const name = target.getAttribute('name')
+    const value = target.value
+
+    setFormState((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }))
+  }
+
+  function handleKeyDown(event: React.KeyboardEvent<HTMLDivElement>) {
+    if (isShowingModal && event.key === 'Escape') {
+      disableModal()
+    }
+  }
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encodeForm({
+        'form-name': 'sendMessage',
+        ...formState,
+      }),
+    })
+      .then(() => navigate('/thanks'))
+      .catch((error) => alert(error))
+  }
 
   const styles = [
     'fixed inset-0 z-10',
@@ -86,9 +124,15 @@ const MessageUsModal: React.FunctionComponent = () => {
           We will respond to your message as soon as possible.
         </Copy>
 
-        <form name="sendMessage" method="POST" data-netlify="true" action="/thanks">
+        <form
+          name="sendMessage"
+          method="POST"
+          data-netlify="true"
+          action="/thanks"
+          onSubmit={handleSubmit}
+        >
           <FormControl id="name" label="Full Name">
-            <Textbox />
+            <Textbox onChange={handleChange} />
           </FormControl>
 
           <FormControl
@@ -96,11 +140,11 @@ const MessageUsModal: React.FunctionComponent = () => {
             label="Email Address"
             help="We need this to respond to your message."
           >
-            <Textbox kind="email" />
+            <Textbox kind="email" onChange={handleChange} />
           </FormControl>
 
           <FormControl id="message" label="Message">
-            <Textarea />
+            <Textarea onChange={handleChange} />
           </FormControl>
 
           <div className="bg-grey-900 p-4 sm:p-8 -mx-4 -mb-4 sm:-mx-8 sm:-mb-8">

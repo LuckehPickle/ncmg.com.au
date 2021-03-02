@@ -29,7 +29,7 @@ const Logo: FunctionComponent<LogoProps> = (props) => {
       viewBox="-351 337 576 128"
       xmlSpace="preserve"
       width={`${size}px`}
-      aria-hidden={true}
+      aria-hidden="true"
     >
       <path
         className="fill-current text-zesty-500"
@@ -52,6 +52,7 @@ const Labelled: FunctionComponent<LabelledProps> = (props) => (
     viewBox="-351 337 576 172.5"
     xmlSpace="preserve"
     width={`${props.size}px`}
+    aria-hidden="true"
   >
     <path
       className="fill-current text-zesty-500"

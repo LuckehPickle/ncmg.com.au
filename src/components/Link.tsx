@@ -14,7 +14,12 @@ const styles = {
 const Link: FunctionComponent<LinkProps> = (props) => {
   if (props.external || props.onClick) {
     return (
-      <a href={props.to} onClick={props.onClick} className={styles.common}>
+      <a
+        href={props.to}
+        onClick={props.onClick}
+        className={styles.common}
+        tabIndex={0}
+      >
         {props.children}
       </a>
     )

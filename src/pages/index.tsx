@@ -2,7 +2,7 @@ import React from 'react'
 
 import ContactBanner from '../components/landing/ContactBanner'
 import CoverageMap from '../components/landing/CoverageMap'
-import FAQ from '../components/landing/FAQ'
+import Faq from '../components/landing/Faq'
 import Hero from '../components/landing/Hero'
 import ProductsAndServices from '../components/landing/ProductsAndServices'
 import SEO from '../components/SEO'
@@ -15,7 +15,7 @@ const LandingPage: React.FunctionComponent = () => (
     <ProductsAndServices />
     <CoverageMap />
     <ContactBanner />
-    <FAQ />
+    <Faq />
   </>
 )
 

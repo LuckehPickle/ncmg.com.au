@@ -13,7 +13,7 @@ interface QuestionProps {
 
 const Question: React.FunctionComponent<QuestionProps> = (props) => (
   <Copy variant="large" className="my-6">
-    <span className="font-normal text-white bg-grey-900 rounded px-1">
+    <span className="font-normal text-white bg-grey-900 rounded pr-1 md:px-1">
       {props.question}
     </span>
     &nbsp;
@@ -48,6 +48,10 @@ const FAQ: React.FunctionComponent = () => {
           Sometimes.{' '}
           <Link onClick={() => enableModal()}>Send us a message</Link> outlining
           where you'd like the work done, and we'll see what we can do.
+        </Question>
+
+        <Question question="Can you take on small projects?">
+          Sure. We will take on projects of any size.
         </Question>
 
         <Question question="How can I get in touch?">

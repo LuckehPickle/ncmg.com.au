@@ -30,13 +30,13 @@ const Hero: React.FunctionComponent = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
           <div>
             <Heading level={1}>
-              The leading choice for marble and granite.
+              The choice in natural and engineered stone.
             </Heading>
 
             <Copy variant="large" className="my-4 md:my-6">
-              We create <Bold>benchtops, vanities and more</Bold>. With the
-              latest machinery and a team of highly experienced trade staff, we
-              can complete any job throughout the Mid North Coast.
+              We create <Bold>benchtops for kitchens, vanities and more</Bold>.
+              With the latest machinery and a team of highly experienced trade
+              staff, we can complete any job throughout the Mid North Coast.
             </Copy>
 
             <PrimaryButton

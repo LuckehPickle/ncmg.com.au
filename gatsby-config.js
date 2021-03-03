@@ -3,7 +3,7 @@ module.exports = {
     title: 'North Coast Marble & Granite',
     titleTemplate: '%s - NCMG',
     description:
-      'We create benchtops, vanities and more. With the latest machinery and a team of highly experienced trade staff, we can complete any job throughout the Mid North Coast.',
+      'We create benchtops for kitchens, vanities and more. With the latest machinery and a team of highly experienced trade staff, we can complete any job throughout the Mid North Coast.',
     siteUrl: `https://www.ncmg.com.au`,
     image: '/ncmg.png',
   },

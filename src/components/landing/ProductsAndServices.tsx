@@ -14,22 +14,22 @@ const ProductsAndServices: React.FunctionComponent = () => {
     {
       kitchen: file(relativePath: { eq: "kitchen-cropped.png" }) {
         childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH)
+          gatsbyImageData(layout: CONSTRAINED, width: 600)
         }
       }
       bathroom: file(relativePath: { eq: "bathroom.png" }) {
         childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH)
+          gatsbyImageData(layout: CONSTRAINED, width: 600)
         }
       }
       splashback: file(relativePath: { eq: "splashback.png" }) {
         childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH)
+          gatsbyImageData(layout: CONSTRAINED, width: 600)
         }
       }
       bar: file(relativePath: { eq: "bar.png" }) {
         childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH)
+          gatsbyImageData(layout: CONSTRAINED, width: 600)
         }
       }
     }
@@ -75,7 +75,7 @@ const ProductsAndServices: React.FunctionComponent = () => {
           <Product
             label="Bathroom Vanities"
             image={data.bathroom.childImageSharp.gatsbyImageData}
-            alt="A stone vanity"
+            alt="A stone vanity top"
           />
           <Product
             label="Splashbacks"
